@@ -7,5 +7,44 @@ load(dir(system.file(package = "hpar", dir = "extdata"),
 
 assign("hpaVersion", hpaRelease$version, envir = .hpaEnv)
 assign("hpaDate", hpaRelease$date, envir = .hpaEnv)
+assign("hpaEnsembl", hpaRelease$ensembl, envir = .hpaEnv)
 
+##' Function used to set the \code{what} \code{hpar} option. 
+##'
+##' @title Sets the 'hpar' options
+##' @param what A \code{character} defining the default data
+##' to be queries or \code{NULL}. If \code{NULL} (default),
+##' the data will be chosen based on 'what' argument in the
+##' \code{\link{getHpa}} function. 
+##' @return Returns the set value of the \code{hpar} option.
+##' Used for its side effect.
+##' @author Laurent Gatto
+##' @examples
+##' oldOpt <- getHparOptions()
+##' oldOpt
+##' setHparOptions("hpaRna")
+##' getHparOptions()
+##' setHparOptions(oldOpt)
+setHparOptions <- function(what = NULL) {
+  if (!is.null(what))
+    what <- match.arg(c("NormalTissue", "RNA", "SubcellularLoc"))
+  opts <- getOption("hpar")
+  if (is.null(opts))
+    opts <- list()
+  ## defines a prefered data to query when using hpar()
+  opts$what <- what
+  options("hpar" = opts)
+  invisible(what)
+}
 
+##' Returns the \code{hapr} options. Currently, there is only
+##' one, \code{what}. See \code{\link{setHparOptions}} for
+##' details and examples.
+##'
+##' @title Returns the \code{hpar} option.
+##' @return A \code{list} with the \code{hpar} option(s). 
+##' @author Laurent Gatto
+getHparOptions <- function() {
+  options("hpar")  
+}
+  
