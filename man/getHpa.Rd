@@ -2,7 +2,7 @@
 \alias{getHpa}
 \title{HPA gene query}
 \usage{
-  getHpa(id, hpadata = NULL, what = c("data", "details"))
+  getHpa(id, hpadata = NULL, type = c("data", "details"))
 }
 \arguments{
   \item{id}{A Ensembl gene identifier.}
@@ -14,14 +14,14 @@
   \code{\link{setHparOptions}} and
   \code{\link{getHparOptions}} for more details.}
 
-  \item{what}{A \code{character} defining what type data to
+  \item{type}{A \code{character} defining what type data to
   return. One of \code{data} (default, for the data as
   \code{dataframe}) or \code{details} (to open the id's HPA
   webpage).}
 }
 \value{
   A \code{dataframe} with the information corresponding to
-  the respective \code{id} genes. If \code{what} is
+  the respective \code{id} genes. If \code{type} is
   \code{details}, then the \code{dataframe} is returned
   invisibly and a web page is opened with
   \code{\link{browseURL}}.
@@ -50,7 +50,7 @@ getHpa(id = c("ENSG00000000003", "ENSG00000000005"),
 \dontrun{
 ## opens a browser with http://www.proteinatlas.org/ENSG00000163435
 getHpa("ENSG00000163435",
-       what = "details")
+       type = "details")
 }
 }
 \author{

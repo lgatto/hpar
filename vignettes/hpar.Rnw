@@ -243,7 +243,7 @@ sapply(as.list(GOTERM[ans$GO]), slot, "Term")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Session information}\label{sec:sessionInfo} 
-<<sessioninfo, results = 'tex', echo = FALSE, cache = FALSE>>=
+<<sessioninfo, results = tex, echo = FALSE, cache = FALSE>>=
 toLatex(sessionInfo())
 @
 
