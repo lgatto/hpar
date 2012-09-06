@@ -1,0 +1,8 @@
+Package: hpar
+Type: Package
+Title: Human Protein Atlas in R
+Version: 0.1.0
+Author: Laurent Gatto 
+Maintainer: Laurent Gatto <lg390@cam.ac.uk>
+Description: A simple interface to the Human Protein Atlas.
+License: Artistic-2.0
