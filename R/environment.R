@@ -5,9 +5,9 @@ load(dir(system.file(package = "hpar", dir = "extdata"),
          full.name = TRUE,
          pattern = "hpaRelease.rda"))
 
-assign("hpaVersion", hpaRelease$version, envir = .hpaEnv)
-assign("hpaDate", hpaRelease$date, envir = .hpaEnv)
-assign("hpaEnsembl", hpaRelease$ensembl, envir = .hpaEnv)
+assign("hpaVersion", hpaRelease$version, envir = .hparEnv)
+assign("hpaDate", hpaRelease$date, envir = .hparEnv)
+assign("hpaEnsembl", hpaRelease$ensembl, envir = .hparEnv)
 
 ##' Function used to set the \code{what} \code{hpar} option. 
 ##'
@@ -25,13 +25,11 @@ assign("hpaEnsembl", hpaRelease$ensembl, envir = .hpaEnv)
 ##' setHparOptions("hpaRna")
 ##' getHparOptions()
 ##' setHparOptions(oldOpt)
-setHparOptions <- function(what = NULL) {
-  if (!is.null(what))
-    what <- match.arg(c("NormalTissue", "RNA", "SubcellularLoc"))
+setHparOptions <- function(what = c("NormalTissue", "Rna", "SubcellularLoc")) {
+  what <- match.arg(what)
   opts <- getOption("hpar")
   if (is.null(opts))
     opts <- list()
-  ## defines a prefered data to query when using hpar()
   opts$what <- what
   options("hpar" = opts)
   invisible(what)

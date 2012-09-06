@@ -1,8 +1,8 @@
 .onLoad <- function(libname, pkgname) {
-    setHparOptions() ## initialises options$hpar with NULL
+    setHparOptions(what = "NormalTissue")
 }
 
 .onAttach <- function(libname, pkgname) {
-  msg <- "For information about the 'hpar' package and data, please read ?'hpar'."
+  msg <- "For information about the package and data, please read ?'hpar'."
     packageStartupMessage(msg)
 }

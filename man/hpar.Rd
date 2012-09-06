@@ -2,7 +2,7 @@
 \alias{hpaRna}
 \alias{hpaRna}
 \alias{hpaNormalTissue}
-\alias{hpaSubcellLoc}
+\alias{hpaSubcellularLoc}
 
 \docType{data}
 
@@ -28,7 +28,7 @@
 \usage{
 hpaRna
 hpaNormalTissue
-hpaSubcellLoc
+hpaSubcellularLoc
 }
 
 \details{
@@ -46,7 +46,7 @@ hpaSubcellLoc
     on one antibody only) ("Expression.type"), and the reliability or
     validation of the expression value ("Reliability").  
     
-    \item \strong{Subcellular location data} (\code{hpaSubcellLoc})
+    \item \strong{Subcellular location data} (\code{hpaSubcellularLoc})
     Subcellular localisation of proteins based on immunofluorescently
     stained cells. The \code{dataframe} includes Ensembl gene identifier
     ("Gene"), main subcellular location of the protein
@@ -80,7 +80,7 @@ Laurent Gatto <lg390@cam.ac.uk>
 }
 
 \seealso{
-  \code{\link{getHpaData}} for release information. Gene-specific
+  \code{\link{getHpaDate}} for release information. Gene-specific
   information should be accessed using the \code{\link{getHpa}}
   function.  
 }
@@ -110,9 +110,9 @@ dim(hapRna)
 data(hpaNormalTissue)
 head(hpaNormalTissue)
 dim(hpaNormalTissue)
-data(hpaSubcellLoc)
-head(hpaSubcellLoc)
-dim(hpaSubcellLoc)
+data(hpaSubcellularLoc)
+head(hpaSubcellularLoc)
+dim(hpaSubcellularLoc)
 }
 
 \keyword{ datasets }
