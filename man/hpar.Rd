@@ -55,7 +55,10 @@ hpaSubcellularLoc
     annotation (annotated protein expression (APE), based on more than
     one antibody, or staining, based on one antibody only)
     ("Expression.type"), and the reliability or validation of the
-    expression value ("Reliability"). 
+    expression value ("Reliability"). Note that the Gene Ontology and
+    UniProt are both importing part of this data into their
+    respective databases. UniProt cite the source with
+    \emph{source:HPA}.
     
     \item \strong{RNA data} (\code{hpaRna}) RNA levels in three
     different cell lines, based on RNAseq. The \code{dataframe} includes
@@ -71,7 +74,18 @@ hpaSubcellularLoc
   The full data sets can be individually loaded using the
   \code{\link{data}} function (see example below).
   Data about individual genes of interest can retrived with the
-  \code{\link{getHpa}} function. 
+  \code{\link{getHpa}} function.
+
+  HPA data usage policy: The use of data and images from this site in
+  publications and presentations is permitted provided that the
+  following conditions are met:
+  \enumerate{
+    \item The publication and/or presentation are solely for informational
+    and non-commercial purposes.
+    \item The source of the data and/or image is referred to this site
+    (www.proteinatlas.org) and/or one or more of our publications are
+    cited.
+  }  
 }
 
 \author{

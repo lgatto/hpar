@@ -2,8 +2,6 @@
 \alias{getHpaDate}
 \alias{getHpaVersion}
 \alias{getHpaEnsembl}
-\alias{getHpaReleaseNotes}
-
 
 \title{
   Obtain HPA release information
@@ -20,20 +18,14 @@
 getHpaDate()
 getHpaVersion()
 getHpaEnsembl()
-getHpaReleaseNotes(...)
-}
-
-\arguments{
-  \item{...}{Arguments passed to \code{brosweURL}.}
 }
 
 \value{
-  A \code{character} except for \code{getHpaReleaseNotes} that returns a
-  \code{numeric} and opens the release page in a browser.
+  A \code{character}.
 }
 
 \references{
-  The Human Protein Atlas page is \url{http://www.proteinatlas.org/}.
+  HPA release history: \url{http://www.proteinatlas.org/about/releases}
 }
 
 \author{
@@ -44,7 +36,4 @@ getHpaReleaseNotes(...)
 getHpaVersion()
 getHpaDate()
 getHpaEnsembl()
-\dontrun{
-getHpaReleaseNotes
-}
 }

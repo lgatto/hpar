@@ -5,8 +5,6 @@ getHpaDate <- function()
   get("hpaDate", envir = .hparEnv)
 getHpaEnsembl <- function()
   get("hpaEnsembl", envir = .hparEnv)
-getHpaReleaseNotes <- function(...)
-  browseURL("http://www.proteinatlas.org/about/releases", ...)
 
 
 ##' Queries one if the HPA data sets with the \code{id} Ensembl
@@ -20,11 +18,11 @@ getHpaReleaseNotes <- function(...)
 ##' (default). In the latter case, the default option is used. See
 ##' \code{\link{setHparOptions}} and \code{\link{getHparOptions}} for
 ##' more details.
-##' @param what A \code{character} defining what type data to return.
+##' @param type A \code{character} defining what type data to return.
 ##' One of \code{data} (default, for the data as \code{dataframe}) or
 ##' \code{details} (to open the id's HPA webpage).
 ##' @return A \code{dataframe} with the information corresponding
-##' to the respective \code{id} genes. If \code{what} is \code{details},
+##' to the respective \code{id} genes. If \code{type} is \code{details},
 ##' then the \code{dataframe} is returned invisibly and a web page is
 ##' opened with \code{\link{browseURL}}.
 ##' @author Laurent Gatto
@@ -47,12 +45,12 @@ getHpaReleaseNotes <- function(...)
 ##' \dontrun{
 ##' ## opens a browser with http://www.proteinatlas.org/ENSG00000163435
 ##' getHpa("ENSG00000163435",
-##'        what = "details") 
+##'        type = "details") 
 ##' }
 getHpa <- function(id,
                    hpadata = NULL,
-                   what = c("data", "details")) {
-  what <- match.arg(what)
+                   type = c("data", "details")) {
+  type <- match.arg(type)
   if (is.null(hpadata)) {
     opts <- getOption("hpar")    
     hpadata <- opts$hpadata
@@ -62,7 +60,7 @@ getHpa <- function(id,
   data(list = .data, envir = environment())
   idx <- with(get(.data), which(Gene %in% id))
   ans <- get(.data)[idx, ]
-  if (what == "details") {
+  if (type == "details") {
     urls <- paste0("http://www.proteinatlas.org/", id)    
     browseURL(urls[1])  
     if (length(urls) > 1) {
@@ -72,7 +70,7 @@ getHpa <- function(id,
       tmp <- sapply(urls[-1], browseURL)
     }
   }
-  if (what == "data") {
+  if (type == "data") {
     return(ans)
   } else {
     invisible(ans)
