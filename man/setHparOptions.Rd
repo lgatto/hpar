@@ -2,11 +2,11 @@
 \alias{setHparOptions}
 \title{Sets the 'hpar' options}
 \usage{
-  setHparOptions(what = c("NormalTissue", "Rna", "SubcellularLoc"))
+  setHparOptions(hpadata = c("NormalTissue", "Rna", "SubcellularLoc"))
 }
 \arguments{
-  \item{what}{A \code{character} defining the default data
-  to be queries. Choices are "NormalTissue", "Rna" or
+  \item{hpadata}{A \code{character} defining the default
+  data to be queries. Choices are "NormalTissue", "Rna" or
   "SubcellularLoc", or any unambiguous prefix.}
 }
 \value{
@@ -14,14 +14,15 @@
   its side effect.
 }
 \description{
-  Function used to set the \code{what} \code{hpar} option.
+  Function used to set the \code{hpadata} \code{hpar}
+  option.
 }
 \examples{
 oldOpt <- getHparOptions()
-oldOpt$what
+oldOpt$hpadata
 setHparOptions("Rna")
 getHparOptions()
-setHparOptions(oldOpt$what)
+setHparOptions(oldOpt$hpadata)
 }
 \author{
   Laurent Gatto

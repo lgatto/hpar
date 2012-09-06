@@ -9,7 +9,7 @@
 }
 \description{
   Returns the \code{hapr} options. Currently, there is only
-  one, \code{what}. See \code{\link{setHparOptions}} for
+  one, \code{hpadata}. See \code{\link{setHparOptions}} for
   details and examples.
 }
 \author{

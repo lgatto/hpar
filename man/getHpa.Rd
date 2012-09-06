@@ -2,39 +2,56 @@
 \alias{getHpa}
 \title{HPA gene query}
 \usage{
-  getHpa(id, what = NULL)
+  getHpa(id, hpadata = NULL, what = c("data", "details"))
 }
 \arguments{
   \item{id}{A Ensembl gene identifier.}
 
-  \item{what}{The data set to query. One of "NormalTissue",
-  "Rna", "SubcellularLoc" (or any unambiguous prefix) or
-  \code{NULL} (default). In the latter case, the default
-  option is used. See \code{\link{setHparOptions}} and
+  \item{hpadata}{The data set to query. One of
+  "NormalTissue", "Rna", "SubcellularLoc" (or any
+  unambiguous prefix) or \code{NULL} (default). In the
+  latter case, the default option is used. See
+  \code{\link{setHparOptions}} and
   \code{\link{getHparOptions}} for more details.}
+
+  \item{what}{A \code{character} defining what type data to
+  return. One of \code{data} (default, for the data as
+  \code{dataframe}) or \code{details} (to open the id's HPA
+  webpage).}
 }
 \value{
   A \code{dataframe} with the information corresponding to
-  the respective \code{id} genes.
+  the respective \code{id} genes. If \code{what} is
+  \code{details}, then the \code{dataframe} is returned
+  invisibly and a web page is opened with
+  \code{\link{browseURL}}.
 }
 \description{
   Queries one if the HPA data sets with the \code{id}
   Ensembl gene identifier. The data set to be used is
-  defined by the \code{what} argument.
+  defined by the \code{hpadata} argument.
 }
 \examples{
 id <- "ENSG00000000003"
-## Define 'what' data manually
-getHpa(id, what = "Subcell")
-head(getHpa(id, what = "NormalTissue"), )
-head(getHpa(id, what = "Rna"))
-## Default 'what' data
-head(getHpa(id)) ## default 'what' is "NormalTissue"
+## Define 'hpadata' data manually
+getHpa(id, hpadata = "Subcell")
+head(getHpa(id, hpadata = "NormalTissue"), )
+head(getHpa(id, hpadata = "Rna"))
+## Default 'hpadata' data
+head(getHpa(id)) ## default 'hpadata' is "NormalTissue"
 ## Sets default to "SubcellularLoc"
-setHparOptions(what = "SubcellularLoc")
+setHparOptions(hpadata = "SubcellularLoc")
 getHpa(id)      ## now uses "SubcellularLoc"
 setHparOptions() ## reset to "NormalTissue"
 head(getHpa(id))
+## multiple ids
+getHpa(id = c("ENSG00000000003", "ENSG00000000005"),
+       hpadata = "SubcellularLoc")
+\dontrun{
+## opens a browser with http://www.proteinatlas.org/ENSG00000163435
+getHpa("ENSG00000163435",
+       what = "details")
+}
 }
 \author{
   Laurent Gatto

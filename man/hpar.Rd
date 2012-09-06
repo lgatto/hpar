@@ -1,4 +1,5 @@
 \name{hpar}
+\alias{hpar}
 \alias{hpaRna}
 \alias{hpaRna}
 \alias{hpaNormalTissue}
@@ -74,8 +75,6 @@ hpaSubcellularLoc
 }
 
 \author{
-Laurent Gatto
-
 Laurent Gatto <lg390@cam.ac.uk>
 }
 
@@ -86,7 +85,8 @@ Laurent Gatto <lg390@cam.ac.uk>
 }
      
 \references{
-  The Human Protein Atlas page is \url{http://www.proteinatlas.org/}.
+  See the Human Protein Atlas Project page
+  \url{http://www.proteinatlas.org/} for more details and documentation.
 
   Uhlen et al (2010). Towards a knowledge-based Human Protein Atlas. Nat
   Biotechnol. 28(12):1248-50. 

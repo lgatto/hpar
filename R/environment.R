@@ -9,10 +9,10 @@ assign("hpaVersion", hpaRelease$version, envir = .hparEnv)
 assign("hpaDate", hpaRelease$date, envir = .hparEnv)
 assign("hpaEnsembl", hpaRelease$ensembl, envir = .hparEnv)
 
-##' Function used to set the \code{what} \code{hpar} option. 
+##' Function used to set the \code{hpadata} \code{hpar} option. 
 ##'
 ##' @title Sets the 'hpar' options
-##' @param what A \code{character} defining the default data
+##' @param hpadata A \code{character} defining the default data
 ##' to be queries. Choices are "NormalTissue", "Rna" or
 ##' "SubcellularLoc", or any unambiguous prefix.
 ##' @return Returns the set value of the \code{hpar} option.
@@ -20,22 +20,24 @@ assign("hpaEnsembl", hpaRelease$ensembl, envir = .hparEnv)
 ##' @author Laurent Gatto
 ##' @examples
 ##' oldOpt <- getHparOptions()
-##' oldOpt$what
+##' oldOpt$hpadata
 ##' setHparOptions("Rna")
 ##' getHparOptions()
-##' setHparOptions(oldOpt$what)
-setHparOptions <- function(what = c("NormalTissue", "Rna", "SubcellularLoc")) {
-  what <- match.arg(what)
+##' setHparOptions(oldOpt$hpadata)
+setHparOptions <- function(hpadata = c("NormalTissue",
+                             "Rna",
+                             "SubcellularLoc")) {
+  hpadata <- match.arg(hpadata)
   opts <- getOption("hpar")
   if (is.null(opts))
     opts <- list()
-  opts$what <- what
+  opts$hpadata <- hpadata
   options("hpar" = opts)
-  invisible(what)
+  invisible(hpadata)
 }
 
 ##' Returns the \code{hapr} options. Currently, there is only
-##' one, \code{what}. See \code{\link{setHparOptions}} for
+##' one, \code{hpadata}. See \code{\link{setHparOptions}} for
 ##' details and examples.
 ##'
 ##' @title Returns the \code{hpar} option.

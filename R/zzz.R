@@ -1,5 +1,5 @@
 .onLoad <- function(libname, pkgname) {
-    setHparOptions(what = "NormalTissue")
+    setHparOptions(hpadata = "NormalTissue")
 }
 
 .onAttach <- function(libname, pkgname) {
