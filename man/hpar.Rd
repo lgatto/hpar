@@ -95,7 +95,9 @@ Laurent Gatto <lg390@cam.ac.uk>
 \seealso{
   \code{\link{getHpaDate}} for release information. Gene-specific
   information should be accessed using the \code{\link{getHpa}}
-  function.  
+  function.
+
+  The package vignette can be accessed with \code{vignette("hpar")}.
 }
      
 \references{
