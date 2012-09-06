@@ -60,19 +60,19 @@ getHpa <- function(id,
   hpadata <- match.arg(hpadata, c("NormalTissue", "Rna", "SubcellularLoc"))
   .data <- paste0("hpa", hpadata)         
   data(list = .data, envir = environment())
-  idx <- with(get(.data), which(Gene == id))
+  idx <- with(get(.data), which(Gene %in% id))
   ans <- get(.data)[idx, ]
-  if (what %in% "details") {
+  if (what == "details") {
     urls <- paste0("http://www.proteinatlas.org/", id)    
     browseURL(urls[1])  
     if (length(urls) > 1) {
       ## to avoid a browser error complaining about 
       ## running but not responding
-      Sys.sleep(0.2) 
+      Sys.sleep(0.5) 
       tmp <- sapply(urls[-1], browseURL)
     }
   }
-  if (what %in% "data") {
+  if (what == "data") {
     return(ans)
   } else {
     invisible(ans)
