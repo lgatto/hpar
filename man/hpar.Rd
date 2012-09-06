@@ -105,8 +105,8 @@ Laurent Gatto <lg390@cam.ac.uk>
 
 \examples{
 data(hpaRna)
-head(hapRna)
-dim(hapRna)
+head(hpaRna)
+dim(hpaRna)
 data(hpaNormalTissue)
 head(hpaNormalTissue)
 dim(hpaNormalTissue)

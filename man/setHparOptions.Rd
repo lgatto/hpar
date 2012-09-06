@@ -6,9 +6,8 @@
 }
 \arguments{
   \item{what}{A \code{character} defining the default data
-  to be queries or \code{NULL}. If \code{NULL} (default),
-  the data will be chosen based on 'what' argument in the
-  \code{\link{getHpa}} function.}
+  to be queries. Choices are "NormalTissue", "Rna" or
+  "SubcellularLoc", or any unambiguous prefix.}
 }
 \value{
   Returns the set value of the \code{hpar} option. Used for
@@ -19,10 +18,10 @@
 }
 \examples{
 oldOpt <- getHparOptions()
-oldOpt
-setHparOptions("hpaRna")
+oldOpt$what
+setHparOptions("Rna")
 getHparOptions()
-setHparOptions(oldOpt)
+setHparOptions(oldOpt$what)
 }
 \author{
   Laurent Gatto

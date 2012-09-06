@@ -1,6 +1,5 @@
-export(getHpaVersion,
-       getHpaDate,
-       getHpaReleaseNotes,
+export(getHpaVersion, getHpaDate,
+       getHpaReleaseNotes, getHpaEnsembl,
        getHpa,
        getHparOptions, setHparOptions)
 

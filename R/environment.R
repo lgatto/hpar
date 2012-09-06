@@ -13,18 +13,17 @@ assign("hpaEnsembl", hpaRelease$ensembl, envir = .hparEnv)
 ##'
 ##' @title Sets the 'hpar' options
 ##' @param what A \code{character} defining the default data
-##' to be queries or \code{NULL}. If \code{NULL} (default),
-##' the data will be chosen based on 'what' argument in the
-##' \code{\link{getHpa}} function. 
+##' to be queries. Choices are "NormalTissue", "Rna" or
+##' "SubcellularLoc", or any unambiguous prefix.
 ##' @return Returns the set value of the \code{hpar} option.
 ##' Used for its side effect.
 ##' @author Laurent Gatto
 ##' @examples
 ##' oldOpt <- getHparOptions()
-##' oldOpt
-##' setHparOptions("hpaRna")
+##' oldOpt$what
+##' setHparOptions("Rna")
 ##' getHparOptions()
-##' setHparOptions(oldOpt)
+##' setHparOptions(oldOpt$what)
 setHparOptions <- function(what = c("NormalTissue", "Rna", "SubcellularLoc")) {
   what <- match.arg(what)
   opts <- getOption("hpar")

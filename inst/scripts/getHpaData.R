@@ -12,17 +12,23 @@ getAsDataframe <- function(url, filename, ...) {
 ## Populate PKGDIR/data
 hpaSubcellularLoc <- getAsDataframe(url = "http://www.proteinatlas.org/download/subcellular_location.csv.zip",
                                 filename = "subcellular_location.csv")
-save(hpaSubcellularLoc, file = "../../data/hpaSubcellularLoc.rda",
+save(hpaSubcellularLoc,
+     file = "../../data/hpaSubcellularLoc.rda",
+     compress = "bzip2",
      compression_level = 9)
 
 hpaNormalTissue <- getAsDataframe(url = "http://www.proteinatlas.org/download/normal_tissue.csv.zip",   
                                   filename = "normal_tissue.csv") 
-save(hpaNormalTissue, file = "../../data/hpaNormalTissue.rda",
+save(hpaNormalTissue,
+     file = "../../data/hpaNormalTissue.rda",
+     compress = "xz",
      compression_level = 9)
 
 hpaRna <- getAsDataframe(url = "http://www.proteinatlas.org/download/rna.csv.zip",
                          filename = "rna.csv")
-save(hpaRna, file = "../../data/hpaRna.rda",
+save(hpaRna,
+     file = "../../data/hpaRna.rda",
+     compress = "xz",
      compression_level = 9)
 
 ## Populate PKGDIR/inst/extdata

@@ -4,6 +4,7 @@ Title: Human Protein Atlas in R
 Version: 0.1.0
 Author: Laurent Gatto 
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
-Description: A simple interface to the Human Protein Atlas.
-Depensds: R (>=2.15)
+Description: A simple interface to and data from 
+	     the Human Protein Atlas Project.
+Depends: R (>= 2.15)
 License: Artistic-2.0
