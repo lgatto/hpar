@@ -125,16 +125,16 @@ The use of data and images from the HPA in publications and presentations is per
 
 \subsection{Installation}
 
-%% \Rpackage{hpar} is available through the Bioconductor project. Details about the package and the installation procedure can be found on its page\footnote{\url{http://bioconductor.org/packages/devel/bioc/html/hpar.html}}. Briefly, installation of the package and all its dependencies should be done using the dedicated Bioconductor infrastructure as shown below: 
+\Rpackage{hpar} is available through the Bioconductor project. Details about the package and the installation procedure can be found on its page\footnote{\url{http://bioconductor.org/packages/devel/bioc/html/hpar.html}}. To install using the dedicated Bioconductor infrastructure, run : 
 
-%% <<install, echo=TRUE, eval=FALSE>>= 
-%% source("http://bioconductor.org/biocLite.R")  
-%% ## or, if you have already used the above before 
-%% library("BiocInstaller") ## and to install the package 
-%% biocLite("hpar") 
-%% @ 
+<<install, echo=TRUE, eval=FALSE>>= 
+source("http://bioconductor.org/biocLite.R")  
+## or, if you have already used the above before 
+library("BiocInstaller") ## and to install the package 
+biocLite("hpar") 
+@ 
 
-\Rpackage{hpar} does not have any dependencies and can be directly installed using \Rfunction{install.packages}. After installation, \Rpackage{hpar} will have to be explicitly loaded with  
+After installation, \Rpackage{hpar} will have to be explicitly loaded with  
 
 <<library>>=
 library("hpar")

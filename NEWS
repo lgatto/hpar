@@ -2,6 +2,8 @@ CHANGES IN VERSION 0.99.1
 -------------------------
  o Added collate field <2012-09-14 Fri>
  o Updated to HPA version 10 <2012-09-15 Sat>
+ o Updated installation part in section to use 
+   biocLite <2012-09-15 Sat>
 
 CHANGES IN VERSION 0.99.0
 -------------------------
