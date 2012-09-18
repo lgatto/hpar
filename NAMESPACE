@@ -1,0 +1,4 @@
+export(getHpaVersion, getHpaDate, getHpaEnsembl,
+       getHpa,
+       getHparOptions, setHparOptions)
+

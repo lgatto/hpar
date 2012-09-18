@@ -1,0 +1,253 @@
+%\VignetteIndexEntry{Human Protein Atlas in R}
+%\VignetteKeywords{Infrastructure, Bioinformatics, Proteomics}
+%\VignettePackage{hpar}
+\documentclass{article}
+\usepackage{longtable}
+\usepackage[authoryear,round]{natbib}
+\usepackage[T1]{fontenc}
+\newcommand{\R}{\texttt{R} }
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\mbox{\normalfont\textsf{#1}}}}
+\newcommand{\email}[1]{\href{mailto:#1}{\normalfont\texttt{#1}}}
+%% colors
+\definecolor{Red}{rgb}{0.7,0,0}
+\definecolor{Blue}{rgb}{0,0,0.8}
+
+\usepackage{geometry}
+\geometry{verbose,
+  tmargin = 2.5cm,
+  bmargin = 2.5cm,
+  lmargin = 3.5cm,
+  rmargin = 3.5cm}
+
+\usepackage{hyperref}
+\usepackage{breakurl}
+\hypersetup{%
+  pdfusetitle,
+  bookmarks = {true},
+  bookmarksnumbered = {true},
+  bookmarksopen = {true},
+  bookmarksopenlevel = 2,
+  unicode = {true},
+  breaklinks = {false},
+  hyperindex = {true},
+  colorlinks = {true},
+  linktocpage = {true},
+  plainpages = {false},
+  linkcolor = {Blue},
+  citecolor = {Blue},
+  urlcolor = {Red},
+  pdfstartview = {Fit},
+  pdfpagemode = {UseOutlines},
+  pdfview = {XYZ null null null}
+}
+
+\input{Author.tex}
+
+\begin{document}
+
+\title{\Rpackage{hpar}: The Human Protein Atlas in \R}
+
+\maketitle
+
+<<'setup', include = FALSE, cache = FALSE>>=
+library(knitr)
+opts_chunk$set(fig.align = 'center', 
+               fig.show = 'hold', 
+               par = TRUE,
+               prompt = TRUE,
+               comment = NA)
+options(replace.assign = TRUE, 
+        width = 70)
+knit_hooks$set(par = function(before, options, envir) {
+  if (before && options$fig.show != 'none') 
+    par(mar = c(4,4,.1,.1),
+        cex.lab = .95,
+        cex.axis = .9,
+        mgp = c(2,.7,0),
+        tcl = -.3)
+})
+@
+%% $
+
+<<'env', echo = FALSE>>=
+suppressPackageStartupMessages(library(org.Hs.eg.db))
+suppressPackageStartupMessages(library(GO.db))
+@ 
+
+%% Abstract and keywords %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 0.3in minus 0.1in
+\hrule
+\begin{abstract}
+  The Human Protein Atlas (HPA) is a systematic study oh the human proteome  using antibody-based proteomics. Multiple tissues and cell lines are systematically assayed affinity-purified antibodies and confocal microscopy. The \Rpackage{hpar} package is an \R interface to  the HPA project. It distributes three data sets, provides functionality to query these and to access detailed information pages, including confocal microscopy images available on the HPA web page.  
+\end{abstract}
+\textit{Keywords}: infrastructure, bioinformatics, proteomics, microscopy
+\vskip 0.1in minus 0.05in
+\hrule
+\vskip 0.2in minus 0.1in
+\vspace{10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:intro} 
+
+\subsection{The HPA project}
+
+From the Human Protein Atlas\footnote{http://www.proteinatlas.org/} \citep{Uhlen2005, Uhlen2010} site:
+\begin{quote}
+  The Swedish Human Protein Atlas project, funded by the Knut and   Alice Wallenberg Foundation, has been set up to allow for a systematic exploration of the human proteome using Antibody-Based Proteomics. This is accomplished by combining high-throughput generation of affinity-purified antibodies with protein profiling in a multitude of tissues and cells assembled in tissue microarrays. Confocal microscopy analysis using human cell lines is performed for more detailed protein localisation. The program hosts the Human Protein Atlas portal with expression profiles of human proteins in tissues and cells.
+\end{quote}
+
+The \Rpackage{hpar} package provides functionality to use HPA data from the \R interface. It also distributes three data sets available from the HPA site.
+
+\begin{description}
+    \item[Normal tissue data] Expression profiles for proteins in human tissues based on immunohistochemisty using tissue micro arrays. The \Robject{dataframe} includes Ensembl gene identifier ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell.type"), expression value ("Level"), the type of annotation (annotated protein expression (APE), based on more than one antibody, or staining, based on one antibody only) ("Expression.type"), and the reliability or validation of the expression value ("Reliability").  
+    
+    \item[Subcellular location data] Subcellular localisation of proteins based on immunofluorescently stained cells. The \Robject{dataframe} includes Ensembl gene identifier ("Gene"), main subcellular location of the protein ("Main.location"), other locations ("Other.location"), the type of annotation (annotated protein expression (APE), based on more than one antibody, or staining, based on one antibody only) ("Expression.type"), and the reliability or validation of the expression value ("Reliability"). 
+    
+    \item[RNA data] RNA levels in three different cell lines, based on RNA-seq. The \Robject{dataframe} includes Ensembl gene identifier ("Gene"), analysed cell line ("Cell.line"), number of reads per kilobase gene model and million reads ("RPKM"), and abundance class ("Abundance"). 
+\end{description}
+
+\subsection{HPA data usage policy}
+
+The use of data and images from the HPA in publications and presentations is permitted provided that the following conditions are met: 
+\begin{itemize}
+\item The publication and/or presentation are solely for informational and non-commercial purposes.
+\item The source of the data and/or image is referred to the HPA site (\url{www.proteinatlas.org}) and/or one or more of our publications are cited.
+\end{itemize}
+
+\subsection{Installation}
+
+\Rpackage{hpar} is available through the Bioconductor project. Details about the package and the installation procedure can be found on its page\footnote{\url{http://bioconductor.org/packages/devel/bioc/html/hpar.html}}. To install using the dedicated Bioconductor infrastructure, run : 
+
+<<install, echo=TRUE, eval=FALSE>>= 
+source("http://bioconductor.org/biocLite.R")  
+## or, if you have already used the above before 
+library("BiocInstaller") ## and to install the package 
+biocLite("hpar") 
+@ 
+
+After installation, \Rpackage{hpar} will have to be explicitly loaded with  
+
+<<library>>=
+library("hpar")
+@ 
+
+so that all the package's functionality and data is available to the user. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The \Rpackage{hpar} package}\label{sec:functions}
+
+\subsection{Data sets}\label{sec:data}
+
+The three data sets, named \Robject{hpaNormalTissue}, \Robject{hpaSubcellularLoc} and \Robject{hpaRna} in the package can be loaded with the \Rfunction{data} function, as illustrated below for \Robject{hpaNormalTissue} below. Each data set is a \Robject{dataframe} and can be easily manipulated using standard \R functionality. The code chunk below illustrates some of its properties.
+
+<<hpaData>>=
+data(hpaNormalTissue)
+dim(hpaNormalTissue)
+names(hpaNormalTissue)
+## Number of genes
+length(unique(hpaNormalTissue$Gene))
+## Number of cell types
+length(unique(hpaNormalTissue$Cell.type))
+head(levels(hpaNormalTissue$Cell.type))
+## Number of tissues
+length(unique(hpaNormalTissue$Tissue))
+head(levels(hpaNormalTissue$Tissue))
+table(hpaNormalTissue$Expression.type)
+@ 
+
+\subsection{HPA interface}\label{sec:api}
+
+
+The package provides a interface to the HPA data. The \Rfunction{getHpa} allows to query the data sets described in section \ref{sec:data}. It takes three arguments, \Robject{id}, \Robject{hpadata} and \Robject{type}, that control the query, what data set to interrogate and how to report results respectively. The HPA data uses Ensembl gene identifiers and \Robject{id} must be a valid identifier.\Robject{hpadata} must be one of \Robject{"NormalTissue"}, \Robject{"Rna"} or \Robject{"SubcellularLoc"}. \Robject{type} can be \Robject{data} or \Robject{details}. The former is the default and returns a \Robject{dataframe} containing the information relevant to \Robject{id}. It is also possible to obtained detailed information, (including cell images) as web pages, directly from the HPA web page, using \Robject{details}.
+
+We will illustrate this functionality with using the E74-like factor 3 gene (ENSG00000163435) as example.
+
+<<getHpa>>= 
+id <- "ENSG00000163435"
+head(getHpa(id, hpadata = "NormalTissue"))
+getHpa(id, hpadata = "SubcellularLoc")
+head(getHpa(id, hpadata = "Rna"))
+@ 
+
+If we ask for \Robject{detail}, a browser page pointing to the relevant page is open (see figure \ref{fig:hpa})
+
+<<getHpa2, eval=FALSE>>=
+getHpa(id, type = "details")
+@ 
+
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.75\linewidth]{./hpa.png}
+    \caption{The HPA web page for the E74-like factor 3 gene (ENSG00000163435) gene.}
+    \label{fig:hpa}
+  \end{center}
+\end{figure}
+
+If a user is interested specifically in one data set, it is possible to set \Robject{hpadata} globally and omit it in \Rfunction{getHpa}. This is done by setting the \Rpackage{hpar} options \Robject{hpardata} with the \Rfunction{setHparOptions} function. The current default data set can be tested with \Rfunction{getHparOptions}.
+
+<<opts>>=
+getHparOptions()
+setHparOptions(hpadata = "SubcellularLoc")
+getHparOptions()
+getHpa(id)
+@ 
+
+\subsection{HPA release information}
+
+Information about the HPA release used to build the installed \Rpackage{hpar} package can be accessed with \Rfunction{getHpaVersion}, \Rfunction{getHpaDate} and \Rfunction{getHpaEnsembl}. Full release details can be found on the HPA release history\footnote{http://www.proteinatlas.org/about/releases} page.
+
+<<rel>>=
+getHpaVersion()
+getHpaDate()
+getHpaEnsembl()
+@ 
+
+\section{A small use case}
+
+Let's compare the subcellular localisation annotation obtained from the HPA subcellular location data set and the information available in the Bioconductor annotation packages. The HPA query shown below indicates that the HECW1 (ENSG00000002746) gene main locations are nucleus (but not nucleoli) and cytoplasm.
+
+<<uc-hpar>>=
+id <- "ENSG00000002746"
+getHpa(id, "SubcellularLoc")
+@ 
+
+Below, we first extract all cellular component GO terms available for ENSG00000002746 from the \Rpackage{org.Hs.eg.db} human annotation and then retrieve their term definitions using the \Rpackage{GO.db} database, indicating concordant results. The IDA evidence code indicates that this information is inferred from direct assay.
+
+<<uc-db>>=
+library(org.Hs.eg.db)
+library(GO.db)
+ans <- select(org.Hs.eg.db, keys = id, 
+              cols = c("ENSEMBL", "GO", "ONTOLOGY"), 
+              keytype = "ENSEMBL")
+ans <- ans[ans$ONTOLOGY == "CC", ]
+ans
+sapply(as.list(GOTERM[ans$GO]), slot, "Term")
+@ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Session information}\label{sec:sessionInfo} 
+<<sessioninfo, results = tex, echo = FALSE, cache = FALSE>>=
+toLatex(sessionInfo())
+@
+
+\bibliographystyle{plainnat}
+\bibliography{hpar}
+
+\end{document}
