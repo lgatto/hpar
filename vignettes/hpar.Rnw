@@ -51,29 +51,29 @@
 
 \maketitle
 
-<<'setup', include = FALSE, cache = FALSE>>=
-library(knitr)
-opts_chunk$set(fig.align = 'center', 
-               fig.show = 'hold', 
-               par = TRUE,
-               prompt = TRUE,
-               comment = NA)
-options(replace.assign = TRUE, 
-        width = 70)
-knit_hooks$set(par = function(before, options, envir) {
-  if (before && options$fig.show != 'none') 
-    par(mar = c(4,4,.1,.1),
-        cex.lab = .95,
-        cex.axis = .9,
-        mgp = c(2,.7,0),
-        tcl = -.3)
-})
+<<setup, include = FALSE, cache = FALSE>>=
+## library("knitr")
+## opts_chunk$set(fig.align = 'center', 
+##                fig.show = 'hold', 
+##                par = TRUE,
+##                prompt = TRUE,
+##                comment = NA)
+## options(replace.assign = TRUE, 
+##        width = 70)
+## knit_hooks$set(par = function(before, options, envir) {
+##   if (before && options$fig.show != 'none') 
+##     par(mar = c(4,4,1,1),
+##         cex.lab = .95,
+##         cex.axis = .9,
+##         mgp = c(2,.7,0),
+##         tcl = -.3)
+## })
 @
 %% $
 
-<<'env', echo = FALSE>>=
-suppressPackageStartupMessages(library(org.Hs.eg.db))
-suppressPackageStartupMessages(library(GO.db))
+<<env, echo=FALSE>>=
+suppressPackageStartupMessages(library("org.Hs.eg.db"))
+suppressPackageStartupMessages(library("GO.db"))
 @ 
 
 %% Abstract and keywords %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
