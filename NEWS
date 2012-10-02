@@ -1,3 +1,11 @@
+CHANGES IN VERSION 1.1.1
+------------------------
+ o fixing vignette <2012-10-02 Tue>
+
+CHANGES IN VERSION 1.1.0
+------------------------
+ o version bump for new devel <2012-10-01 Mon>
+
 CHANGES IN VERSION 0.99.1
 -------------------------
  o Added collate field <2012-09-14 Fri>
