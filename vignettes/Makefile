@@ -23,6 +23,7 @@ R_HOME=	$(shell R RHOME)
 endif
 
 vignettes: 
+	cp hpar.Rnw.knitr hpar.Rnw
 	"$(R_HOME)/bin/R" --vanilla -e "library(knitr); knit2pdf('hpar.Rnw');"
 	bibtex hpar
 	"$(R_HOME)/bin/R" CMD pdflatex hpar.tex
@@ -30,3 +31,5 @@ vignettes:
 clean:
 	rm -f $(LATEXFILES)
 	rm -f *~
+	rm -f hpar.Rnw
+	cp hpar.Rnw.stub hpar.Rnw
