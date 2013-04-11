@@ -12,10 +12,6 @@ CHANGES IN VERSION 1.2.0
 
 CHANGES IN VERSION 1.1.2
 ------------------------
- o Bioc 2.12 stable version bump
-
-CHANGES IN VERSION 1.1.2
-------------------------
  o Vignette update for knitr 1.0 compatibility,
    thanks Dan! <2013-01-15 Tue>
 
