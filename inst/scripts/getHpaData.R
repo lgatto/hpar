@@ -45,5 +45,6 @@ getHpaRelease <- function() {
   ans <- c(hpa, ensembl = ens)
   return(ans)
 }
+
 hpaRelease <- getHpaRelease()
 save(hpaRelease, file = "../extdata/hpaRelease.rda")
