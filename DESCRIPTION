@@ -1,15 +1,15 @@
 Package: hpar
 Type: Package
 Title: Human Protein Atlas in R
-Version: 1.5.0
+Version: 1.5.1
 Author@R: person(given = "Laurent", family = "Gatto", email =
         "lg390@cam.ac.uk", role = c("aut","cre"))
-Author: Laurent Gatto 
+Author: Laurent Gatto
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
-Description: A simple interface to and data from 
-	     the Human Protein Atlas project.
+Description: A simple interface to and data from the Human Protein
+        Atlas project.
 Depends: R (>= 2.15)
 Suggests: org.Hs.eg.db, GO.db, knitr
-biocViews: Bioinformatics, Proteomics, Homo_sapiens, CellBiology
 License: Artistic-2.0
 Collate: environment.R hpa.R zzz.R
+biocViews: Proteomics, Homo_sapiens, CellBiology
