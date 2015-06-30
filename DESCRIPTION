@@ -9,7 +9,7 @@ Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: A simple interface to and data from the Human Protein
         Atlas project.
 Depends: R (>= 2.15)
-Suggests: org.Hs.eg.db, GO.db, knitr, BiocStyle
+Suggests: org.Hs.eg.db, GO.db, knitr, BiocStyle, testthat
 VignetteBuilder: knitr
 License: Artistic-2.0
 Collate: environment.R hpa.R zzz.R
