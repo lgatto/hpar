@@ -62,8 +62,8 @@ getHpa <- function(id,
   ans <- get(.data)[idx, ]
   if (type == "details") {
     urls <- paste0("http://www.proteinatlas.org/", id)    
-    browseURL(urls[1])  
-    if (length(urls) > 1) {
+    if (interactive()) browseURL(urls[1])  
+    if (length(urls) > 1 && interactive()) {
       ## to avoid a browser error complaining about 
       ## running but not responding
       Sys.sleep(0.5) 
