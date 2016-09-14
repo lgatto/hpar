@@ -1,3 +1,34 @@
+CHANGES IN VERSION 1.15.3
+-------------------------
+o Updating to HPA version 15, with new datasets <2016-09-14 Wed>
+
+CHANGES IN VERSION 1.15.2
+-------------------------
+o Version bump to trigger package rebuilding now that purl()'ing issue
+  has been correctly identified. knitr does not create purl()'ed
+  (Stangle equivalent) .R files if _R_CHECK_TIMINGS_ is set, which the
+  build system was setting. Now it's not set, so these .R files are
+  now created. See https://github.com/yihui/knitr/issues/1212 for
+  more. r117512 | d.tenenbaum | 2016-05-15 21:14:22 +0100 (Sun, 15 May
+  2016) | 6 lines
+
+CHANGES IN VERSION 1.15.1
+-------------------------
+o Bump version of all packages that use knitr for vignettes. This is
+  because of an issue (now fixed) in knitr which failed to create
+  purl()'ed R files from vignette sources and include them in the
+  package. This version bump will cause these packages to propagate
+  with those R files included. r117081 | d.tenenbaum | 2016-05-03
+  22:30:44 +0100 (Tue, 03 May 2016) | 2 lines
+
+CHANGES IN VERSION 1.15.0
+-------------------------
+o Bioc version 3.3
+
+CHANGES IN VERSION 1.13.0
+-------------------------
+o Bioc version 3.1
+
 CHANGES IN VERSION 1.11.1
 -------------------------
  o unit tests <2015-06-30 Tue>
