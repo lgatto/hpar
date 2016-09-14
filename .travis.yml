@@ -5,6 +5,9 @@ sudo: false
 before_install:
   - tlmgr install bera nowidow parnotes marginfix etoolbox titlesec sectsty framed enumitem parskip soul placeins footmisc changepage xstring caption mathtools 
 
+r_build_args:
+  --compact-vignettes="gs+qpdf"
+
 r:
   - bioc-devel
   - bioc-release
