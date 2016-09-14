@@ -2,6 +2,9 @@ language: r
 cache: packages
 sudo: false
 
+before_install:
+  - tlmgr install bera nowidow parnotes marginfix etoolbox titlesec sectsty framed enumitem parskip soul placeins footmisc changepage xstring caption mathtools 
+
 r:
   - bioc-devel
   - bioc-release
