@@ -1,4 +1,4 @@
-%\VignetteEngine{knitr}
+%\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{Human Protein Atlas in R}
 %\VignetteKeywords{Infrastructure, Bioinformatics, Proteomics}
 %\VignettePackage{hpar}
@@ -6,16 +6,17 @@
 \documentclass{article}
 
 <<biocstyle, eval=TRUE, echo=FALSE, results="asis">>=
-BiocStyle::latex()
+BiocStyle::latex2()
 @
 
 \usepackage{longtable}
 
 \author{
-  Laurent Gatto\footnote{\url{http://cpu.sysbiol.cam.ac.uk}}
+  Laurent Gatto\\
+  Computational Proteomics Unit, University of Cambridge
 }
 
-\title{\Rpackage{hpar}: The Human Protein Atlas in \R{}}
+\bioctitle[]{\Biocpkg{hpar}: The Human Protein Atlas in \R{}}
 
 \begin{document}
 
@@ -27,22 +28,24 @@ suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("GO.db"))
 @ 
 
-%% Abstract and keywords %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vskip 0.3in minus 0.1in
-\hrule
 \begin{abstract}
-  The Human Protein Atlas (HPA) is a systematic study oh the human proteome  using antibody-based proteomics. Multiple tissues and cell lines are systematically assayed affinity-purified antibodies and confocal microscopy. The \Rpackage{hpar} package is an \R interface to  the HPA project. It distributes three data sets, provides functionality to query these and to access detailed information pages, including confocal microscopy images available on the HPA web page.  
+  The Human Protein Atlas (HPA) is a systematic study oh the human
+  proteome using antibody-based proteomics. Multiple tissues and cell
+  lines are systematically assayed affinity-purified antibodies and
+  confocal microscopy. The \Biocpkg{hpar} package is an \R{} interface
+  to the HPA project. It distributes three data sets, provides
+  functionality to query these and to access detailed information
+  pages, including confocal microscopy images available on the HPA web
+  page.
 \end{abstract}
-\textit{Keywords}: infrastructure, bioinformatics, proteomics, microscopy
-\vskip 0.1in minus 0.05in
-\hrule
-\vskip 0.2in minus 0.1in
-\vspace{10mm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
 
-\newpage
+\packageVersion{\Sexpr{BiocStyle::pkg_ver("hpar")}}
+
+Report issues on \url{https://github.com/Bioconductor/hpar/issues}
+
+Ask questions on \url{https://support.bioconductor.org/}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Section
@@ -67,35 +70,58 @@ From the Human Protein Atlas\footnote{http://www.proteinatlas.org/}
   proteins in tissues and cells.
 \end{quote}
 
-The \Rpackage{hpar} package provides functionality to use HPA data
-from the \R interface. It also distributes three data sets available
-from the HPA site.
+The \Rpackage{hpar} package provides access to HPA data from the \R
+interface. It also distributes the following data sets:
 
 \begin{description}
-\item[Normal tissue data] Expression profiles for proteins in human
-  tissues based on immunohistochemisty using tissue micro arrays. The
-  \Robject{dataframe} includes Ensembl gene identifier ("Gene"),
-  tissue name ("Tissue"), annotated cell type ("Cell.type"),
-  expression value ("Level"), the type of annotation (annotated
-  protein expression (APE), based on more than one antibody, or
-  staining, based on one antibody only) ("Expression.type"), and the
-  reliability or validation of the expression value ("Reliability").
-    
-\item[Subcellular location data] Subcellular localisation of proteins
-  based on immunofluorescently stained cells. The \Robject{dataframe}
-  includes Ensembl gene identifier ("Gene"), main subcellular location
-  of the protein ("Main.location"), other locations
-  ("Other.location"), the type of annotation (annotated protein
-  expression (APE), based on more than one antibody, or staining,
-  based on one antibody only) ("Expression.type"), and the reliability
-  or validation of the expression value ("Reliability").
-    
-\item[RNA data] RNA levels in three different cell lines, based on
-  RNA-seq. The \Robject{dataframe} includes Ensembl gene identifier
-  ("Gene"), analysed cell line ("Cell.line"), number of reads per
-  kilobase gene model and million reads ("RPKM"), and abundance class
-  ("Abundance").
+  
+\item[\texttt{hpaNormalTissue}]{\textbf{Normal tissue data}:
+    Expression profiles for proteins in human tissues based on
+    immunohistochemisty using tissue micro arrays. The comma-separated
+    file includes Ensembl gene identifier ("Gene"), tissue name
+    ("Tissue"), annotated cell type ("Cell type"), expression value
+    ("Level"), the type of annotation (annotated protein expression
+    (APE), based on more than one antibody, or staining, based on one
+    antibody only) ("Expression type"), and the reliability or
+    validation of the expression value ("Reliability").}
+
+\item[\texttt{hpaCancer}]{\textbf{Cancer tumor data}: Staining
+    profiles for proteins in human tumor tissue based on
+    immunohistochemisty using tissue micro arrays. The comma-separated
+    file includes Ensembl gene identifier ("Gene"), tumor name
+    ("Tumor"), staining value ("Level"), the number of patients that
+    stain for this staining value ("Count patients"), the total amount
+    of patients for this tumor type ("Total patients") and the type of
+    annotation staining ("Expression type").  }
+
+\item[\texttt{rnaGeneTissue}]{\textbf{RNA gene data}: RNA levels in 45
+    cell lines and 32 tissues based on RNA-seq. The comma-separated
+    file includes Ensembl gene identifier ("Gene"), analysed sample
+    ("Sample"), fragments per kilobase of transcript per million
+    fragments mapped ("Value" and "Unit"), and abundance class
+    ("Abundance"). }
+
+\item[\texttt{rnaGeneCellLine}]{\textbf{RNA gene data}: RNA levels in
+    45 cell lines and 32 tissues based on RNA-seq. The comma-separated
+    file includes Ensembl gene identifier ("Gene"), analysed sample
+    ("Sample"), fragments per kilobase of transcript per million
+    fragments mapped ("Value" and "Unit"), and abundance class
+    ("Abundance"). }
+
+\item[\texttt{hpaSubcellularLoc}]{\textbf{Subcellular location data}:
+    Subcellular localization of proteins based on immunofluorescently
+    stained cells. The comma-separated file includes Ensembl gene
+    identifier ("Gene"), main subcellular location of the protein
+    ("Main location"), other locations ("Other location"), the type of
+    annotation (annotated protein expression (APE), based on more than
+    one antibody, or staining, based on one antibody only)
+    ("Expression type"), and the reliability or validation of the
+    expression value ("Reliability"). }
+
+\item[{hpaSubcellularLoc14}]{Same as above, for version 14.}
+
 \end{description}
+
 
 \subsection{HPA data usage policy}
 
@@ -121,10 +147,10 @@ install using the dedicated Bioconductor infrastructure, run :
 source("http://bioconductor.org/biocLite.R")  
 ## or, if you have already used the above before 
 library("BiocInstaller") ## and to install the package 
-biocLite("hpar") 
+biocLite("hpar")
 @ 
 
-After installation, \Rpackage{hpar} will have to be explicitly loaded
+After installation, \Biocpkg{hpar} will have to be explicitly loaded
 with
 
 <<library>>=
@@ -139,17 +165,15 @@ user.
 %% Section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The \Rpackage{hpar} package}\label{sec:functions}
+\section{The \Biocpkg{hpar} package}\label{sec:functions}
 
 \subsection{Data sets}\label{sec:data}
 
-The three data sets, named \Robject{hpaNormalTissue},
-\Robject{hpaSubcellularLoc} and \Robject{hpaRna} in the package can be
-loaded with the \Rfunction{data} function, as illustrated below for
-\Robject{hpaNormalTissue} below. Each data set is a
-\Robject{dataframe} and can be easily manipulated using standard \R
-functionality. The code chunk below illustrates some of its
-properties.
+The data sets described above can be loaded with the \Rfunction{data}
+function, as illustrated below for \Robject{hpaNormalTissue}
+below. Each data set is a \Robject{data.frame} and can be easily
+manipulated using standard \R{} functionality. The code chunk below
+illustrates some of its properties.
 
 <<hpaData>>=
 data(hpaNormalTissue)
@@ -175,26 +199,25 @@ The package provides a interface to the HPA data. The
 \Robject{hpadata} and \Robject{type}, that control the query, what
 data set to interrogate and how to report results respectively. The
 HPA data uses Ensembl gene identifiers and \Robject{id} must be a
-valid identifier.\Robject{hpadata} must be one of
-\Robject{"NormalTissue"}, \Robject{"Rna"} or
-\Robject{"SubcellularLoc"}. \Robject{type} can be \Robject{data} or
-\Robject{details}. The former is the default and returns a
-\Robject{dataframe} containing the information relevant to
+valid identifier. \Robject{hpadata} must be one of available
+dataset. \Robject{type} can be either \Robject{"data"} or
+\Robject{"details"}. The former is the default and returns a
+\Robject{data.frame} containing the information relevant to
 \Robject{id}. It is also possible to obtained detailed information,
 (including cell images) as web pages, directly from the HPA web page,
-using \Robject{details}.
+using \Robject{"details"}.
 
 We will illustrate this functionality with using the TSPAN6
 (tetraspanin 6) gene (ENSG00000000003) as example.
 
 <<getHpa>>=
 id <- "ENSG00000000003"
-head(getHpa(id, hpadata = "NormalTissue"))
-getHpa(id, hpadata = "SubcellularLoc")
-head(getHpa(id, hpadata = "Rna"))
+head(getHpa(id, hpadata = "hpaNormalTissue"))
+getHpa(id, hpadata = "hpaSubcellularLoc")
+head(getHpa(id, hpadata = "rnaGeneCellLine"))
 @ 
 
-If we ask for \Robject{detail}, a browser page pointing to the
+If we ask for \Robject{"detail"}, a browser page pointing to the
 relevant page is open (see figure \ref{fig:hpa})
 
 <<getHpa2, eval=FALSE>>=
@@ -218,7 +241,7 @@ function. The current default data set can be tested with
 
 <<opts>>=
 getHparOptions()
-setHparOptions(hpadata = "SubcellularLoc")
+setHparOptions(hpadata = "hpaSubcellularLoc")
 getHparOptions()
 getHpa(id)
 @ 
@@ -226,10 +249,9 @@ getHpa(id)
 \subsection{HPA release information}
 
 Information about the HPA release used to build the installed
-\Rpackage{hpar} package can be accessed with
-\Rfunction{getHpaVersion}, \Rfunction{getHpaDate} and
-\Rfunction{getHpaEnsembl}. Full release details can be found on the
-HPA release
+\Biocpkg{hpar} package can be accessed with \Rfunction{getHpaVersion},
+\Rfunction{getHpaDate} and \Rfunction{getHpaEnsembl}. Full release
+details can be found on the HPA release
 history\footnote{http://www.proteinatlas.org/about/releases} page.
 
 <<rel>>=
@@ -242,11 +264,11 @@ getHpaEnsembl()
 
 Let's compare the subcellular localisation annotation obtained from
 the HPA subcellular location data set and the information available in
-the Bioconductor annotation packages. 
+the Bioconductor annotation packages.
 
 <<uc-hpar>>=
 id <- "ENSG00000001460"
-getHpa(id, "SubcellularLoc")
+getHpa(id, "hpaSubcellularLoc")
 @ 
 
 Below, we first extract all cellular component GO terms available for
@@ -254,8 +276,8 @@ Below, we first extract all cellular component GO terms available for
 retrieve their term definitions using the \Rpackage{GO.db} database.
 
 <<uc-db>>=
-library(org.Hs.eg.db)
-library(GO.db)
+library("org.Hs.eg.db")
+library("GO.db")
 ans <- select(org.Hs.eg.db, keys = id, 
               columns = c("ENSEMBL", "GO", "ONTOLOGY"), 
               keytype = "ENSEMBL")

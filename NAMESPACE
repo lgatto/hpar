@@ -1,4 +1,5 @@
-export(getHpaVersion, getHpaDate, getHpaEnsembl,
-       getHpa,
-       getHparOptions, setHparOptions)
+importFrom("utils", "data", "browseURL")
 
+export(getHpaVersion, getHpaDate, getHpaEnsembl,
+       getHpa, allHparData,
+       getHparOptions, setHparOptions)
