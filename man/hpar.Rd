@@ -28,10 +28,9 @@
   proteins in tissues and cells.
 }
 
-\details{
-  Three data tables are distributed by the HPA project and available
-  within the package as \code{data.frame}s. The description below is
-  taken from the HPA site: 
+\details{ Several flat files are distributed by the HPA project and
+  available within the package as \code{data.frame}s. The description
+  below is taken from the HPA site:
 
 \describe{
 
