@@ -1,9 +1,14 @@
-CHANGES IN VERSION 1.15.4
+CHANGES IN VERSION 1.17.0
 -------------------------
+ o Bioconductor devel 3.5
+ 
+CHANGES IN VERSION 1.16.0
+-------------------------
+ o Bioconductor release 3.4
 
 CHANGES IN VERSION 1.15.3
 -------------------------
-o Updating to HPA version 15, with new datasets <2016-09-14 Wed>
+ o Updating to HPA version 15, with new datasets <2016-09-14 Wed>
 
 CHANGES IN VERSION 1.15.2
 -------------------------
@@ -26,11 +31,11 @@ o Bump version of all packages that use knitr for vignettes. This is
 
 CHANGES IN VERSION 1.15.0
 -------------------------
-o Bioc version 3.3
+ o Bioc version 3.3
 
 CHANGES IN VERSION 1.13.0
 -------------------------
-o Bioc version 3.1
+ o Bioc version 3.1
 
 CHANGES IN VERSION 1.11.1
 -------------------------
