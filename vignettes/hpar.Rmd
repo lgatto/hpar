@@ -3,7 +3,7 @@ title: "Human Protein Atlas in R"
 author: 
 - name: Laurent Gatto
   affiliation: Computational Proteomics Unit, Cambridge, UK
-package: rols
+package: hpar
 abstract: >
   The Human Protein Atlas (HPA) is a systematic study oh the human
   proteome using antibody-based proteomics. Multiple tissues and cell
