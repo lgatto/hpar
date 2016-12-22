@@ -1,10 +1,10 @@
-# Human Protein Atlas in R
+[![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
+[![codecov](https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg)](https://codecov.io/gh/lgatto/hpar)
 
+# Human Protein Atlas in R
 
 `hpar` is a simple interface to the
 [Human Protein Atlas](http://www.proteinatlas.org/).
-
-Travis-CI build status: [![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
 
 The official Bioconductor landing page for the
 [release](http://bioconductor.org/packages/release/bioc/html/hpar.html)
@@ -20,18 +20,16 @@ biocLite("hpar")
 
 ## Documentation
 
+In R:
+
 ```
 vignette("hpar")
 ?hpar
 ```
 
-Or the documentation online on
-[RDocumentation](http://www.rdocumentation.org/packages/hpar) (release
-only) and the vignette
-([devel](http://bioconductor.org/packages/devel/bioc/vignettes/hpar/inst/doc/hpar.pdf)
-and
-[release](http://bioconductor.org/packages/release/bioc/vignettes/hpar/inst/doc/hpar.pdf))
-from the Bioconductor page.
+Online:
+
+http://lgatto.github.io/hpar
 
 ## Questions
 

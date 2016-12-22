@@ -2,26 +2,23 @@ language: r
 cache: packages
 sudo: false
 
-before_install:
-  - tlmgr install bera nowidow parnotes marginfix etoolbox titlesec sectsty framed enumitem parskip soul placeins footmisc changepage xstring caption mathtools 
-
-r_build_args:
-  --compact-vignettes="gs+qpdf"
-
 r:
   - bioc-devel
   - bioc-release
 
+bioc_packages:
+  - GO.db
+  - BiocStyle
+  - org.Hs.eg.db
+
 r_packages:
+  - knitr
+  - testthat
+  - rmarkdown
   - covr
   
 after_success:
-  - Rscript -e 'covr::codecov()'
-
-# print timings (of examples) and sysinfo
-after_script:
-  - dump_logs_by_extension "timings"
-  - dump_sysinfo
+  - Rscript -e 'library(covr); codecov()'
 
 notifications:
   email:
