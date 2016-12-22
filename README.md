@@ -1,12 +1,10 @@
-# Human Protein Atlas in R
+[![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
+[![codecov](https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg)](https://codecov.io/gh/lgatto/hpar)
 
+# Human Protein Atlas in R
 
 `hpar` is a simple interface to the
 [Human Protein Atlas](http://www.proteinatlas.org/).
-
-Travis-CI build status: [![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
-
-Code coverage: [![codecov](https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg)](https://codecov.io/gh/lgatto/hpar)
 
 The official Bioconductor landing page for the
 [release](http://bioconductor.org/packages/release/bioc/html/hpar.html)
