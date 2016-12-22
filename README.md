@@ -6,6 +6,8 @@
 
 Travis-CI build status: [![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
 
+Code coverage: [![codecov](https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg)](https://codecov.io/gh/lgatto/hpar)
+
 The official Bioconductor landing page for the
 [release](http://bioconductor.org/packages/release/bioc/html/hpar.html)
 and devel
@@ -20,18 +22,16 @@ biocLite("hpar")
 
 ## Documentation
 
+In R:
+
 ```
 vignette("hpar")
 ?hpar
 ```
 
-Or the documentation online on
-[RDocumentation](http://www.rdocumentation.org/packages/hpar) (release
-only) and the vignette
-([devel](http://bioconductor.org/packages/devel/bioc/vignettes/hpar/inst/doc/hpar.pdf)
-and
-[release](http://bioconductor.org/packages/release/bioc/vignettes/hpar/inst/doc/hpar.pdf))
-from the Bioconductor page.
+Online:
+
+http://lgatto.github.io/hpar
 
 ## Questions
 

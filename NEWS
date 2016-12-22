@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.17.1
+-------------------------
+ o Using travis and codecov <2016-12-22 Thu>
+ o Migrate vignette to BiocStyle's html2 <2016-12-22 Thu>
+
 CHANGES IN VERSION 1.17.0
 -------------------------
  o Bioconductor devel 3.5
