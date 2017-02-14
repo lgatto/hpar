@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.17.2
+-------------------------
+ o Update to HPA version 16.1 (2017.01.31) <2017-02-14 Tue>
+ 
 CHANGES IN VERSION 1.17.1
 -------------------------
  o Using travis and codecov <2016-12-22 Thu>
