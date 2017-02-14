@@ -36,7 +36,7 @@ test_that("getHpa", {
     res0 <- getHpa(id)
     res1 <- getHpa(id, type = "data")
     expect_identical(res0, res1)
-    expect_identical(dim(res0), c(80L, 7L))    
+    expect_identical(dim(res0), c(80L, 6L))
     expect_true(all(res0$Gene == id))
     ## -------------
     res0 <- getHpa(id, hpadata = "hpaSubcellularLoc14")
