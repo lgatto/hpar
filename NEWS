@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.19.1
+-------------------------
+ o Re-generate data sets from scripts/getHpaData.R, as discrepancies
+   with the data downloaded form the hpa site were documented by
+   Martin Bush <2017-07-19 Wed>
+ 
 CHANGES IN VERSION 1.19.0
 -------------------------
  o new Bioconductor devel
