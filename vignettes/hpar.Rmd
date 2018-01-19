@@ -14,7 +14,7 @@ abstract: >
   confocal microscopy images available on the HPA web page.
 bibliography: hpar.bib
 output:
-  BiocStyle::html_document2:
+  BiocStyle::html_document:
     toc_float: true
 vignette: >
   %\VignetteIndexEntry{Human Protein Atlas in R}
