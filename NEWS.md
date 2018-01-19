@@ -1,3 +1,10 @@
+# hpar 1.21
+
+## Changes in version 1.21.1
+
+- use html_document (rather that deprecated html_document2)
+  <2018-01-19 Fri>
+
 # hpar 1.19
 
 ## Changes in version 1.19.1
