@@ -13,7 +13,7 @@ getAsDataframe <- function(url, filename, ...) {
     return(x)
 }
 
-saveObjAsRda <- function(obj) {    
+saveObjAsRda <- function(obj) {
     var <- MSnbase:::getVariableName(match.call(), "obj")
     f <- file.path("../../data", paste(var, "rda", sep = "."))
     save(list = var, file = f,
@@ -26,33 +26,36 @@ saveObjAsRda <- function(obj) {
 
 ## Sub-cellular data: Subcellular localization of proteins based on
 ## immunofluorescently stained cells.
-hpaSubcellularLoc <- getAsDataframe("http://www.proteinatlas.org/download/subcellular_location.csv.zip")
+hpaSubcellularLoc <- getAsDataframe("https://www.proteinatlas.org/download/subcellular_location.tsv.zip")
 saveObjAsRda(hpaSubcellularLoc)
 
 ## Normal tissue: Normal tissue data Expression profiles for proteins
 ## in human tissues based on immunohistochemisty using tissue micro
 ## arrays.
-hpaNormalTissue <- getAsDataframe("http://www.proteinatlas.org/download/normal_tissue.csv.zip")
+hpaNormalTissue <- getAsDataframe("https://www.proteinatlas.org/download/normal_tissue.tsv.zip")
 saveObjAsRda(hpaNormalTissue)
 
 ## Cancer tumor data: Staining profiles for proteins in human tumor
 ## tissue based on immunohistochemisty using tissue micro arrays.
-hpaCancer <- getAsDataframe("http://www.proteinatlas.org/download/cancer.csv.zip")
+hpaCancer <- getAsDataframe("https://www.proteinatlas.org/download/pathology.tsv.zip")
+names(hpaCancer) <- sub("\\.\\.", "", names(hpaCancer))
 saveObjAsRda(hpaCancer)
 
 ## RNA gene data: RNA levels in 45 cell lines and 32 tissues based on
 ## RNA-seq.
-rnaGeneTissue <- getAsDataframe("http://www.proteinatlas.org/download/rna_tissue.csv.zip")
+rnaGeneTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue.tsv.zip")
 saveObjAsRda(rnaGeneTissue)
-rnaGeneCellLine <- getAsDataframe("http://www.proteinatlas.org/download/rna_celline.csv.zip")
+
+rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_celline.tsv.zip")
 saveObjAsRda(rnaGeneCellLine)
 
 ## ## RNA isoform data: RNA levels in 45 cell lines and 32 tissues based
 ## ## on RNA-seq.
-## rnaIsofrmTissue <- getAsDataframe("http://www.proteinatlas.org/download/transcript_rna_tissue.tsv.zip")
-## saveObjAsRda(rnaIsofrmTissue)
-## rnaIsofrmCellLine <- getAsDataframe("http://www.proteinatlas.org/download/transcript_rna_celline.tsv.zip")
-## saveObjAsRda(rnaIsofrmCellLine)
+## rnaIsoformTissue <- getAsDataframe("https://www.proteinatlas.org/download/transcript_rna_tissue.tsv.zip")
+## saveObjAsRda(rnaIsoformTissue)
+## rnaIsoformCellLine <- getAsDataframe("https://www.proteinatlas.org/download/transcript_rna_celline.tsv.zip")
+## saveObjAsRda(rnaIsoformCellLine)
+
 
 ## Removed
 ## hpaRna <- getAsDataframe("http://www.proteinatlas.org/download/rna.csv.zip",
@@ -67,9 +70,10 @@ getHpaRelease <- function() {
     suppressWarnings(relver <- grep("Protein Atlas version", rel, value = TRUE)[1])
     reldate <- sub("</b.+$", "", sub("^.+<b>", "", reldate))
     relver <- sub("<.+$", "", sub("^.+version ", "", relver))
-    hpa <- c("version" = relver, "date" = reldate)    
-    ens <- grep("Ensembl version", rel, value = TRUE, useBytes=TRUE)[1]    
-    ens <- sub("</b>", "", sub("^.+<b>", "", ens))    
+    hpa <- c("version" = relver, "date" = reldate)
+    ens <- grep("Ensembl version", rel, value = TRUE, useBytes=TRUE)[1]
+    ens <- sub("</b>", "", sub("^.+<b>", "", ens))
+    ens <- sub("\t", "", ens)
     ans <- c(hpa, ensembl = ens)
     return(ans)
 }
