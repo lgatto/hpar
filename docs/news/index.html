@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All news • hpar</title>
+<title>Changelog • hpar</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,11 +18,18 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Changelog" />
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,24 +53,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">hpar</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">hpar</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.23.1</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="../articles/hpar.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
-</li>
-<li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -71,16 +89,49 @@
       
       </header>
 
-      <div class="row">
-
-  <div class="col-md-9">
+<div class="row">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Change log <small>All releases</small></h1>
+      <h1>Changelog <small></small></h1>
+      
     </div>
 
-    <div class="contents">
+    <div id="hpar-1-23" class="section level1">
+<h1 class="page-header">
+<a href="#hpar-1-23" class="anchor"></a>hpar 1.23</h1>
+<div id="changes-in-version-1-23-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes-in-version-1-23-1" class="anchor"></a>Changes in version 1.23.1</h2>
+<ul>
+<li>New Bioconductor devel</li>
+<li>Update to HPA version 18</li>
+</ul>
+</div>
+</div>
+    <div id="hpar-1-22" class="section level1">
+<h1 class="page-header">
+<a href="#hpar-1-22" class="anchor"></a>hpar 1.22</h1>
+<div id="changes-in-version-1-22-0" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes-in-version-1-22-0" class="anchor"></a>Changes in version 1.22.0</h2>
+<ul>
+<li>New Bioconductor release</li>
+</ul>
+</div>
+</div>
+    <div id="hpar-1-21" class="section level1">
+<h1 class="page-header">
+<a href="#hpar-1-21" class="anchor"></a>hpar 1.21</h1>
+<div id="changes-in-version-1-21-1" class="section level2">
+<h2 class="hasAnchor">
+<a href="#changes-in-version-1-21-1" class="anchor"></a>Changes in version 1.21.1</h2>
+<ul>
+<li>use html_document (rather that deprecated html_document2) &lt;2018-01-19 Fri&gt;</li>
+</ul>
+</div>
+</div>
     <div id="hpar-1-19" class="section level1">
-<h1 class="hasAnchor">
+<h1 class="page-header">
 <a href="#hpar-1-19" class="anchor"></a>hpar 1.19</h1>
 <div id="changes-in-version-1-19-1" class="section level2">
 <h2 class="hasAnchor">
@@ -240,7 +291,7 @@
 </div>
 </div>
     <div id="hpar-0-99" class="section level1">
-<h1 class="hasAnchor">
+<h1 class="page-header">
 <a href="#hpar-0-99" class="anchor"></a>hpar 0.99</h1>
 <div id="changes-in-version-0-99-1" class="section level2">
 <h2 class="hasAnchor">
@@ -266,13 +317,15 @@
 </ul>
 </div>
 </div>
-    </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#hpar-1-23">1.23</a></li>
+        <li><a href="#hpar-1-22">1.22</a></li>
+        <li><a href="#hpar-1-21">1.21</a></li>
         <li><a href="#hpar-1-19">1.19</a></li>
         <li><a href="#hpar-0-99">0.99</a></li>
       </ul>
@@ -287,11 +340,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
