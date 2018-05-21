@@ -4,12 +4,12 @@
 
 - New Bioconductor devel
 - Update to HPA version 18
+
 # hpar 1.22
 
 ## Changes in version 1.22.0
 
 - New Bioconductor release
-
 
 # hpar 1.21
 
