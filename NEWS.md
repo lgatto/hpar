@@ -1,3 +1,16 @@
+# hpar 1.23
+
+## Changes in version 1.23.1
+
+- New Bioconductor devel
+- Update to HPA version 18
+# hpar 1.22
+
+## Changes in version 1.22.0
+
+- New Bioconductor release
+
+
 # hpar 1.21
 
 ## Changes in version 1.21.1
@@ -12,19 +25,19 @@
 - Re-generate data sets from scripts/getHpaData.R, as discrepancies
    with the data downloaded form the hpa site were documented by
    Martin Bush <2017-07-19 Wed>
- 
+
 ## Changes in version 1.19.0
 
 - new Bioconductor devel
- 
+
 ## Changes in version 1.18.0
 
 - new Bioconductor release
- 
+
 ## Changes in version 1.17.2
 
 - Update to HPA version 16.1 (2017.01.31) <2017-02-14 Tue>
- 
+
 ## Changes in version 1.17.1
 
 - Using travis and codecov <2016-12-22 Thu>
@@ -33,7 +46,7 @@
 ## Changes in version 1.17.0
 
 - Bioconductor devel 3.5
- 
+
 ## Changes in version 1.16.0
 
 - Bioconductor release 3.4
@@ -72,7 +85,7 @@
 ## Changes in version 1.11.1
 
 - unit tests <2015-06-30 Tue>
- 
+
 ## Changes in version 1.11.0
 
 - Bio version 3.2 (devel)
@@ -117,7 +130,7 @@
 
 - Added collate field <2012-09-14 Fri>
 - Updated to HPA version 10 <2012-09-15 Sat>
-- Updated installation part in section to use 
+- Updated installation part in section to use
    biocLite <2012-09-15 Sat>
 
 ## Changes in version 0.99.0
