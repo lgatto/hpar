@@ -2,10 +2,14 @@
 \alias{hpar}
 \alias{allHparData}
 \alias{hpaCancer}
+\alias{hpaCancer16.1}
 \alias{hpaNormalTissue}
+\alias{hpaNormalTissue16.1}
 \alias{hpaSubcellularLoc}
 \alias{hpaSubcellularLoc14}
+\alias{hpaSubcellularLoc16.1}
 \alias{rnaGeneCellLine}
+\alias{rnaGeneCellLine16.1}
 \alias{rnaGeneTissue}
 
 
