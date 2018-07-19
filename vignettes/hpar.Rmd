@@ -120,10 +120,10 @@ be found on its
 install using the dedicated Bioconductor infrastructure, run :
 
 ```{r install, eval = FALSE}
-source("http://bioconductor.org/biocLite.R")
-## or, if you have already used the above before
-library("BiocInstaller") ## and to install the package
-biocLite("hpar")
+## install BiocManager only one
+install.packages("BiocManager")
+## install hpar
+BiocManager::install("hpar")
 ```
 
 After installation, `r Biocpkg("hpar")` will have to be explicitly
