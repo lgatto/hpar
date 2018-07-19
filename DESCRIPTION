@@ -24,4 +24,4 @@ Collate:
     hpa.R
     zzz.R
 biocViews: Proteomics, Homo_sapiens, CellBiology
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

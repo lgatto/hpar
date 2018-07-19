@@ -21,7 +21,7 @@ Function used to set the \code{hpadata} \code{hpar} option.
 }
 \examples{
 oldOpt <- getHparOptions()
-oldOpt$hpadata
+oldOpt
 setHparOptions("hpaNormalTissue")
 getHparOptions()
 setHparOptions(oldOpt$hpadata)
@@ -29,4 +29,3 @@ setHparOptions(oldOpt$hpadata)
 \author{
 Laurent Gatto
 }
-

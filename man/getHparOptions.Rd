@@ -17,4 +17,3 @@ details and examples.
 \author{
 Laurent Gatto
 }
-

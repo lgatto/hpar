@@ -57,4 +57,3 @@ getHpa("ENSG00000163435", type = "details")
 \author{
 Laurent Gatto
 }
-
