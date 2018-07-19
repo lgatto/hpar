@@ -1,5 +1,9 @@
 # hpar 1.23
 
+## Changes in version 1.23.3
+
+- Use BiocManager for installation <2018-07-19 Thu>
+
 ## Changes in version 1.23.2
 
 - Rename 16.1 objects <2018-05-23 Wed>
