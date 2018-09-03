@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.23.3</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.23.4</span>
       </span>
     </div>
 
@@ -131,7 +131,11 @@ unambiguous prefix.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>oldOpt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='getHparOptions.html'>getHparOptions</a></span>()
-<span class='no'>oldOpt</span>$<span class='no'>hpadata</span></div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>setHparOptions</span>(<span class='st'>"hpaNormalTissue"</span>)
+<span class='no'>oldOpt</span></div><div class='output co'>#&gt; $hpar
+#&gt; $hpar$hpadata
+#&gt; [1] "hpaNormalTissue"
+#&gt; 
+#&gt; </div><div class='input'><span class='fu'>setHparOptions</span>(<span class='st'>"hpaNormalTissue"</span>)
 <span class='fu'><a href='getHparOptions.html'>getHparOptions</a></span>()</div><div class='output co'>#&gt; $hpar
 #&gt; $hpar$hpadata
 #&gt; [1] "hpaNormalTissue"
