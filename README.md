@@ -14,9 +14,16 @@ and devel
 ## Installation
 
 ```r
+<<<<<<< HEAD
 if (!requireNamespace("BiocManager", quietly=TRUE))
     install.packages("BiocManager")
 BiocManager::install("hpar")
+=======
+## load or install BiocManager
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("hpar", version = "devel")
+>>>>>>> master
 ```
 
 ## Documentation
