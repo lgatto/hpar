@@ -1,8 +1,8 @@
 # hpar 1.23
 
-## Changes in version 1.23.3
+## Changes in version 1.23.4
 
-- Nothing yet
+- Update README to use BiocManager <2018-09-03 Mon>
 
 ## Changes in version 1.23.3
 

@@ -14,8 +14,10 @@ and devel
 ## Installation
 
 ```r
-source("https://bioconductor.org/biocLite.R")
-biocLite("hpar")
+## load or install BiocManager
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("hpar", version = "devel")
 ```
 
 ## Documentation
