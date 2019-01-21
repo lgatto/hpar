@@ -2,7 +2,7 @@
 title: "Human Protein Atlas in R"
 author:
 - name: Laurent Gatto
-  affiliation: Computational Proteomics Unit, Cambridge, UK
+  affiliation: de Duve Institute, UCLouvain, Belgium
 package: hpar
 abstract: >
   The Human Protein Atlas (HPA) is a systematic study oh the human
@@ -247,15 +247,15 @@ database.
 library("org.Hs.eg.db")
 library("GO.db")
 ans <- select(org.Hs.eg.db, keys = id,
-			  columns = c("ENSEMBL", "GO", "ONTOLOGY"),
-			  keytype = "ENSEMBL")
+              columns = c("ENSEMBL", "GO", "ONTOLOGY"),
+              keytype = "ENSEMBL")
 ans <- ans[ans$ONTOLOGY == "CC", ]
 ans
 sapply(as.list(GOTERM[ans$GO]), slot, "Term")
 ```
 
 
-# Session information}
+# Session information {-}
 
 ```{r sessioninfo, echo = FALSE}
 sessionInfo()
