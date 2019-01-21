@@ -1,3 +1,20 @@
+# hpar 1.25
+
+## Changes in version 1.25.1
+
+- Update to HPA release 18.1 <2019-01-21 Mon>
+
+## Changes in version 1.25.0
+
+- New release for Bioconductor devel 3.9
+
+
+# hpar 1.24
+
+## Changes in version 1.24.0
+
+- New release for Bioconductor 3.8
+
 # hpar 1.23
 
 ## Changes in version 1.23.4

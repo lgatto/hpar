@@ -26,27 +26,27 @@ saveObjAsRda <- function(obj) {
 
 ## Sub-cellular data: Subcellular localization of proteins based on
 ## immunofluorescently stained cells.
-hpaSubcellularLoc <- getAsDataframe("https://www.proteinatlas.org/download/subcellular_location.tsv.zip")
+hpaSubcellularLoc <- getAsDataframe("https://www.proteinatlas.org/download/subcellular_location.tsv.zip", sep = "\t")
 saveObjAsRda(hpaSubcellularLoc)
 
 ## Normal tissue: Normal tissue data Expression profiles for proteins
 ## in human tissues based on immunohistochemisty using tissue micro
 ## arrays.
-hpaNormalTissue <- getAsDataframe("https://www.proteinatlas.org/download/normal_tissue.tsv.zip")
+hpaNormalTissue <- getAsDataframe("https://www.proteinatlas.org/download/normal_tissue.tsv.zip", sep = "\t")
 saveObjAsRda(hpaNormalTissue)
 
 ## Cancer tumor data: Staining profiles for proteins in human tumor
 ## tissue based on immunohistochemisty using tissue micro arrays.
-hpaCancer <- getAsDataframe("https://www.proteinatlas.org/download/pathology.tsv.zip")
+hpaCancer <- getAsDataframe("https://www.proteinatlas.org/download/pathology.tsv.zip", sep = "\t")
 names(hpaCancer) <- sub("\\.\\.", "", names(hpaCancer))
 saveObjAsRda(hpaCancer)
 
 ## RNA gene data: RNA levels in 45 cell lines and 32 tissues based on
 ## RNA-seq.
-rnaGeneTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue.tsv.zip")
+rnaGeneTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue.tsv.zip", sep = "\t")
 saveObjAsRda(rnaGeneTissue)
 
-rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_celline.tsv.zip")
+rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_celline.tsv.zip", sep = "\t")
 saveObjAsRda(rnaGeneCellLine)
 
 ## ## RNA isoform data: RNA levels in 45 cell lines and 32 tissues based
