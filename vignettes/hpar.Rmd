@@ -215,8 +215,7 @@ getHpa(id)
 Information about the HPA release used to build the installed
 
 
-
- `r Biocpkg("hpar")` package can be accessed with `getHpaVersion`,
+`r Biocpkg("hpar")` package can be accessed with `getHpaVersion`,
 `getHpaDate` and `getHpaEnsembl`. Full release details can be found on
 the [HPA release history](http://www.proteinatlas.org/about/releases)
 page.
