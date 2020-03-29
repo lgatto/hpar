@@ -1,3 +1,9 @@
+# hpar 1.29
+
+## Changes in version 1.29.1
+
+- Update email address <2020-03-29 Sun>
+
 # hpar 1.25
 
 ## Changes in version 1.25.1
@@ -7,7 +13,6 @@
 ## Changes in version 1.25.0
 
 - New release for Bioconductor devel 3.9
-
 
 # hpar 1.24
 
