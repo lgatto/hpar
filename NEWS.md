@@ -1,3 +1,10 @@
+# hpar 1.31
+
+## Changes in version 1.31.1
+
+- Update to HPA release 19.3 (2020.03.06) <2020-10-26 Mon>
+- New release for Bioconductor devel 3.12
+
 # hpar 1.29
 
 ## Changes in version 1.29.1
