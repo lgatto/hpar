@@ -8,6 +8,7 @@
 \alias{hpaSubcellularLoc}
 \alias{hpaSubcellularLoc14}
 \alias{hpaSubcellularLoc16.1}
+\alias{hpaSecretome}
 \alias{rnaGeneCellLine}
 \alias{rnaGeneCellLine16.1}
 \alias{rnaGeneTissue}
@@ -81,6 +82,17 @@
     ("Reliability"). }
 
   \item{hpaSubcellularLoc14}{Same as above, for version 14.}
+  
+  \item{hpaSecretome}{\bold{Secretome data}:
+    The human secretome is here defined as all Ensembl genes with 
+    at least one predicted secreted transcript according to HPA 
+    predictions. The complete information about the HPA Secretome 
+    data is given on 
+    \url{https://www.proteinatlas.org/humanproteome/blood/secretome}. 
+    This dataset has 230 columns and includes the Ensembl gene identifier 
+    ("Gene"). Information about the additionnal variables can be found 
+    \href{https://www.proteinatlas.org/search}{here} by clicking on 
+    \emph{Show/hide columns}.}
 
 }
 
@@ -165,6 +177,9 @@ head(hpaSubcellularLoc14)
 
 data(hpaCancer)
 head(hpaCancer)
+
+data(hpaSecretome)
+head(hpaSecretome)
 }
 
 \keyword{ datasets }

@@ -13,6 +13,19 @@ getAsDataframe <- function(url, filename, ...) {
     return(x)
 }
 
+require(dplyr)
+getAsDataframe_fromQuery <- function(url, ...){
+    tf <- tempfile()
+    on.exit(unlink(tf))
+    download.file(url, tf)
+    x <- read.table(tf, sep = '\t', header = TRUE, ...)
+    on.exit(unlink(tf), add = TRUE)
+    # format 1st column names
+    x <- x %>% dplyr::rename(Gene.name = Gene, Gene = Ensembl) 
+    x <- x %>% dplyr::relocate(Gene, Gene.name)
+    return(x)
+}
+
 saveObjAsRda <- function(obj) {
     var <- MSnbase:::getVariableName(match.call(), "obj")
     f <- file.path("../../data", paste(var, "rda", sep = "."))
@@ -48,6 +61,14 @@ saveObjAsRda(rnaGeneTissue)
 
 rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_celline.tsv.zip", sep = "\t")
 saveObjAsRda(rnaGeneCellLine)
+
+
+## Secretome data: The human 'secretome' can be defined as all genes encoding at 
+## least one secreted protein
+url <- "https://www.proteinatlas.org/search/sa_location%3ASecreted+-+unknown+location%2CSecreted+in+brain%2CSecreted+in+female+reproductive+system%2CSecreted+in+male+reproductive+system%2CSecreted+in+other+tissues%2CSecreted+to+blood%2CSecreted+to+digestive+system%2CSecreted+to+extracellular+matrix%2CIntracellular+and+membrane?format=tsv"
+hpaSecretome <- getAsDataframe_fromQuery(url)
+saveObjAsRda(hpaSecretome)
+
 
 ## ## RNA isoform data: RNA levels in 45 cell lines and 32 tissues based
 ## ## on RNA-seq.

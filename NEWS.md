@@ -3,8 +3,9 @@
 ## Changes in version 1.31.1
 
 - Update to HPA release 19.3 (2020.03.06) <2020-10-26 Mon>
-- New release for Bioconductor devel 3.12
-- Updated R version (>= 3.5.0) in Depends field
+- New release for Bioconductor devel 3.12 <2020-10-26 Mon>
+- Updated R version (>= 3.5.0) in Depends field <2020-10-26 Mon>
+- Added the Secretome data <2020-10-28 Wed>
 
 # hpar 1.29
 
