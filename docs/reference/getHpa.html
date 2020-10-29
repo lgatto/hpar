@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -39,7 +43,6 @@
 <meta property="og:description" content="Queries one if the HPA data sets with the id Ensembl
 gene identifier. The data set to be used is defined by the
 hpadata argument." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -57,7 +60,7 @@ hpadata argument." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -71,7 +74,7 @@ hpadata argument." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.29.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.31.1</span>
       </span>
     </div>
 
@@ -119,7 +122,7 @@ gene identifier. The data set to be used is defined by the
 <code>hpadata</code> argument.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"data"</span>, <span class='st'>"details"</span>))</pre>
+    <pre class="usage"><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='cn'>NULL</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"data"</span>, <span class='st'>"details"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,41 +156,55 @@ webpage).</p></td>
     <code>details</code>, then the <code>dataframe</code> is returned
     invisibly and a web page is opened with
     <code><a href='https://rdrr.io/r/utils/browseURL.html'>browseURL</a></code>.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Laurent Gatto</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>id</span> <span class='kw'>&lt;-</span> <span class='st'>"ENSG00000000003"</span>
+    <pre class="examples"><div class='input'><span class='va'>id</span> <span class='op'>&lt;-</span> <span class='st'>"ENSG00000000003"</span>
 <span class='co'>## Define 'hpadata' data manually</span>
-<span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"hpaSubcellularLoc"</span>)</div><div class='output co'>#&gt;              Gene Gene.name Reliability Enhanced Supported Approved Uncertain
-#&gt; 1 ENSG00000000003    TSPAN6    Approved                     Cytosol          
+<span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"hpaSubcellularLoc"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Reliability          Main.location
+#&gt; 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
+#&gt;         Additional.location Extracellular.location Enhanced Supported
+#&gt; 1 Nucleoli fibrillar center                                          
+#&gt;                                           Approved Uncertain
+#&gt; 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          
 #&gt;   Single.cell.variation.intensity Single.cell.variation.spatial
-#&gt; 1                                                              
-#&gt;   Cell.cycle.dependency                GO.id
-#&gt; 1                       Cytosol (GO:0005829)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"hpaNormalTissue"</span>), )</div><div class='output co'>#&gt;              Gene Gene.name        Tissue           Cell.type        Level
-#&gt; 1 ENSG00000000003    TSPAN6 adrenal gland     glandular cells Not detected
-#&gt; 2 ENSG00000000003    TSPAN6      appendix     glandular cells       Medium
-#&gt; 3 ENSG00000000003    TSPAN6      appendix     lymphoid tissue Not detected
-#&gt; 4 ENSG00000000003    TSPAN6   bone marrow hematopoietic cells Not detected
-#&gt; 5 ENSG00000000003    TSPAN6        breast          adipocytes Not detected
-#&gt; 6 ENSG00000000003    TSPAN6        breast     glandular cells         High
+#&gt; 1                         Cytosol                              
+#&gt;   Cell.cycle.dependency
+#&gt; 1                      
+#&gt;                                                                                     GO.id
+#&gt; 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"hpaNormalTissue"</span><span class='op'>)</span>, <span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name         Tissue           Cell.type        Level
+#&gt; 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected
+#&gt; 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected
+#&gt; 3 ENSG00000000003    TSPAN6       appendix     glandular cells       Medium
+#&gt; 4 ENSG00000000003    TSPAN6       appendix     lymphoid tissue Not detected
+#&gt; 5 ENSG00000000003    TSPAN6    bone marrow hematopoietic cells Not detected
+#&gt; 6 ENSG00000000003    TSPAN6         breast          adipocytes Not detected
 #&gt;   Reliability
 #&gt; 1    Approved
 #&gt; 2    Approved
 #&gt; 3    Approved
 #&gt; 4    Approved
 #&gt; 5    Approved
-#&gt; 6    Approved</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"rnaGeneTissue"</span>))</div><div class='output co'>#&gt;              Gene Gene.name          Sample Value Unit
-#&gt; 1 ENSG00000000003    TSPAN6  adipose tissue  31.5  TPM
-#&gt; 2 ENSG00000000003    TSPAN6   adrenal gland  26.4  TPM
-#&gt; 3 ENSG00000000003    TSPAN6        appendix   9.2  TPM
-#&gt; 4 ENSG00000000003    TSPAN6     bone marrow   0.7  TPM
-#&gt; 5 ENSG00000000003    TSPAN6          breast  53.4  TPM
-#&gt; 6 ENSG00000000003    TSPAN6 cerebral cortex  18.5  TPM</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"rnaGeneCellLine"</span>))</div><div class='output co'>#&gt;              Gene Gene.name    Sample Value Unit
-#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  TPM
-#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  TPM
-#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1  TPM
-#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  TPM
-#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  TPM
-#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  TPM</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>getHpa</span>(<span class='no'>id</span>, <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"hpaCancer"</span>))</div><div class='output co'>#&gt;              Gene Gene.name             Cancer High Medium Low Not.detected
+#&gt; 6    Approved</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"rnaGeneTissue"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name          Tissue  TPM pTPM
+#&gt; 1 ENSG00000000003    TSPAN6  adipose tissue 31.5 37.7
+#&gt; 2 ENSG00000000003    TSPAN6   adrenal gland 26.4 32.7
+#&gt; 3 ENSG00000000003    TSPAN6        appendix  9.2 14.5
+#&gt; 4 ENSG00000000003    TSPAN6     bone marrow  0.7  0.9
+#&gt; 5 ENSG00000000003    TSPAN6          breast 53.3 68.1
+#&gt; 6 ENSG00000000003    TSPAN6 cerebral cortex 18.5 22.8</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"rnaGeneCellLine"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Cell.line   TPM  pTPM   NX
+#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.8
+#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.5
+#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.3
+#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.3
+#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.4
+#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"hpaCancer"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name             Cancer High Medium Low Not.detected
 #&gt; 1 ENSG00000000003    TSPAN6      breast cancer    1      7   2            2
 #&gt; 2 ENSG00000000003    TSPAN6          carcinoid    0      1   1            2
 #&gt; 3 ENSG00000000003    TSPAN6    cervical cancer   11      1   0            0
@@ -200,7 +217,7 @@ webpage).</p></td>
 #&gt; 3                    NA                0.089670                      NA
 #&gt; 4                    NA                0.035620                      NA
 #&gt; 5                    NA                      NA                      NA
-#&gt; 6                    NA                0.003617                      NA
+#&gt; 6                    NA                0.002707                      NA
 #&gt;   unprognostic.unfavourable
 #&gt; 1                        NA
 #&gt; 2                        NA
@@ -208,20 +225,28 @@ webpage).</p></td>
 #&gt; 4                        NA
 #&gt; 5                    0.2567
 #&gt; 6                        NA</div><div class='input'><span class='co'>## Sets default to "SubcellularLoc"</span>
-<span class='fu'><a href='setHparOptions.html'>setHparOptions</a></span>(<span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"hpaSubcellularLoc"</span>)
-<span class='fu'>getHpa</span>(<span class='no'>id</span>)       <span class='co'>## now uses "hpaSubcellularLoc"</span></div><div class='output co'>#&gt;              Gene Gene.name Reliability Enhanced Supported Approved Uncertain
-#&gt; 1 ENSG00000000003    TSPAN6    Approved                     Cytosol          
+<span class='fu'><a href='setHparOptions.html'>setHparOptions</a></span><span class='op'>(</span>hpadata <span class='op'>=</span> <span class='st'>"hpaSubcellularLoc"</span><span class='op'>)</span>
+<span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span><span class='op'>)</span>       <span class='co'>## now uses "hpaSubcellularLoc"</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Reliability          Main.location
+#&gt; 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
+#&gt;         Additional.location Extracellular.location Enhanced Supported
+#&gt; 1 Nucleoli fibrillar center                                          
+#&gt;                                           Approved Uncertain
+#&gt; 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          
 #&gt;   Single.cell.variation.intensity Single.cell.variation.spatial
-#&gt; 1                                                              
-#&gt;   Cell.cycle.dependency                GO.id
-#&gt; 1                       Cytosol (GO:0005829)</div><div class='input'><span class='fu'><a href='setHparOptions.html'>setHparOptions</a></span>() <span class='co'>## reset to "hpaNormalTissue"</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'>getHpa</span>(<span class='no'>id</span>))</div><div class='output co'>#&gt;              Gene Gene.name        Tissue           Cell.type        Level
-#&gt; 1 ENSG00000000003    TSPAN6 adrenal gland     glandular cells Not detected
-#&gt; 2 ENSG00000000003    TSPAN6      appendix     glandular cells       Medium
-#&gt; 3 ENSG00000000003    TSPAN6      appendix     lymphoid tissue Not detected
-#&gt; 4 ENSG00000000003    TSPAN6   bone marrow hematopoietic cells Not detected
-#&gt; 5 ENSG00000000003    TSPAN6        breast          adipocytes Not detected
-#&gt; 6 ENSG00000000003    TSPAN6        breast     glandular cells         High
+#&gt; 1                         Cytosol                              
+#&gt;   Cell.cycle.dependency
+#&gt; 1                      
+#&gt;                                                                                     GO.id
+#&gt; 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</div><div class='input'><span class='fu'><a href='setHparOptions.html'>setHparOptions</a></span><span class='op'>(</span><span class='op'>)</span> <span class='co'>## reset to "hpaNormalTissue"</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name         Tissue           Cell.type        Level
+#&gt; 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected
+#&gt; 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected
+#&gt; 3 ENSG00000000003    TSPAN6       appendix     glandular cells       Medium
+#&gt; 4 ENSG00000000003    TSPAN6       appendix     lymphoid tissue Not detected
+#&gt; 5 ENSG00000000003    TSPAN6    bone marrow hematopoietic cells Not detected
+#&gt; 6 ENSG00000000003    TSPAN6         breast          adipocytes Not detected
 #&gt;   Reliability
 #&gt; 1    Approved
 #&gt; 2    Approved
@@ -229,27 +254,29 @@ webpage).</p></td>
 #&gt; 4    Approved
 #&gt; 5    Approved
 #&gt; 6    Approved</div><div class='input'><span class='co'>## multiple ids</span>
-<span class='fu'>getHpa</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ENSG00000000003"</span>, <span class='st'>"ENSG00000000005"</span>),
-       <span class='kw'>hpadata</span> <span class='kw'>=</span> <span class='st'>"hpaSubcellularLoc"</span>)</div><div class='output co'>#&gt;              Gene Gene.name Reliability Enhanced Supported Approved Uncertain
-#&gt; 1 ENSG00000000003    TSPAN6    Approved                     Cytosol          
+<span class='fu'>getHpa</span><span class='op'>(</span>id <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ENSG00000000003"</span>, <span class='st'>"ENSG00000000005"</span><span class='op'>)</span>,
+       hpadata <span class='op'>=</span> <span class='st'>"hpaSubcellularLoc"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Reliability          Main.location
+#&gt; 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
+#&gt;         Additional.location Extracellular.location Enhanced Supported
+#&gt; 1 Nucleoli fibrillar center                                          
+#&gt;                                           Approved Uncertain
+#&gt; 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          
 #&gt;   Single.cell.variation.intensity Single.cell.variation.spatial
-#&gt; 1                                                              
-#&gt;   Cell.cycle.dependency                GO.id
-#&gt; 1                       Cytosol (GO:0005829)</div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+#&gt; 1                         Cytosol                              
+#&gt;   Cell.cycle.dependency
+#&gt; 1                      
+#&gt;                                                                                     GO.id
+#&gt; 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## opens a browser with http://www.proteinatlas.org/ENSG00000163435</span>
-<span class='fu'>getHpa</span>(<span class='st'>"ENSG00000163435"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"details"</span>)
-}</div></pre>
+<span class='fu'>getHpa</span><span class='op'>(</span><span class='st'>"ENSG00000163435"</span>, type <span class='op'>=</span> <span class='st'>"details"</span><span class='op'>)</span> 
+<span class='op'>}</span>
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Laurent Gatto</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -260,7 +287,7 @@ webpage).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
