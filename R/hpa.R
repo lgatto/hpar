@@ -1,6 +1,13 @@
-allHparData <- function()
-    c("hpaNormalTissue", "rnaGeneCellLine", "rnaGeneTissue",
-      "hpaSubcellularLoc", "hpaSubcellularLoc14", "hpaCancer")
+allHparData <- function(){
+  x <- grep(".rda", list.files(system.file("data", package = "hpar")), value = TRUE)
+  x <- gsub(".rda","",x)
+  # reorder the list of datasets givent the initial order
+  nam <- c("hpaNormalTissue", "rnaGeneCellLine", "rnaGeneTissue",
+           "hpaSubcellularLoc", "hpaSubcellularLoc14", "hpaCancer")
+  x <- c(nam[nam %in% x],x[!x %in% nam])
+  return(x)
+}
+
 
 getHpaVersion <- function()
   get("hpaVersion", envir = .hparEnv)

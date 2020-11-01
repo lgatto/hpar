@@ -26,8 +26,8 @@ test_that("hpar options", {
     expect_identical(getOption("hpar")[[1]], "hpaNormalTissue")
     setHparOptions("hpaSubcellularLoc") ## subcell
     expect_identical(getOption("hpar")[[1]], "hpaSubcellularLoc")
-    setHparOptions("hpaCan") ## cancer, partial match
-    expect_identical(getOption("hpar")[[1]], "hpaCancer")
+    setHparOptions("hpaSecr") ## Secretome, partial match
+    expect_identical(getOption("hpar")[[1]], "hpaSecretome")
 })
 
 test_that("getHpa", {

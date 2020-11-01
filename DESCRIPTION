@@ -10,7 +10,8 @@ Description: The hpar package provides a simple R interface to and
 	     data from the Human Protein Atlas project.
 Depends:
     R (>= 3.5.0)
-Imports: utils
+Imports: 
+    utils
 Suggests:
     org.Hs.eg.db,
     GO.db,

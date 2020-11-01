@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -48,7 +52,6 @@
   performed for more detailed protein localization. The program hosts
   the Human Protein Atlas portal with expression profiles of human
   proteins in tissues and cells." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -66,7 +69,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -80,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.29.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.31.1</span>
       </span>
     </div>
 
@@ -142,53 +145,78 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Several flat files are distributed by the HPA project and
-  available within the package as <code>data.frame</code>s. The description
-  below is taken from the HPA site:</p>
-<dl class='dl-horizontal'>
+  available within the package as <code>data.frame</code>s, other datasets 
+  are available through a search query on the HPA website. 
+  The description below is taken from the HPA site:</p>
+<dl>
 
   <dt>hpaNormalTissue</dt><dd><p><b>Normal tissue data</b>: Expression profiles
-    for proteins in human tissues based on immunohistochemisty using
-    tissue micro arrays. The comma-separated file includes Ensembl gene
-    identifier ("Gene"), tissue name ("Tissue"), annotated cell type
-    ("Cell type"), expression value ("Level"), the type of annotation
-    (annotated protein expression (APE), based on more than one antibody,
-    or staining, based on one antibody only) ("Expression type"), and the
-    reliability or validation of the expression value ("Reliability").</p></dd>
+  for proteins in human tissues based on immunohistochemisty using tissue
+  micro arrays. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell type"), 
+  expression value ("Level"), and the gene reliability of the expression 
+  value ("Reliability").</p></dd>
+  
+  <dt>hpaNormalTissue16.1</dt><dd><p>Same as above, for version 16.1</p></dd>
 
-  <dt>hpaCancer</dt><dd><p><b>Cancer tumor data</b>: Staining profiles for
-    proteins in human tumor tissue based on immunohistochemisty using
-    tissue micro arrays. The comma-separated file includes Ensembl gene
-    identifier ("Gene"), tumor name ("Tumor"), staining value ("Level"),
-    the number of patients that stain for this staining value
-    ("Count patients"), the total amount of patients for this tumor type
-    ("Total patients") and the type of annotation staining
-    ("Expression type").</p></dd>
+  <dt>hpaCancer</dt><dd><p><b>Pathology data</b>: Staining profiles for 
+  proteins in human tumor tissue based on immunohistochemisty using 
+  tissue micro arrays and log-rank P value for Kaplan-Meier analysis 
+  of correlation between mRNA expression level and patient survival. 
+  The tab-separated file includes Ensembl gene identifier ("Gene"), 
+  gene name ("Gene name"), tumor name ("Cancer"), the number of 
+  patients annotated for different staining levels ("High", "Medium",
+  "Low" &amp; "Not detected") and log-rank p values for patient survival 
+  and mRNA correlation ("prognostic - favourable", 
+  "unprognostic - favourable", "prognostic - unfavourable", 
+  "unprognostic - unfavourable").</p></dd>
 
-  <dt>rnaGeneTissue</dt><dd><p><b>RNA gene data</b>: RNA levels in 45 cell lines
-    and 32 tissues based on RNA-seq. The comma-separated file includes
-    Ensembl gene identifier ("Gene"), analysed sample ("Sample"),
-    fragments per kilobase of transcript per million fragments mapped
-    ("Value" and "Unit"), and abundance class ("Abundance").</p></dd>
-
-  <dt>rnaGeneCellLine</dt><dd><p><b>RNA gene data</b>: RNA levels in 45 cell
-    lines and 32 tissues based on RNA-seq. The comma-separated file
-    includes Ensembl gene identifier ("Gene"), analysed sample
-    ("Sample"), fragments per kilobase of transcript per million
-    fragments mapped ("Value" and "Unit"), and abundance class
-    ("Abundance").</p></dd>
+  <dt>hpaCancer16.1</dt><dd><p>Same as above, for version 16.1</p></dd>
+  
+  <dt>rnaGeneTissue</dt><dd><p><b>RNA HPA tissue gene data</b>: Transcript 
+  expression levels summarized per gene in 37 tissues based on 
+  RNA-seq. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), analysed sample ("Tissue"), transcripts per million 
+  ("TPM"), protein-transcripts per million ("pTPM") and 
+  normalized expression ("NX").</p></dd>
+  
+  <dt>rnaGeneCellLine</dt><dd><p><b>RNA HPA cell line gene data</b>: 
+  Transcript expression levels summarized per gene in 64 cell 
+  lines. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), analysed sample ("Cell line"), transcripts per
+  million ("TPM"), protein-coding transcripts per million ("pTPM") 
+  and normalized expression ("NX").</p></dd>
+  
+  <dt>rnaGeneCellLine16.1</dt><dd><p>Same as above, for version 16.1</p></dd>
 
   <dt>hpaSubcellularLoc</dt><dd><p><b>Subcellular location data</b>:
-    Subcellular localization of proteins based on
-    immunofluorescently stained cells. The comma-separated file
-    includes Ensembl gene identifier ("Gene"), main subcellular
-    location of the protein ("Main location"), other locations
-    ("Other location"), the type of annotation (annotated protein
-    expression (APE), based on more than one antibody, or staining,
-    based on one antibody only) ("Expression type"), and the
-    reliability or validation of the expression value
-    ("Reliability").</p></dd>
-
+  Subcellular location of proteins based on immunofluorescently stained 
+  cells. The tab-separated file includes the following columns: Ensembl 
+  gene identifier ("Gene"), name of gene ("Gene name"), gene reliability 
+  score ("Reliability"), enhanced locations ("Enhanced"), supported 
+  locations ("Supported"), Approved locations ("Approved"), uncertain 
+  locations ("Uncertain"), locations with single-cell variation in 
+  intensity ("Single-cell variation intensity"), locations with spatial 
+  single-cell variation ("Single-cell variation spatial"), locations 
+  with observed cell cycle dependency (type can be one or more of 
+  biological definition, custom data or correlation) ("Cell cycle 
+  dependency"), Gene Ontology Cellular Component term identifier 
+  ("GO id").</p></dd>
+  
+  <dt>hpaSubcellularLoc16.1</dt><dd><p>Same as above, for version 16.1</p></dd>
+  
   <dt>hpaSubcellularLoc14</dt><dd><p>Same as above, for version 14.</p></dd>
+  
+  <dt>hpaSecretome</dt><dd><p><b>Secretome data</b>:
+    The human secretome is here defined as all Ensembl genes with 
+    at least one predicted secreted transcript according to HPA 
+    predictions. The complete information about the HPA Secretome 
+    data is given on 
+    <a href='https://www.proteinatlas.org/humanproteome/blood/secretome'>https://www.proteinatlas.org/humanproteome/blood/secretome</a>. 
+    This dataset has 230 columns and includes the Ensembl gene identifier 
+    ("Gene"). Information about the additionnal variables can be found 
+    <a href='https://www.proteinatlas.org/search'>here</a> by clicking on 
+    <em>Show/hide columns</em>.</p></dd>
 
 
 </dl>
@@ -211,6 +239,9 @@ following conditions are met:</p>
   cited.</p></li>
 </ol>  
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt;</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='getHpaDate.html'>getHpaDate</a></code> for release information. Gene-specific
@@ -225,7 +256,8 @@ following conditions are met:</p>
   <a href='http://www.proteinatlas.org/'>http://www.proteinatlas.org/</a> and
   <a href='http://www.proteinatlas.org/about/download'>http://www.proteinatlas.org/about/download</a> for more details and
   documentation.</p>
-
+<p>Uhlen et al (2015). Tissue-based map of the human proteome. Science. 
+  347(6220):1260419.</p>
 <p>Uhlen et al (2010). Towards a knowledge-based Human Protein Atlas. Nat
   Biotechnol. 28(12):1248-50.</p>  
 <p>Berglund et al (2008). A gene-centric Human Protein Atlas for
@@ -239,16 +271,20 @@ following conditions are met:</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>allHparData</span>()</div><div class='output co'>#&gt; [1] "hpaNormalTissue"     "rnaGeneCellLine"     "rnaGeneTissue"      
-#&gt; [4] "hpaSubcellularLoc"   "hpaSubcellularLoc14" "hpaCancer"          </div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>hpaNormalTissue</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>hpaNormalTissue</span>)</div><div class='output co'>#&gt;              Gene Gene.name        Tissue           Cell.type        Level
-#&gt; 1 ENSG00000000003    TSPAN6 adrenal gland     glandular cells Not detected
-#&gt; 2 ENSG00000000003    TSPAN6      appendix     glandular cells       Medium
-#&gt; 3 ENSG00000000003    TSPAN6      appendix     lymphoid tissue Not detected
-#&gt; 4 ENSG00000000003    TSPAN6   bone marrow hematopoietic cells Not detected
-#&gt; 5 ENSG00000000003    TSPAN6        breast          adipocytes Not detected
-#&gt; 6 ENSG00000000003    TSPAN6        breast     glandular cells         High
+<span class='fu'>allHparData</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;  [1] "hpaNormalTissue"       "rnaGeneCellLine"       "rnaGeneTissue"        
+#&gt;  [4] "hpaSubcellularLoc"     "hpaSubcellularLoc14"   "hpaCancer"            
+#&gt;  [7] "hpaCancer16.1"         "hpaNormalTissue16.1"   "hpaSecretome"         
+#&gt; [10] "hpaSubcellularLoc16.1" "rnaGeneCellLine16.1"  </div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpaNormalTissue</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>hpaNormalTissue</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name         Tissue           Cell.type        Level
+#&gt; 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected
+#&gt; 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected
+#&gt; 3 ENSG00000000003    TSPAN6       appendix     glandular cells       Medium
+#&gt; 4 ENSG00000000003    TSPAN6       appendix     lymphoid tissue Not detected
+#&gt; 5 ENSG00000000003    TSPAN6    bone marrow hematopoietic cells Not detected
+#&gt; 6 ENSG00000000003    TSPAN6         breast          adipocytes Not detected
 #&gt;   Reliability
 #&gt; 1    Approved
 #&gt; 2    Approved
@@ -256,39 +292,49 @@ following conditions are met:</p>
 #&gt; 4    Approved
 #&gt; 5    Approved
 #&gt; 6    Approved</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>rnaGeneCellLine</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>rnaGeneCellLine</span>)</div><div class='output co'>#&gt;              Gene Gene.name    Sample Value Unit
-#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  TPM
-#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  TPM
-#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1  TPM
-#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  TPM
-#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  TPM
-#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  TPM</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>rnaGeneTissue</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>rnaGeneTissue</span>)</div><div class='output co'>#&gt;              Gene Gene.name          Sample Value Unit
-#&gt; 1 ENSG00000000003    TSPAN6  adipose tissue  31.5  TPM
-#&gt; 2 ENSG00000000003    TSPAN6   adrenal gland  26.4  TPM
-#&gt; 3 ENSG00000000003    TSPAN6        appendix   9.2  TPM
-#&gt; 4 ENSG00000000003    TSPAN6     bone marrow   0.7  TPM
-#&gt; 5 ENSG00000000003    TSPAN6          breast  53.4  TPM
-#&gt; 6 ENSG00000000003    TSPAN6 cerebral cortex  18.5  TPM</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>hpaSubcellularLoc</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>hpaSubcellularLoc</span>)</div><div class='output co'>#&gt;              Gene Gene.name Reliability Enhanced Supported
-#&gt; 1 ENSG00000000003    TSPAN6    Approved                   
-#&gt; 2 ENSG00000000457     SCYL3   Uncertain                   
-#&gt; 3 ENSG00000000460  C1orf112    Approved                   
-#&gt; 4 ENSG00000000938       FGR    Approved                   
-#&gt; 5 ENSG00000000971       CFH    Approved                   
-#&gt; 6 ENSG00000001084      GCLC    Approved                   
-#&gt;                    Approved                   Uncertain
-#&gt; 1                   Cytosol                            
-#&gt; 2                           Microtubules;Nuclear bodies
-#&gt; 3              Mitochondria                            
-#&gt; 4 Aggresome;Plasma membrane                            
-#&gt; 5                  Vesicles                            
-#&gt; 6  Cytosol;Nucleoli;Nucleus                            
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>rnaGeneCellLine</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>rnaGeneCellLine</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Cell.line   TPM  pTPM   NX
+#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.8
+#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.5
+#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.3
+#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.3
+#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.4
+#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.7</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>rnaGeneTissue</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>rnaGeneTissue</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name          Tissue  TPM pTPM
+#&gt; 1 ENSG00000000003    TSPAN6  adipose tissue 31.5 37.7
+#&gt; 2 ENSG00000000003    TSPAN6   adrenal gland 26.4 32.7
+#&gt; 3 ENSG00000000003    TSPAN6        appendix  9.2 14.5
+#&gt; 4 ENSG00000000003    TSPAN6     bone marrow  0.7  0.9
+#&gt; 5 ENSG00000000003    TSPAN6          breast 53.3 68.1
+#&gt; 6 ENSG00000000003    TSPAN6 cerebral cortex 18.5 22.8</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpaSubcellularLoc</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>hpaSubcellularLoc</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name Reliability          Main.location
+#&gt; 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
+#&gt; 2 ENSG00000000457     SCYL3   Uncertain           Microtubules
+#&gt; 3 ENSG00000000460  C1orf112    Approved           Mitochondria
+#&gt; 4 ENSG00000000938       FGR    Approved        Plasma membrane
+#&gt; 5 ENSG00000000971       CFH    Approved               Vesicles
+#&gt; 6 ENSG00000001084      GCLC    Approved            Nucleoplasm
+#&gt;         Additional.location   Extracellular.location Enhanced Supported
+#&gt; 1 Nucleoli fibrillar center                                            
+#&gt; 2            Nuclear bodies                                            
+#&gt; 3                                                                      
+#&gt; 4                 Aggresome                                            
+#&gt; 5                           Predicted to be secreted                   
+#&gt; 6          Cytosol;Nucleoli                                            
+#&gt;                                           Approved                   Uncertain
+#&gt; 1 Cell Junctions;Cytosol;Nucleoli fibrillar center                            
+#&gt; 2                                                  Microtubules;Nuclear bodies
+#&gt; 3                                     Mitochondria                            
+#&gt; 4                        Aggresome;Plasma membrane                            
+#&gt; 5                                         Vesicles                            
+#&gt; 6                     Cytosol;Nucleoli;Nucleoplasm                            
 #&gt;   Single.cell.variation.intensity Single.cell.variation.spatial
-#&gt; 1                                                              
+#&gt; 1                         Cytosol                              
 #&gt; 2                                                              
 #&gt; 3                                                              
 #&gt; 4                                                              
@@ -301,15 +347,16 @@ following conditions are met:</p>
 #&gt; 4                      
 #&gt; 5                      
 #&gt; 6                      
-#&gt;                                                             GO.id
-#&gt; 1                                            Cytosol (GO:0005829)
-#&gt; 2           Microtubules (GO:0015630);Nuclear bodies (GO:0016604)
-#&gt; 3                                       Mitochondria (GO:0005739)
-#&gt; 4             Aggresome (GO:0016235);Plasma membrane (GO:0005886)
-#&gt; 5                                           Vesicles (GO:0043231)
-#&gt; 6 Cytosol (GO:0005829);Nucleoli (GO:0005730);Nucleus (GO:0005634)</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>hpaSubcellularLoc14</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>hpaSubcellularLoc14</span>)</div><div class='output co'>#&gt;              Gene                         Main.location
+#&gt;                                                                                     GO.id
+#&gt; 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)
+#&gt; 2                                   Microtubules (GO:0015630);Nuclear bodies (GO:0016604)
+#&gt; 3                                                               Mitochondria (GO:0005739)
+#&gt; 4                                     Aggresome (GO:0016235);Plasma membrane (GO:0005886)
+#&gt; 5                                                                   Vesicles (GO:0043231)
+#&gt; 6                     Cytosol (GO:0005829);Nucleoli (GO:0005730);Nucleoplasm (GO:0005654)</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpaSubcellularLoc14</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>hpaSubcellularLoc14</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene                         Main.location
 #&gt; 1 ENSG00000000003                             Cytoplasm
 #&gt; 2 ENSG00000000457           Cytoskeleton (Microtubules)
 #&gt; 3 ENSG00000000460 Nucleus but not nucleoli;Mitochondria
@@ -323,8 +370,9 @@ following conditions are met:</p>
 #&gt; 4                                                      APE   Uncertain
 #&gt; 5                                Cytoplasm             APE  Supportive
 #&gt; 6                         Nuclear membrane             APE  Supportive</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>hpaCancer</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>hpaCancer</span>)</div><div class='output co'>#&gt;              Gene Gene.name             Cancer High Medium Low Not.detected
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpaCancer</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>hpaCancer</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name             Cancer High Medium Low Not.detected
 #&gt; 1 ENSG00000000003    TSPAN6      breast cancer    1      7   2            2
 #&gt; 2 ENSG00000000003    TSPAN6          carcinoid    0      1   1            2
 #&gt; 3 ENSG00000000003    TSPAN6    cervical cancer   11      1   0            0
@@ -337,26 +385,770 @@ following conditions are met:</p>
 #&gt; 3                    NA                0.089670                      NA
 #&gt; 4                    NA                0.035620                      NA
 #&gt; 5                    NA                      NA                      NA
-#&gt; 6                    NA                0.003617                      NA
+#&gt; 6                    NA                0.002707                      NA
 #&gt;   unprognostic.unfavourable
 #&gt; 1                        NA
 #&gt; 2                        NA
 #&gt; 3                        NA
 #&gt; 4                        NA
 #&gt; 5                    0.2567
-#&gt; 6                        NA</div></pre>
+#&gt; 6                        NA</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>hpaSecretome</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>hpaSecretome</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;              Gene Gene.name           Gene.synonym
+#&gt; 1 ENSG00000121410      A1BG                       
+#&gt; 2 ENSG00000175899       A2M CPAMD5, FWP007, S863-7
+#&gt; 3 ENSG00000166535     A2ML1 CPAMD9, FLJ25179, p170
+#&gt; 4 ENSG00000118017     A4GNT              alpha4GnT
+#&gt; 5 ENSG00000197953   AADACL2               MGC72001
+#&gt; 6 ENSG00000129673     AANAT                   SNAT
+#&gt;                            Gene.description Uniprot Chromosome
+#&gt; 1                    Alpha-1-B glycoprotein  P04217         19
+#&gt; 2                     Alpha-2-macroglobulin  P01023         12
+#&gt; 3              Alpha-2-macroglobulin like 1  A8K2U0         12
+#&gt; 4 Alpha-1,4-N-acetylglucosaminyltransferase  Q9UNA3          3
+#&gt; 5          Arylacetamide deacetylase like 2  Q6P093          3
+#&gt; 6          Aralkylamine N-acetyltransferase  Q16613         17
+#&gt;              Position
+#&gt; 1   58345178-58353499
+#&gt; 2     9067664-9116229
+#&gt; 3     8822472-8887001
+#&gt; 4 138123718-138132387
+#&gt; 5 151733916-151761339
+#&gt; 6   76453351-76470117
+#&gt;                                                                                                Protein.class
+#&gt; 1                             Plasma proteins, Predicted intracellular proteins, Predicted secreted proteins
+#&gt; 2 Cancer-related genes, Candidate cardiovascular disease genes, Plasma proteins, Predicted secreted proteins
+#&gt; 3                                              Predicted intracellular proteins, Predicted secreted proteins
+#&gt; 4                                                                           Predicted intracellular proteins
+#&gt; 5                                                                                Predicted secreted proteins
+#&gt; 6                                                                  Enzymes, Predicted intracellular proteins
+#&gt;                           Biological.process
+#&gt; 1                                           
+#&gt; 2                                           
+#&gt; 3                                           
+#&gt; 4                                           
+#&gt; 5                                           
+#&gt; 6 Biological rhythms, Melatonin biosynthesis
+#&gt;                              Molecular.function  Disease.involvement
+#&gt; 1                                                                   
+#&gt; 2 Protease inhibitor, Serine protease inhibitor Cancer-related genes
+#&gt; 3 Protease inhibitor, Serine protease inhibitor                     
+#&gt; 4              Glycosyltransferase, Transferase                     
+#&gt; 5                                     Hydrolase                     
+#&gt; 6                  Acyltransferase, Transferase     Disease mutation
+#&gt;                       Evidence                 HPA.evidence
+#&gt; 1    Evidence at protein level    Evidence at protein level
+#&gt; 2    Evidence at protein level    Evidence at protein level
+#&gt; 3    Evidence at protein level    Evidence at protein level
+#&gt; 4    Evidence at protein level    Evidence at protein level
+#&gt; 5 Evidence at transcript level Evidence at transcript level
+#&gt; 6    Evidence at protein level    Evidence at protein level
+#&gt;               UniProt.evidence            NeXtProt.evidence
+#&gt; 1    Evidence at protein level    Evidence at protein level
+#&gt; 2    Evidence at protein level    Evidence at protein level
+#&gt; 3    Evidence at protein level    Evidence at protein level
+#&gt; 4    Evidence at protein level    Evidence at protein level
+#&gt; 5 Evidence at transcript level Evidence at transcript level
+#&gt; 6    Evidence at protein level    Evidence at protein level
+#&gt;                 MS.evidence RNA.tissue.specificity RNA.tissue.distribution
+#&gt; 1 Evidence at protein level        Tissue enriched        Detected in some
+#&gt; 2 Evidence at protein level        Tissue enhanced        Detected in many
+#&gt; 3 Evidence at protein level        Tissue enhanced        Detected in some
+#&gt; 4                                   Group enriched        Detected in some
+#&gt; 5                                   Group enriched        Detected in some
+#&gt; 6                                   Group enriched        Detected in some
+#&gt;   RNA.tissue.specificity.score
+#&gt; 1                          180
+#&gt; 2                           NA
+#&gt; 3                           NA
+#&gt; 4                            8
+#&gt; 5                           10
+#&gt; 6                            5
+#&gt;                                RNA.tissue.specific.NX RNA.cell.line.specificity
+#&gt; 1                                        liver: 299.6        Cell line enhanced
+#&gt; 2                            liver: 231.0;lung: 227.4            Group enriched
+#&gt; 3 esophagus: 131.6;lymphoid tissue: 67.9;tongue: 54.7        Cell line enhanced
+#&gt; 4     gallbladder: 25.9;pancreas: 7.0;stomach 1: 25.0        Cell line enhanced
+#&gt; 5             placenta: 8.6;skin 1: 26.1;tongue: 22.2        Cell line enriched
+#&gt; 6                            retina: 27.7;testis: 8.2        Cell line enhanced
+#&gt;   RNA.cell.line.distribution RNA.cell.line.specificity.score
+#&gt; 1           Detected in some                              NA
+#&gt; 2           Detected in some                               5
+#&gt; 3           Detected in some                              NA
+#&gt; 4           Detected in some                              NA
+#&gt; 5         Detected in single                               5
+#&gt; 6           Detected in some                              NA
+#&gt;                                        RNA.cell.line.specific.NX
+#&gt; 1                HEK 293: 5.0;Hep G2: 4.8;REH: 6.4;U-266/70: 4.8
+#&gt; 2        AF22: 111.0;ASC diff: 33.0;Hep G2: 89.4;SK-MEL-30: 32.1
+#&gt; 3                          HMC-1: 12.1;hTCEpi: 6.0;SK-BR-3: 15.1
+#&gt; 4                                              A549: 2.6;BJ: 3.7
+#&gt; 5                                                    hTCEpi: 1.7
+#&gt; 6 A549: 4.5;SCLC-21H: 5.6;U-266/70: 4.5;U-266/84: 4.7;U-698: 6.6
+#&gt;   RNA.cancer.specificity RNA.cancer.distribution RNA.cancer.specificity.score
+#&gt; 1        Cancer enriched      Detected in single                           85
+#&gt; 2 Low cancer specificity         Detected in all                           NA
+#&gt; 3        Cancer enhanced        Detected in many                           NA
+#&gt; 4         Group enriched        Detected in some                            6
+#&gt; 5           Not detected            Not detected                           NA
+#&gt; 6           Not detected            Not detected                           NA
+#&gt;                     RNA.cancer.specific.FPKM RNA.brain.regional.specificity
+#&gt; 1                         liver cancer: 22.3                   Not detected
+#&gt; 2                                                    Low region specificity
+#&gt; 3                 head and neck cancer: 39.9                   Not detected
+#&gt; 4 pancreatic cancer: 2.5;stomach cancer: 3.6                   Not detected
+#&gt; 5                                                              Not detected
+#&gt; 6                                                    Low region specificity
+#&gt;   RNA.brain.regional.distribution RNA.brain.regional.specificity.score
+#&gt; 1                    Not detected                                   NA
+#&gt; 2                 Detected in all                                   NA
+#&gt; 3                    Not detected                                   NA
+#&gt; 4                    Not detected                                   NA
+#&gt; 5                    Not detected                                   NA
+#&gt; 6                Detected in many                                   NA
+#&gt;   RNA.brain.regional.specific.NX RNA.blood.cell.specificity
+#&gt; 1                                        Cell type enhanced
+#&gt; 2                                        Cell type enhanced
+#&gt; 3                                 Low cell type specificity
+#&gt; 4                                              Not detected
+#&gt; 5                                              Not detected
+#&gt; 6                                 Low cell type specificity
+#&gt;   RNA.blood.cell.distribution RNA.blood.cell.specificity.score
+#&gt; 1            Detected in some                               NA
+#&gt; 2            Detected in some                               NA
+#&gt; 3            Detected in many                               NA
+#&gt; 4                Not detected                               NA
+#&gt; 5                Not detected                               NA
+#&gt; 6            Detected in some                               NA
+#&gt;   RNA.blood.cell.specific.NX RNA.blood.lineage.specificity
+#&gt; 1       plasmacytoid DC: 1.6       Low lineage specificity
+#&gt; 2              gdT-cell: 4.4                Group enriched
+#&gt; 3                                  Low lineage specificity
+#&gt; 4                                             Not detected
+#&gt; 5                                             Not detected
+#&gt; 6                                  Low lineage specificity
+#&gt;   RNA.blood.lineage.distribution RNA.blood.lineage.specificity.score
+#&gt; 1               Detected in many                                  NA
+#&gt; 2               Detected in many                                   7
+#&gt; 3               Detected in many                                  NA
+#&gt; 4                   Not detected                                  NA
+#&gt; 5                   Not detected                                  NA
+#&gt; 6               Detected in many                                  NA
+#&gt;       RNA.blood.lineage.specific.NX RNA.mouse.brain.regional.specificity
+#&gt; 1                                                                       
+#&gt; 2 dendritic cells: 1.4;T-cells: 4.4               Low region specificity
+#&gt; 3                                                                       
+#&gt; 4                                                           Not detected
+#&gt; 5                                                           Not detected
+#&gt; 6                                                           Not detected
+#&gt;   RNA.mouse.brain.regional.distribution
+#&gt; 1                                      
+#&gt; 2                      Detected in many
+#&gt; 3                                      
+#&gt; 4                          Not detected
+#&gt; 5                          Not detected
+#&gt; 6                          Not detected
+#&gt;   RNA.mouse.brain.regional.specificity.score
+#&gt; 1                                         NA
+#&gt; 2                                         NA
+#&gt; 3                                         NA
+#&gt; 4                                         NA
+#&gt; 5                                         NA
+#&gt; 6                                         NA
+#&gt;   RNA.mouse.brain.regional.specific.pTPM RNA.pig.brain.regional.specificity
+#&gt; 1                                                    Low region specificity
+#&gt; 2                                                    Low region specificity
+#&gt; 3                                                                          
+#&gt; 4                                                    Low region specificity
+#&gt; 5                                                              Not detected
+#&gt; 6                                                                          
+#&gt;   RNA.pig.brain.regional.distribution RNA.pig.brain.regional.specificity.score
+#&gt; 1                     Detected in all                                       NA
+#&gt; 2                    Detected in many                                       NA
+#&gt; 3                                                                           NA
+#&gt; 4                     Detected in all                                       NA
+#&gt; 5                        Not detected                                       NA
+#&gt; 6                                                                           NA
+#&gt;   RNA.pig.brain.regional.specific.pTPM             Antibody Reliability..IH.
+#&gt; 1                                      CAB016673, HPA044252        Supported
+#&gt; 2                                      HPA002265, CAB017621        Supported
+#&gt; 3                                      HPA038847, HPA038848         Enhanced
+#&gt; 4                                                 HPA008017         Enhanced
+#&gt; 5                                                                           
+#&gt; 6                                                 HPA054321                 
+#&gt;   Reliability..Mouse.Brain. Reliability..IF. Subcellular.location
+#&gt; 1                                                                
+#&gt; 2                                                                
+#&gt; 3                                                                
+#&gt; 4                                                                
+#&gt; 5                                                                
+#&gt; 6                                  Supported              Cytosol
+#&gt;           Secretome.location Blood.concentration...Conc..blood.IM..pg.L.
+#&gt; 1          Secreted to blood                                     2.0e+11
+#&gt; 2          Secreted to blood                                     2.9e+12
+#&gt; 3  Secreted in other tissues                                          NA
+#&gt; 4 Intracellular and membrane                                          NA
+#&gt; 5  Secreted in other tissues                                          NA
+#&gt; 6 Intracellular and membrane                                          NA
+#&gt;   Blood.concentration...Conc..blood.MS..pg.L. Subcellular.main.location
+#&gt; 1                                     4.9e+10                          
+#&gt; 2                                     2.2e+11                          
+#&gt; 3                                     3.4e+07                          
+#&gt; 4                                          NA                          
+#&gt; 5                                          NA                          
+#&gt; 6                                          NA                   Cytosol
+#&gt;   Subcellular.additional.location                                 Antibody.RRID
+#&gt; 1                                            CAB016673: AB_1611892, HPA044252: 
+#&gt; 2                                  CAB017621: AB_1118894, HPA002265: AB_1078142
+#&gt; 3                                 HPA038847: AB_2676236, HPA038848: AB_10672654
+#&gt; 4                                                         HPA008017: AB_1078073
+#&gt; 5                                                                              
+#&gt; 6                                                                   HPA054321: 
+#&gt;   Pathology.prognostics...Breast.cancer Pathology.prognostics...Cervical.cancer
+#&gt; 1                unprognostic (9.95e-2)                  unprognostic (5.31e-2)
+#&gt; 2                unprognostic (1.73e-2)                  unprognostic (1.05e-3)
+#&gt; 3                unprognostic (1.13e-2)                  unprognostic (7.64e-2)
+#&gt; 4                unprognostic (1.21e-1)                  unprognostic (2.52e-1)
+#&gt; 5                                                        unprognostic (2.20e-2)
+#&gt; 6                unprognostic (7.89e-2)                  unprognostic (2.62e-1)
+#&gt;   Pathology.prognostics...Colorectal.cancer
+#&gt; 1                    unprognostic (3.67e-2)
+#&gt; 2                    unprognostic (1.72e-1)
+#&gt; 3                    unprognostic (1.04e-2)
+#&gt; 4                                          
+#&gt; 5                                          
+#&gt; 6                    unprognostic (1.41e-1)
+#&gt;   Pathology.prognostics...Endometrial.cancer Pathology.prognostics...Glioma
+#&gt; 1                     unprognostic (3.44e-2)         unprognostic (1.18e-1)
+#&gt; 2                     unprognostic (2.29e-2)         unprognostic (7.36e-2)
+#&gt; 3                     unprognostic (9.46e-3)         unprognostic (2.14e-1)
+#&gt; 4                                                    unprognostic (2.14e-1)
+#&gt; 5                                                                          
+#&gt; 6                     unprognostic (2.44e-1)         unprognostic (1.83e-2)
+#&gt;   Pathology.prognostics...Head.and.neck.cancer
+#&gt; 1                       unprognostic (1.66e-2)
+#&gt; 2                       unprognostic (3.91e-2)
+#&gt; 3                       unprognostic (5.54e-3)
+#&gt; 4                       unprognostic (1.18e-2)
+#&gt; 5                       unprognostic (3.10e-3)
+#&gt; 6                       unprognostic (2.03e-2)
+#&gt;   Pathology.prognostics...Liver.cancer Pathology.prognostics...Lung.cancer
+#&gt; 1      prognostic favourable (3.97e-4)              unprognostic (1.09e-1)
+#&gt; 2               unprognostic (7.95e-2)              unprognostic (3.65e-2)
+#&gt; 3               unprognostic (4.59e-2)              unprognostic (7.58e-3)
+#&gt; 4               unprognostic (1.48e-2)              unprognostic (8.79e-2)
+#&gt; 5                                                   unprognostic (2.63e-2)
+#&gt; 6               unprognostic (1.05e-2)              unprognostic (3.09e-1)
+#&gt;   Pathology.prognostics...Melanoma Pathology.prognostics...Ovarian.cancer
+#&gt; 1           unprognostic (2.59e-1)                 unprognostic (2.10e-1)
+#&gt; 2           unprognostic (2.38e-1)                 unprognostic (7.19e-2)
+#&gt; 3           unprognostic (2.63e-1)                 unprognostic (1.57e-1)
+#&gt; 4           unprognostic (9.35e-2)                 unprognostic (1.97e-1)
+#&gt; 5           unprognostic (1.37e-1)                 unprognostic (1.22e-1)
+#&gt; 6           unprognostic (1.01e-2)                 unprognostic (3.61e-1)
+#&gt;   Pathology.prognostics...Pancreatic.cancer
+#&gt; 1                    unprognostic (1.47e-2)
+#&gt; 2                    unprognostic (4.71e-2)
+#&gt; 3                    unprognostic (1.15e-3)
+#&gt; 4                    unprognostic (1.81e-1)
+#&gt; 5                                          
+#&gt; 6                    unprognostic (9.30e-2)
+#&gt;   Pathology.prognostics...Prostate.cancer Pathology.prognostics...Renal.cancer
+#&gt; 1                  unprognostic (1.37e-2)               unprognostic (4.19e-5)
+#&gt; 2                  unprognostic (2.06e-2)               unprognostic (1.28e-2)
+#&gt; 3                  unprognostic (2.03e-1)               unprognostic (1.06e-9)
+#&gt; 4                  unprognostic (1.85e-1)               unprognostic (4.03e-2)
+#&gt; 5                                                                             
+#&gt; 6                  unprognostic (4.19e-1)               unprognostic (2.81e-7)
+#&gt;   Pathology.prognostics...Stomach.cancer Pathology.prognostics...Testis.cancer
+#&gt; 1                 unprognostic (2.37e-2)                unprognostic (1.94e-1)
+#&gt; 2                 unprognostic (8.04e-3)                unprognostic (2.32e-2)
+#&gt; 3                 unprognostic (2.28e-1)                unprognostic (3.07e-1)
+#&gt; 4                 unprognostic (1.03e-1)                unprognostic (7.79e-2)
+#&gt; 5                 unprognostic (3.00e-1)                                      
+#&gt; 6                 unprognostic (1.04e-1)                unprognostic (6.00e-2)
+#&gt;   Pathology.prognostics...Thyroid.cancer
+#&gt; 1                 unprognostic (1.72e-1)
+#&gt; 2                 unprognostic (8.58e-2)
+#&gt; 3                 unprognostic (5.88e-2)
+#&gt; 4                 unprognostic (2.55e-2)
+#&gt; 5                                       
+#&gt; 6                 unprognostic (4.47e-2)
+#&gt;   Pathology.prognostics...Urothelial.cancer Tissue.RNA...adipose.tissue..NX.
+#&gt; 1                    unprognostic (6.72e-2)                              0.0
+#&gt; 2                    unprognostic (9.03e-3)                             77.4
+#&gt; 3                    unprognostic (2.42e-2)                              0.1
+#&gt; 4                    unprognostic (6.48e-3)                              0.1
+#&gt; 5                    unprognostic (2.91e-4)                              1.3
+#&gt; 6                    unprognostic (1.34e-2)                              0.3
+#&gt;   Tissue.RNA...adrenal.gland..NX. Tissue.RNA...amygdala..NX.
+#&gt; 1                             0.0                        0.0
+#&gt; 2                            20.5                       12.5
+#&gt; 3                             0.1                        0.1
+#&gt; 4                             0.0                        0.1
+#&gt; 5                             0.0                        0.0
+#&gt; 6                             0.2                        1.2
+#&gt;   Tissue.RNA...appendix..NX. Tissue.RNA...basal.ganglia..NX.
+#&gt; 1                        0.0                             0.0
+#&gt; 2                       14.7                            16.8
+#&gt; 3                        0.1                             0.2
+#&gt; 4                        0.1                             0.1
+#&gt; 5                        0.0                             0.0
+#&gt; 6                        3.8                             0.8
+#&gt;   Tissue.RNA...bone.marrow..NX. Tissue.RNA...breast..NX.
+#&gt; 1                           0.0                      0.0
+#&gt; 2                           0.3                     39.6
+#&gt; 3                           0.1                      1.2
+#&gt; 4                           0.1                      0.1
+#&gt; 5                           0.0                      1.9
+#&gt; 6                           2.7                      0.3
+#&gt;   Tissue.RNA...cerebellum..NX. Tissue.RNA...cerebral.cortex..NX.
+#&gt; 1                          0.0                               0.0
+#&gt; 2                          6.1                              16.1
+#&gt; 3                          0.1                               0.6
+#&gt; 4                          0.1                               0.1
+#&gt; 5                          0.0                               0.0
+#&gt; 6                          1.3                               1.6
+#&gt;   Tissue.RNA...cervix..uterine..NX. Tissue.RNA...colon..NX.
+#&gt; 1                               0.0                     0.0
+#&gt; 2                              41.8                    27.3
+#&gt; 3                              31.3                     0.1
+#&gt; 4                               0.1                     0.1
+#&gt; 5                               0.4                     0.8
+#&gt; 6                               0.3                     0.3
+#&gt;   Tissue.RNA...corpus.callosum..NX. Tissue.RNA...ductus.deferens..NX.
+#&gt; 1                               0.0                               0.0
+#&gt; 2                              25.3                              10.5
+#&gt; 3                               0.1                               0.1
+#&gt; 4                               0.2                               0.1
+#&gt; 5                               0.0                               0.7
+#&gt; 6                               0.3                               0.3
+#&gt;   Tissue.RNA...duodenum..NX. Tissue.RNA...endometrium.1..NX.
+#&gt; 1                        0.0                             0.0
+#&gt; 2                       15.0                            54.6
+#&gt; 3                        0.0                             0.6
+#&gt; 4                        2.5                             0.1
+#&gt; 5                        0.0                             0.0
+#&gt; 6                        0.3                             0.3
+#&gt;   Tissue.RNA...epididymis..NX. Tissue.RNA...esophagus..NX.
+#&gt; 1                          0.0                         0.0
+#&gt; 2                         28.2                        39.5
+#&gt; 3                          0.2                       131.6
+#&gt; 4                          0.1                         0.1
+#&gt; 5                          0.6                         0.3
+#&gt; 6                          0.3                         0.8
+#&gt;   Tissue.RNA...fallopian.tube..NX. Tissue.RNA...gallbladder..NX.
+#&gt; 1                              0.1                           0.0
+#&gt; 2                             30.6                          49.7
+#&gt; 3                              0.2                           0.1
+#&gt; 4                              0.1                          25.9
+#&gt; 5                              0.1                           0.0
+#&gt; 6                              0.4                           1.8
+#&gt;   Tissue.RNA...heart.muscle..NX. Tissue.RNA...hippocampal.formation..NX.
+#&gt; 1                            0.0                                     0.0
+#&gt; 2                           68.0                                    12.4
+#&gt; 3                            0.1                                     0.1
+#&gt; 4                            0.1                                     0.1
+#&gt; 5                            0.0                                     0.0
+#&gt; 6                            0.3                                     1.2
+#&gt;   Tissue.RNA...hypothalamus..NX. Tissue.RNA...kidney..NX.
+#&gt; 1                            0.0                      0.0
+#&gt; 2                           10.2                     50.0
+#&gt; 3                            0.0                      0.1
+#&gt; 4                            0.1                      1.5
+#&gt; 5                            0.0                      0.0
+#&gt; 6                            1.5                      0.3
+#&gt;   Tissue.RNA...liver..NX. Tissue.RNA...lung..NX. Tissue.RNA...lymph.node..NX.
+#&gt; 1                   299.6                    0.0                          0.0
+#&gt; 2                   231.0                  227.4                         14.9
+#&gt; 3                     0.1                    0.1                          0.1
+#&gt; 4                     0.4                    0.3                          0.1
+#&gt; 5                     0.0                    0.1                          0.0
+#&gt; 6                     0.3                    0.3                          3.3
+#&gt;   Tissue.RNA...midbrain..NX. Tissue.RNA...olfactory.region..NX.
+#&gt; 1                        0.0                                0.0
+#&gt; 2                       16.9                                8.0
+#&gt; 3                        0.1                                0.1
+#&gt; 4                        0.1                                0.1
+#&gt; 5                        0.0                                0.0
+#&gt; 6                        1.7                                0.7
+#&gt;   Tissue.RNA...ovary..NX. Tissue.RNA...pancreas..NX.
+#&gt; 1                     0.0                        0.0
+#&gt; 2                    40.8                       13.0
+#&gt; 3                     0.1                        0.1
+#&gt; 4                     0.2                        7.0
+#&gt; 5                     0.0                        0.0
+#&gt; 6                     0.4                        0.3
+#&gt;   Tissue.RNA...parathyroid.gland..NX. Tissue.RNA...pituitary.gland..NX.
+#&gt; 1                                 0.0                               0.0
+#&gt; 2                                20.9                              20.4
+#&gt; 3                                 0.3                               0.1
+#&gt; 4                                 0.0                               0.1
+#&gt; 5                                 0.0                               0.0
+#&gt; 6                                 0.0                               0.9
+#&gt;   Tissue.RNA...placenta..NX. Tissue.RNA...pons.and.medulla..NX.
+#&gt; 1                        0.0                                0.0
+#&gt; 2                       48.0                               20.5
+#&gt; 3                        1.3                                0.1
+#&gt; 4                        0.1                                0.1
+#&gt; 5                        8.6                                0.0
+#&gt; 6                        0.3                                1.9
+#&gt;   Tissue.RNA...prostate..NX. Tissue.RNA...rectum..NX. Tissue.RNA...retina..NX.
+#&gt; 1                        0.0                      0.0                      0.0
+#&gt; 2                       77.3                     35.9                     47.5
+#&gt; 3                        0.2                      0.1                      0.1
+#&gt; 4                        0.1                      0.0                      0.1
+#&gt; 5                        0.4                      0.0                      0.0
+#&gt; 6                        0.3                      0.0                     27.7
+#&gt;   Tissue.RNA...salivary.gland..NX. Tissue.RNA...seminal.vesicle..NX.
+#&gt; 1                              0.0                               0.0
+#&gt; 2                             20.5                              26.3
+#&gt; 3                             17.3                               0.1
+#&gt; 4                              0.1                               0.1
+#&gt; 5                              0.4                               0.0
+#&gt; 6                              0.3                               0.3
+#&gt;   Tissue.RNA...skeletal.muscle..NX. Tissue.RNA...skin.1..NX.
+#&gt; 1                               0.0                      0.0
+#&gt; 2                              26.0                     10.2
+#&gt; 3                               0.1                     18.1
+#&gt; 4                               0.1                      0.2
+#&gt; 5                               0.2                     26.1
+#&gt; 6                               1.8                      3.3
+#&gt;   Tissue.RNA...small.intestine..NX. Tissue.RNA...smooth.muscle..NX.
+#&gt; 1                               0.0                             0.0
+#&gt; 2                              23.1                            57.7
+#&gt; 3                               0.1                             0.1
+#&gt; 4                               0.1                             0.1
+#&gt; 5                               0.3                             0.0
+#&gt; 6                               0.7                             0.3
+#&gt;   Tissue.RNA...spinal.cord..NX. Tissue.RNA...spleen..NX.
+#&gt; 1                           0.0                      0.1
+#&gt; 2                          20.9                     42.3
+#&gt; 3                           0.1                      0.1
+#&gt; 4                           0.1                      0.1
+#&gt; 5                           0.0                      0.0
+#&gt; 6                           1.2                      2.2
+#&gt;   Tissue.RNA...stomach.1..NX. Tissue.RNA...testis..NX.
+#&gt; 1                         0.0                      0.0
+#&gt; 2                        25.8                     26.2
+#&gt; 3                         0.1                      1.3
+#&gt; 4                        25.0                      0.1
+#&gt; 5                         0.1                      0.3
+#&gt; 6                         0.2                      8.2
+#&gt;   Tissue.RNA...thalamus..NX. Tissue.RNA...thymus..NX.
+#&gt; 1                        0.0                      0.0
+#&gt; 2                       13.0                      4.0
+#&gt; 3                        0.1                      1.2
+#&gt; 4                        0.1                      0.1
+#&gt; 5                        0.0                      0.4
+#&gt; 6                        0.3                      0.3
+#&gt;   Tissue.RNA...thyroid.gland..NX. Tissue.RNA...tongue..NX.
+#&gt; 1                             0.0                      0.0
+#&gt; 2                            29.5                     17.0
+#&gt; 3                             0.1                     54.7
+#&gt; 4                             0.3                      0.1
+#&gt; 5                             0.0                     22.2
+#&gt; 6                             0.8                      0.3
+#&gt;   Tissue.RNA...tonsil..NX. Tissue.RNA...urinary.bladder..NX.
+#&gt; 1                      0.0                               0.0
+#&gt; 2                      8.6                              68.9
+#&gt; 3                     67.9                               0.3
+#&gt; 4                      0.1                               0.3
+#&gt; 5                      1.0                               0.7
+#&gt; 6                      0.3                               0.9
+#&gt;   Tissue.RNA...vagina..NX. Tissue.RNA...B.cells..NX.
+#&gt; 1                      0.0                       0.6
+#&gt; 2                     59.0                       0.2
+#&gt; 3                     28.7                       1.0
+#&gt; 4                      0.1                       0.0
+#&gt; 5                      1.2                       0.0
+#&gt; 6                      0.3                       1.3
+#&gt;   Tissue.RNA...dendritic.cells..NX. Tissue.RNA...granulocytes..NX.
+#&gt; 1                               1.6                            0.0
+#&gt; 2                               1.4                            0.0
+#&gt; 3                               1.2                            1.8
+#&gt; 4                               0.0                            0.0
+#&gt; 5                               0.0                            0.0
+#&gt; 6                               1.3                            2.2
+#&gt;   Tissue.RNA...monocytes..NX. Tissue.RNA...NK.cells..NX.
+#&gt; 1                         0.1                        0.0
+#&gt; 2                         0.4                        0.0
+#&gt; 3                         2.0                        1.5
+#&gt; 4                         0.0                        0.0
+#&gt; 5                         0.0                        0.0
+#&gt; 6                         0.1                        1.8
+#&gt;   Tissue.RNA...T.cells..NX. Tissue.RNA...total.PBMC..NX. Cell.RNA...A.431..NX.
+#&gt; 1                       1.0                          0.7                   0.0
+#&gt; 2                       4.4                          0.3                   0.0
+#&gt; 3                       0.9                          0.2                   0.1
+#&gt; 4                       0.8                          0.0                   0.3
+#&gt; 5                       0.0                          0.0                   0.0
+#&gt; 6                       0.2                          0.0                   0.9
+#&gt;   Cell.RNA...A549..NX. Cell.RNA...AF22..NX. Cell.RNA...AN3.CA..NX.
+#&gt; 1                  0.7                  0.1                    1.3
+#&gt; 2                  0.0                111.0                    0.0
+#&gt; 3                  0.1                  0.1                    0.1
+#&gt; 4                  2.6                  0.0                    0.0
+#&gt; 5                  0.0                  0.0                    0.0
+#&gt; 6                  4.5                  0.7                    0.5
+#&gt;   Cell.RNA...ASC.diff..NX. Cell.RNA...ASC.TERT1..NX. Cell.RNA...BEWO..NX.
+#&gt; 1                        0                       0.3                  0.6
+#&gt; 2                       33                       2.4                  0.3
+#&gt; 3                        0                       0.0                  2.8
+#&gt; 4                        0                       0.0                  0.0
+#&gt; 5                        0                       0.0                  0.0
+#&gt; 6                        0                       0.1                  0.5
+#&gt;   Cell.RNA...BJ..NX. Cell.RNA...BJ.hTERT...NX.
+#&gt; 1                1.9                       0.0
+#&gt; 2               13.2                       3.6
+#&gt; 3                0.0                       0.0
+#&gt; 4                3.7                       0.0
+#&gt; 5                0.0                       0.0
+#&gt; 6                0.0                       0.4
+#&gt;   Cell.RNA...BJ.hTERT..SV40.Large.T...NX.
+#&gt; 1                                     0.0
+#&gt; 2                                     0.0
+#&gt; 3                                     0.0
+#&gt; 4                                     0.0
+#&gt; 5                                     0.0
+#&gt; 6                                     0.3
+#&gt;   Cell.RNA...BJ.hTERT..SV40.Large.T..RasG12V..NX. Cell.RNA...CACO.2..NX.
+#&gt; 1                                             0.0                    0.2
+#&gt; 2                                             0.0                    0.0
+#&gt; 3                                             0.0                    0.0
+#&gt; 4                                             0.1                    0.0
+#&gt; 5                                             0.0                    0.0
+#&gt; 6                                             0.1                    0.1
+#&gt;   Cell.RNA...CAPAN.2..NX. Cell.RNA...Daudi..NX. Cell.RNA...EFO.21..NX.
+#&gt; 1                     0.0                   1.7                    0.9
+#&gt; 2                     0.0                   0.0                    0.0
+#&gt; 3                     2.0                   0.1                    0.0
+#&gt; 4                     0.2                   0.0                    0.0
+#&gt; 5                     0.0                   0.2                    0.0
+#&gt; 6                     3.2                   3.7                    0.5
+#&gt;   Cell.RNA...fHDF.TERT166..NX. Cell.RNA...HaCaT..NX. Cell.RNA...HAP1..NX.
+#&gt; 1                            0                   0.0                    0
+#&gt; 2                            0                   0.0                    0
+#&gt; 3                            0                   0.3                    0
+#&gt; 4                            0                   0.1                    0
+#&gt; 5                            0                   0.0                    0
+#&gt; 6                            0                   1.1                    0
+#&gt;   Cell.RNA...HBEC3.KT..NX. Cell.RNA...HBF.TERT88..NX. Cell.RNA...HDLM.2..NX.
+#&gt; 1                      0.0                        0.0                    0.9
+#&gt; 2                      0.0                        0.0                    0.0
+#&gt; 3                      0.3                        0.0                    0.1
+#&gt; 4                      0.0                        0.0                    0.0
+#&gt; 5                      0.0                        0.0                    0.0
+#&gt; 6                      0.0                        0.3                    0.0
+#&gt;   Cell.RNA...HEK.293..NX. Cell.RNA...HEL..NX. Cell.RNA...HeLa..NX.
+#&gt; 1                     5.0                 2.6                  0.0
+#&gt; 2                     0.0                 0.0                  1.5
+#&gt; 3                     0.1                 0.2                  0.1
+#&gt; 4                     0.0                 0.2                  0.1
+#&gt; 5                     0.0                 0.0                  0.3
+#&gt; 6                     1.1                 0.1                  0.7
+#&gt;   Cell.RNA...Hep.G2..NX. Cell.RNA...HHSteC..NX. Cell.RNA...HL.60..NX.
+#&gt; 1                    4.8                      0                   1.0
+#&gt; 2                   89.4                      0                   0.1
+#&gt; 3                    0.2                      0                   2.7
+#&gt; 4                    0.0                      0                   0.1
+#&gt; 5                    0.0                      0                   0.0
+#&gt; 6                    0.0                      0                   0.0
+#&gt;   Cell.RNA...HMC.1..NX. Cell.RNA...HSkMC..NX. Cell.RNA...hTCEpi..NX.
+#&gt; 1                   0.4                   0.2                    0.4
+#&gt; 2                   0.1                   5.5                    0.0
+#&gt; 3                  12.1                   0.0                    6.0
+#&gt; 4                   0.3                   0.2                    0.0
+#&gt; 5                   0.0                   0.0                    1.7
+#&gt; 6                   0.0                   0.0                    0.0
+#&gt;   Cell.RNA...hTEC.SVTERT24.B..NX. Cell.RNA...hTERT.HME1..NX.
+#&gt; 1                             0.0                          0
+#&gt; 2                             0.0                          0
+#&gt; 3                             0.0                          0
+#&gt; 4                             0.0                          0
+#&gt; 5                             0.0                          0
+#&gt; 6                             0.1                          0
+#&gt;   Cell.RNA...HUVEC.TERT2..NX. Cell.RNA...K.562..NX. Cell.RNA...Karpas.707..NX.
+#&gt; 1                         0.0                   0.8                        0.0
+#&gt; 2                         0.2                   0.0                        0.0
+#&gt; 3                         0.0                   0.3                        0.1
+#&gt; 4                         0.0                   0.0                        0.0
+#&gt; 5                         0.0                   0.0                        0.0
+#&gt; 6                         1.1                   0.0                        1.9
+#&gt;   Cell.RNA...LHCN.M2..NX. Cell.RNA...MCF7..NX. Cell.RNA...MOLT.4..NX.
+#&gt; 1                     0.0                  1.8                    0.9
+#&gt; 2                     0.0                  0.0                    0.0
+#&gt; 3                     0.0                  0.0                    0.0
+#&gt; 4                     0.0                  0.0                    0.0
+#&gt; 5                     0.0                  0.0                    0.0
+#&gt; 6                     0.4                  0.5                    0.1
+#&gt;   Cell.RNA...NB.4..NX. Cell.RNA...NTERA.2..NX. Cell.RNA...PC.3..NX.
+#&gt; 1                  1.6                     0.3                  0.4
+#&gt; 2                  0.2                     0.5                  0.0
+#&gt; 3                  0.0                     2.3                  0.0
+#&gt; 4                  0.0                     0.0                  0.0
+#&gt; 5                  0.0                     0.0                  0.0
+#&gt; 6                  0.1                     1.2                  0.4
+#&gt;   Cell.RNA...REH..NX. Cell.RNA...RH.30..NX. Cell.RNA...RPMI.8226..NX.
+#&gt; 1                 6.4                   3.1                       1.3
+#&gt; 2                 0.2                   0.1                       0.1
+#&gt; 3                 0.1                   0.3                       0.0
+#&gt; 4                 0.0                   0.1                       0.0
+#&gt; 5                 0.0                   0.0                       0.0
+#&gt; 6                 0.2                   0.2                       1.9
+#&gt;   Cell.RNA...RPTEC.TERT1..NX. Cell.RNA...RT4..NX. Cell.RNA...SCLC.21H..NX.
+#&gt; 1                           0                 0.0                      0.0
+#&gt; 2                           0                 0.0                      0.0
+#&gt; 3                           0                 0.1                      0.0
+#&gt; 4                           0                 0.1                      0.1
+#&gt; 5                           0                 0.0                      0.0
+#&gt; 6                           0                 0.1                      5.6
+#&gt;   Cell.RNA...SH.SY5Y..NX. Cell.RNA...SiHa..NX. Cell.RNA...SK.BR.3..NX.
+#&gt; 1                     0.4                  0.7                     0.2
+#&gt; 2                     0.1                  0.2                     0.0
+#&gt; 3                     0.0                  0.0                    15.1
+#&gt; 4                     0.0                  0.1                     0.0
+#&gt; 5                     0.0                  0.0                     0.0
+#&gt; 6                     0.4                  0.1                     0.2
+#&gt;   Cell.RNA...SK.MEL.30..NX. Cell.RNA...T.47d..NX. Cell.RNA...THP.1..NX.
+#&gt; 1                       0.8                   1.0                   1.1
+#&gt; 2                      32.1                   0.0                   0.0
+#&gt; 3                       0.0                   0.2                   0.1
+#&gt; 4                       0.0                   0.4                   0.6
+#&gt; 5                       0.0                   0.0                   0.0
+#&gt; 6                       1.5                   2.8                   0.7
+#&gt;   Cell.RNA...TIME..NX. Cell.RNA...U.138.MG..NX. Cell.RNA...U.2.OS..NX.
+#&gt; 1                  0.0                      1.8                    0.3
+#&gt; 2                  0.0                      0.0                    0.9
+#&gt; 3                  0.4                      0.0                    0.0
+#&gt; 4                  0.0                      0.2                    0.1
+#&gt; 5                  0.0                      0.0                    0.0
+#&gt; 6                  0.0                      0.0                    1.8
+#&gt;   Cell.RNA...U.2197..NX. Cell.RNA...U.251.MG..NX. Cell.RNA...U.266.70..NX.
+#&gt; 1                    0.0                      0.0                      4.8
+#&gt; 2                    0.2                      0.0                      0.1
+#&gt; 3                    0.0                      0.0                      0.0
+#&gt; 4                    0.8                      0.0                      0.0
+#&gt; 5                    0.0                      0.0                      0.2
+#&gt; 6                    0.2                      0.1                      4.5
+#&gt;   Cell.RNA...U.266.84..NX. Cell.RNA...U.698..NX. Cell.RNA...U.87.MG..NX.
+#&gt; 1                      2.1                   1.6                     0.0
+#&gt; 2                      0.0                   0.1                     0.0
+#&gt; 3                      0.0                   0.3                     0.0
+#&gt; 4                      0.0                   0.0                     0.1
+#&gt; 5                      0.0                   0.0                     0.0
+#&gt; 6                      4.7                   6.6                     1.2
+#&gt;   Cell.RNA...U.937..NX. Cell.RNA...WM.115..NX. Blood.RNA...basophil..NX.
+#&gt; 1                   1.1                    0.0                       0.0
+#&gt; 2                   0.0                    2.1                       0.0
+#&gt; 3                   0.3                    0.0                       1.8
+#&gt; 4                   0.6                    0.1                       0.0
+#&gt; 5                   0.1                    0.0                       0.0
+#&gt; 6                   0.4                    0.8                       2.0
+#&gt;   Blood.RNA...classical.monocyte..NX. Blood.RNA...eosinophil..NX.
+#&gt; 1                                 0.1                         0.0
+#&gt; 2                                 0.4                         0.0
+#&gt; 3                                 0.7                         0.4
+#&gt; 4                                 0.0                         0.0
+#&gt; 5                                 0.0                         0.0
+#&gt; 6                                 0.1                         2.2
+#&gt;   Blood.RNA...gdT.cell..NX. Blood.RNA...intermediate.monocyte..NX.
+#&gt; 1                       0.0                                    0.0
+#&gt; 2                       4.4                                    0.2
+#&gt; 3                       0.9                                    1.0
+#&gt; 4                       0.0                                    0.0
+#&gt; 5                       0.0                                    0.0
+#&gt; 6                       0.2                                    0.0
+#&gt;   Blood.RNA...MAIT.T.cell..NX. Blood.RNA...memory.B.cell..NX.
+#&gt; 1                          0.5                            0.1
+#&gt; 2                          2.6                            0.2
+#&gt; 3                          0.7                            0.9
+#&gt; 4                          0.0                            0.0
+#&gt; 5                          0.0                            0.0
+#&gt; 6                          0.0                            0.6
+#&gt;   Blood.RNA...memory.CD4.T.cell..NX. Blood.RNA...memory.CD8.T.cell..NX.
+#&gt; 1                                0.4                                0.5
+#&gt; 2                                0.5                                1.2
+#&gt; 3                                0.4                                0.4
+#&gt; 4                                0.0                                0.0
+#&gt; 5                                0.0                                0.0
+#&gt; 6                                0.1                                0.0
+#&gt;   Blood.RNA...myeloid.DC..NX. Blood.RNA...naive.B.cell..NX.
+#&gt; 1                         0.5                           0.6
+#&gt; 2                         0.3                           0.0
+#&gt; 3                         0.3                           1.0
+#&gt; 4                         0.0                           0.0
+#&gt; 5                         0.0                           0.0
+#&gt; 6                         0.0                           1.3
+#&gt;   Blood.RNA...naive.CD4.T.cell..NX. Blood.RNA...naive.CD8.T.cell..NX.
+#&gt; 1                               0.0                               0.3
+#&gt; 2                               0.1                               0.7
+#&gt; 3                               0.5                               0.6
+#&gt; 4                               0.0                               0.8
+#&gt; 5                               0.0                               0.0
+#&gt; 6                               0.0                               0.2
+#&gt;   Blood.RNA...neutrophil..NX. Blood.RNA...NK.cell..NX.
+#&gt; 1                         0.0                      0.0
+#&gt; 2                         0.0                      0.0
+#&gt; 3                         1.7                      1.5
+#&gt; 4                         0.0                      0.0
+#&gt; 5                         0.0                      0.0
+#&gt; 6                         0.6                      1.8
+#&gt;   Blood.RNA...non.classical.monocyte..NX. Blood.RNA...plasmacytoid.DC..NX.
+#&gt; 1                                       0                              1.6
+#&gt; 2                                       0                              1.4
+#&gt; 3                                       2                              1.2
+#&gt; 4                                       0                              0.0
+#&gt; 5                                       0                              0.0
+#&gt; 6                                       0                              1.3
+#&gt;   Blood.RNA...T.reg..NX. Blood.RNA...total.PBMC..NX. Brain.RNA...amygdala..NX.
+#&gt; 1                    1.0                         0.7                       0.0
+#&gt; 2                    0.0                         0.3                      12.5
+#&gt; 3                    0.4                         0.2                       0.1
+#&gt; 4                    0.0                         0.0                       0.1
+#&gt; 5                    0.0                         0.0                       0.0
+#&gt; 6                    0.1                         0.0                       1.2
+#&gt;   Brain.RNA...basal.ganglia..NX. Brain.RNA...cerebellum..NX.
+#&gt; 1                            0.0                         0.0
+#&gt; 2                           16.8                         6.1
+#&gt; 3                            0.2                         0.1
+#&gt; 4                            0.1                         0.1
+#&gt; 5                            0.0                         0.0
+#&gt; 6                            0.8                         1.3
+#&gt;   Brain.RNA...cerebral.cortex..NX. Brain.RNA...hippocampal.formation..NX.
+#&gt; 1                              0.0                                    0.0
+#&gt; 2                             16.1                                   12.4
+#&gt; 3                              0.1                                    0.1
+#&gt; 4                              0.1                                    0.1
+#&gt; 5                              0.0                                    0.0
+#&gt; 6                              0.9                                    1.2
+#&gt;   Brain.RNA...hypothalamus..NX. Brain.RNA...midbrain..NX.
+#&gt; 1                           0.0                       0.0
+#&gt; 2                          10.2                      16.9
+#&gt; 3                           0.0                       0.1
+#&gt; 4                           0.1                       0.1
+#&gt; 5                           0.0                       0.0
+#&gt; 6                           1.5                       1.7
+#&gt;   Brain.RNA...olfactory.region..NX. Brain.RNA...pons.and.medulla..NX.
+#&gt; 1                               0.0                               0.0
+#&gt; 2                               8.0                              20.5
+#&gt; 3                               0.1                               0.1
+#&gt; 4                               0.1                               0.1
+#&gt; 5                               0.0                               0.0
+#&gt; 6                               0.7                               1.9
+#&gt;   Brain.RNA...thalamus..NX.
+#&gt; 1                       0.0
+#&gt; 2                      13.0
+#&gt; 3                       0.1
+#&gt; 4                       0.1
+#&gt; 5                       0.0
+#&gt; 6                       0.3</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Laurent Gatto &lt;lg390@cam.ac.uk&gt;</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -367,7 +1159,7 @@ following conditions are met:</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
