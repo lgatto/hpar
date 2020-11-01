@@ -1,6 +1,6 @@
-# hpar 1.31
+# hpar 1.33
 
-## Changes in version 1.31.1
+## Changes in version 1.33.1
 
 - Update to HPA release 19.3 (2020.03.06) <2020-10-26 Mon>
 - New release for Bioconductor devel 3.12 <2020-10-26 Mon>
@@ -8,6 +8,10 @@
 - Added the Secretome data <2020-10-28 Wed>
 - Updated the documentation and docs folder for pkgdown <2020-10-29 Thu>
 - Automated `allHparData()` <2020-10-29 Thu>
+
+## Changes in version 1.33.0
+
+- New Bioc devel version
 
 # hpar 1.29
 
