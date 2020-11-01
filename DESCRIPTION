@@ -12,7 +12,6 @@ Authors@R:
 	     family = "Martin",
 	     email = "manon.martin@uclouvain.be",
 	     role = "aut"))
-
 Description: The hpar package provides a simple R interface to and
 	     data from the Human Protein Atlas project.
 Depends:
