@@ -8,6 +8,7 @@
 \alias{hpaSubcellularLoc}
 \alias{hpaSubcellularLoc14}
 \alias{hpaSubcellularLoc16.1}
+\alias{hpaSecretome}
 \alias{rnaGeneCellLine}
 \alias{rnaGeneCellLine16.1}
 \alias{rnaGeneTissue}
@@ -33,54 +34,79 @@
 }
 
 \details{ Several flat files are distributed by the HPA project and
-  available within the package as \code{data.frame}s. The description
-  below is taken from the HPA site:
+  available within the package as \code{data.frame}s, other datasets 
+  are available through a search query on the HPA website. 
+  The description below is taken from the HPA site:
 
 \describe{
 
   \item{hpaNormalTissue}{\bold{Normal tissue data}: Expression profiles
-    for proteins in human tissues based on immunohistochemisty using
-    tissue micro arrays. The comma-separated file includes Ensembl gene
-    identifier ("Gene"), tissue name ("Tissue"), annotated cell type
-    ("Cell type"), expression value ("Level"), the type of annotation
-    (annotated protein expression (APE), based on more than one antibody,
-    or staining, based on one antibody only) ("Expression type"), and the
-    reliability or validation of the expression value ("Reliability").}
+  for proteins in human tissues based on immunohistochemisty using tissue
+  micro arrays. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell type"), 
+  expression value ("Level"), and the gene reliability of the expression 
+  value ("Reliability").}
+  
+  \item{hpaNormalTissue16.1}{Same as above, for version 16.1}
 
-  \item{hpaCancer}{\bold{Cancer tumor data}: Staining profiles for
-    proteins in human tumor tissue based on immunohistochemisty using
-    tissue micro arrays. The comma-separated file includes Ensembl gene
-    identifier ("Gene"), tumor name ("Tumor"), staining value ("Level"),
-    the number of patients that stain for this staining value
-    ("Count patients"), the total amount of patients for this tumor type
-    ("Total patients") and the type of annotation staining
-    ("Expression type").  }
+  \item{hpaCancer}{\bold{Pathology data}: Staining profiles for 
+  proteins in human tumor tissue based on immunohistochemisty using 
+  tissue micro arrays and log-rank P value for Kaplan-Meier analysis 
+  of correlation between mRNA expression level and patient survival. 
+  The tab-separated file includes Ensembl gene identifier ("Gene"), 
+  gene name ("Gene name"), tumor name ("Cancer"), the number of 
+  patients annotated for different staining levels ("High", "Medium",
+  "Low" & "Not detected") and log-rank p values for patient survival 
+  and mRNA correlation ("prognostic - favourable", 
+  "unprognostic - favourable", "prognostic - unfavourable", 
+  "unprognostic - unfavourable").}
 
-  \item{rnaGeneTissue}{\bold{RNA gene data}: RNA levels in 45 cell lines
-    and 32 tissues based on RNA-seq. The comma-separated file includes
-    Ensembl gene identifier ("Gene"), analysed sample ("Sample"),
-    fragments per kilobase of transcript per million fragments mapped
-    ("Value" and "Unit"), and abundance class ("Abundance"). }
-
-  \item{rnaGeneCellLine}{\bold{RNA gene data}: RNA levels in 45 cell
-    lines and 32 tissues based on RNA-seq. The comma-separated file
-    includes Ensembl gene identifier ("Gene"), analysed sample
-    ("Sample"), fragments per kilobase of transcript per million
-    fragments mapped ("Value" and "Unit"), and abundance class
-    ("Abundance"). }
+  \item{hpaCancer16.1}{Same as above, for version 16.1}
+  
+  \item{rnaGeneTissue}{\bold{RNA HPA tissue gene data}: Transcript 
+  expression levels summarized per gene in 37 tissues based on 
+  RNA-seq. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), analysed sample ("Tissue"), transcripts per million 
+  ("TPM"), protein-transcripts per million ("pTPM") and 
+  normalized expression ("NX"). }
+  
+  \item{rnaGeneCellLine}{\bold{RNA HPA cell line gene data}: 
+  Transcript expression levels summarized per gene in 64 cell 
+  lines. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), analysed sample ("Cell line"), transcripts per
+  million ("TPM"), protein-coding transcripts per million ("pTPM") 
+  and normalized expression ("NX").}
+  
+  \item{rnaGeneCellLine16.1}{Same as above, for version 16.1}
 
   \item{hpaSubcellularLoc}{\bold{Subcellular location data}:
-    Subcellular localization of proteins based on
-    immunofluorescently stained cells. The comma-separated file
-    includes Ensembl gene identifier ("Gene"), main subcellular
-    location of the protein ("Main location"), other locations
-    ("Other location"), the type of annotation (annotated protein
-    expression (APE), based on more than one antibody, or staining,
-    based on one antibody only) ("Expression type"), and the
-    reliability or validation of the expression value
-    ("Reliability"). }
-
+  Subcellular location of proteins based on immunofluorescently stained 
+  cells. The tab-separated file includes the following columns: Ensembl 
+  gene identifier ("Gene"), name of gene ("Gene name"), gene reliability 
+  score ("Reliability"), enhanced locations ("Enhanced"), supported 
+  locations ("Supported"), Approved locations ("Approved"), uncertain 
+  locations ("Uncertain"), locations with single-cell variation in 
+  intensity ("Single-cell variation intensity"), locations with spatial 
+  single-cell variation ("Single-cell variation spatial"), locations 
+  with observed cell cycle dependency (type can be one or more of 
+  biological definition, custom data or correlation) ("Cell cycle 
+  dependency"), Gene Ontology Cellular Component term identifier 
+  ("GO id").}
+  
+  \item{hpaSubcellularLoc16.1}{Same as above, for version 16.1}
+  
   \item{hpaSubcellularLoc14}{Same as above, for version 14.}
+  
+  \item{hpaSecretome}{\bold{Secretome data}:
+    The human secretome is here defined as all Ensembl genes with 
+    at least one predicted secreted transcript according to HPA 
+    predictions. The complete information about the HPA Secretome 
+    data is given on 
+    \url{https://www.proteinatlas.org/humanproteome/blood/secretome}. 
+    This dataset has 230 columns and includes the Ensembl gene identifier 
+    ("Gene"). Information about the additionnal variables can be found 
+    \href{https://www.proteinatlas.org/search}{here} by clicking on 
+    \emph{Show/hide columns}.}
 
 }
 
@@ -110,7 +136,7 @@ following conditions are met:
 }
 
 \author{
-  Laurent Gatto <lg390@cam.ac.uk>
+  Laurent Gatto <laurent.gatto@uclouvain.be>
 }
 
 \seealso{
@@ -128,6 +154,8 @@ following conditions are met:
   \url{http://www.proteinatlas.org/about/download} for more details and
   documentation.
 
+  Uhlen et al (2015). Tissue-based map of the human proteome. Science. 
+  347(6220):1260419. 
 
   Uhlen et al (2010). Towards a knowledge-based Human Protein Atlas. Nat
   Biotechnol. 28(12):1248-50. 
@@ -165,6 +193,9 @@ head(hpaSubcellularLoc14)
 
 data(hpaCancer)
 head(hpaCancer)
+
+data(hpaSecretome)
+head(hpaSecretome)
 }
 
 \keyword{ datasets }

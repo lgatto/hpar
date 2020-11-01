@@ -26,8 +26,8 @@ test_that("hpar options", {
     expect_identical(getOption("hpar")[[1]], "hpaNormalTissue")
     setHparOptions("hpaSubcellularLoc") ## subcell
     expect_identical(getOption("hpar")[[1]], "hpaSubcellularLoc")
-    setHparOptions("hpaCan") ## cancer, partial match
-    expect_identical(getOption("hpar")[[1]], "hpaCancer")
+    setHparOptions("hpaSecr") ## Secretome, partial match
+    expect_identical(getOption("hpar")[[1]], "hpaSecretome")
 })
 
 test_that("getHpa", {
@@ -36,7 +36,7 @@ test_that("getHpa", {
     res0 <- getHpa(id)
     res1 <- getHpa(id, type = "data")
     expect_identical(res0, res1)
-    expect_identical(dim(res0), c(80L, 6L))
+    expect_identical(dim(res0), c(79L, 6L))
     expect_true(all(res0$Gene == id))
     ## -------------
     res0 <- getHpa(id, hpadata = "hpaSubcellularLoc14")

@@ -10,3 +10,6 @@ link.svg
 pkgdown.css
 pkgdown.js
 reference
+.git
+.github
+.editorconfig

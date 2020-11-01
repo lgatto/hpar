@@ -1,16 +1,23 @@
 Package: hpar
 Type: Package
 Title: Human Protein Atlas in R
-Version: 1.33.0
-Authors@R: person(given = "Laurent",
-		  family = "Gatto",
-		  email = "laurent.gatto@uclouvain.be",
-		  role = c("aut","cre"))
+Version: 1.33.1
+Authors@R:
+    c(person(given = "Laurent",
+	     family = "Gatto",
+	     email = "laurent.gatto@uclouvain.be",
+	     comment = c(ORCID = "0000-0002-1520-2268"),
+	     role = c("cre","aut")),
+      person(given = "Manon",
+	     family = "Martin",
+	     email = "manon.martin@uclouvain.be",
+	     role = "aut"))
 Description: The hpar package provides a simple R interface to and
 	     data from the Human Protein Atlas project.
 Depends:
-    R (>= 2.15)
-Imports: utils
+    R (>= 3.5.0)
+Imports:
+    utils
 Suggests:
     org.Hs.eg.db,
     GO.db,
@@ -24,4 +31,4 @@ Collate:
     hpa.R
     zzz.R
 biocViews: Proteomics, Homo_sapiens, CellBiology
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
