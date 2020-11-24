@@ -1,5 +1,9 @@
 # hpar 1.33
 
+## Changes in version 1.33.3
+
+- Update to HPA release 20.0 <2020-11-24 Thu>
+
 ## Changes in version 1.33.2
 
 - Nothing yet
