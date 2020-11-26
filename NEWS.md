@@ -2,7 +2,7 @@
 
 ## Changes in version 1.33.2
 
-- Nothing yet
+- Update to HPA release 20.0 <2020-11-24 Thu>
 
 ## Changes in version 1.33.1
 
