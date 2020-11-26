@@ -121,8 +121,8 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"hpar"</span><span class="op">)</span></code></pre></div>
 <pre><code>## This is hpar version 1.33.2,
 ## based on the Human Protein Atlas
-##   Version: 19.3
-##   Release data: 2020.03.06
+##   Version: 20.0
+##   Release data: 2020.11.19
 ##   Ensembl build: 92.38
 ## See '?hpar' or 'vignette('hpar')' for details.</code></pre>
 <p>so that all the package’s functionality and data is available to the user.</p>
@@ -138,7 +138,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 1056061       6</code></pre>
+<pre><code>## [1] 1118517       6</code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "Gene"        "Gene.name"   "Tissue"      "Cell.type"   "Level"      
@@ -146,11 +146,11 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Number of genes</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Gene</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 15313</code></pre>
+<pre><code>## [1] 15320</code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Number of cell types</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Cell.type</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 84</code></pre>
+<pre><code>## [1] 120</code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Cell.type</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## NULL</code></pre>
@@ -201,12 +201,12 @@
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, hpadata <span class="op">=</span> <span class="st">"rnaGeneCellLine"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##              Gene Gene.name Cell.line   TPM  pTPM   NX
-## 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.8
-## 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.5
-## 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.3
-## 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.3
-## 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.4
-## 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.7</code></pre>
+## 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.9
+## 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.6
+## 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.7
+## 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.5
+## 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.6
+## 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.8</code></pre>
 <p>If we ask for <code>"detail"</code>, a browser page pointing to the relevant page is open (see figure below)</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, type <span class="op">=</span> <span class="st">"details"</span><span class="op">)</span></code></pre></div>
@@ -248,11 +248,11 @@
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaVersion</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## version 
-##  "19.3"</code></pre>
+##  "20.0"</code></pre>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaDate</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>##         date 
-## "2020.03.06"</code></pre>
+## "2020.11.19"</code></pre>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaEnsembl</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## ensembl 
@@ -296,7 +296,7 @@
 <div id="session-information" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session information</h1>
-<pre><code>## R Under development (unstable) (2020-11-12 r79424)
+<pre><code>## R Under development (unstable) (2020-11-18 r79449)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.1 LTS
 ## 
@@ -318,19 +318,19 @@
 ## other attached packages:
 ## [1] hpar_1.33.2          GO.db_3.12.1         org.Hs.eg.db_3.12.0 
 ## [4] AnnotationDbi_1.53.0 IRanges_2.25.2       S4Vectors_0.29.3    
-## [7] Biobase_2.51.0       BiocGenerics_0.37.0  BiocStyle_2.19.0    
+## [7] Biobase_2.51.0       BiocGenerics_0.37.0  BiocStyle_2.19.1    
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_1.0.5          compiler_4.1.0      BiocManager_1.30.10
 ##  [4] tools_4.1.0         digest_0.6.27       bit_4.0.4          
 ##  [7] evaluate_0.14       memoise_1.1.0       RSQLite_2.2.1      
-## [10] pkgconfig_2.0.3     rlang_0.4.8         DBI_1.1.0          
+## [10] pkgconfig_2.0.3     rlang_0.4.9         DBI_1.1.0          
 ## [13] yaml_2.2.1          pkgdown_1.6.1.9000  xfun_0.19          
 ## [16] stringr_1.4.0       knitr_1.30          desc_1.2.0         
-## [19] fs_1.5.0            vctrs_0.3.4         systemfonts_0.3.2  
+## [19] fs_1.5.0            vctrs_0.3.5         systemfonts_0.3.2  
 ## [22] rprojroot_2.0.2     bit64_4.0.5         R6_2.5.0           
 ## [25] textshaping_0.2.1   rmarkdown_2.5       bookdown_0.21      
-## [28] blob_1.2.1          magrittr_1.5        htmltools_0.5.0    
+## [28] blob_1.2.1          magrittr_2.0.1      htmltools_0.5.0    
 ## [31] assertthat_0.2.1    ragg_0.4.0          stringi_1.5.3      
 ## [34] crayon_1.3.4</code></pre>
 <div id="refs" class="references">

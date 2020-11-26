@@ -192,12 +192,12 @@ webpage).</p></td>
 #&gt; 5 ENSG00000000003    TSPAN6          breast 53.3 68.1
 #&gt; 6 ENSG00000000003    TSPAN6 cerebral cortex 18.5 22.8</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"rnaGeneCellLine"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;              Gene Gene.name Cell.line   TPM  pTPM   NX
-#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.8
-#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.5
-#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.3
-#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.3
-#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.4
-#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"hpaCancer"</span><span class='op'>)</span><span class='op'>)</span>
+#&gt; 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.9
+#&gt; 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.6
+#&gt; 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.7
+#&gt; 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.5
+#&gt; 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.6
+#&gt; 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.8</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span>, hpadata <span class='op'>=</span> <span class='st'>"hpaCancer"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;              Gene Gene.name             Cancer High Medium Low Not.detected
 #&gt; 1 ENSG00000000003    TSPAN6      breast cancer    1      7   2            2
 #&gt; 2 ENSG00000000003    TSPAN6          carcinoid    0      1   1            2
@@ -205,20 +205,20 @@ webpage).</p></td>
 #&gt; 4 ENSG00000000003    TSPAN6  colorectal cancer    0      6   2            2
 #&gt; 5 ENSG00000000003    TSPAN6 endometrial cancer   10      2   0            0
 #&gt; 6 ENSG00000000003    TSPAN6             glioma    0      0   0           11
-#&gt;   prognostic.favourable unprognostic.favourable prognostic.unfavourable
-#&gt; 1                    NA                0.077120                      NA
-#&gt; 2                    NA                      NA                      NA
-#&gt; 3                    NA                0.089670                      NA
-#&gt; 4                    NA                0.035620                      NA
-#&gt; 5                    NA                      NA                      NA
-#&gt; 6                    NA                0.002707                      NA
-#&gt;   unprognostic.unfavourable
-#&gt; 1                        NA
-#&gt; 2                        NA
-#&gt; 3                        NA
-#&gt; 4                        NA
-#&gt; 5                    0.2567
-#&gt; 6                        NA</div><div class='input'><span class='co'>## Sets default to "SubcellularLoc"</span>
+#&gt;   prognostic.favorable unprognostic.favorable prognostic.unfavorable
+#&gt; 1                   NA               0.077120                     NA
+#&gt; 2                   NA                     NA                     NA
+#&gt; 3                   NA               0.089670                     NA
+#&gt; 4                   NA               0.035620                     NA
+#&gt; 5                   NA                     NA                     NA
+#&gt; 6                   NA               0.002707                     NA
+#&gt;   unprognostic.unfavorable
+#&gt; 1                       NA
+#&gt; 2                       NA
+#&gt; 3                       NA
+#&gt; 4                       NA
+#&gt; 5                   0.2567
+#&gt; 6                       NA</div><div class='input'><span class='co'>## Sets default to "SubcellularLoc"</span>
 <span class='fu'><a href='setHparOptions.html'>setHparOptions</a></span><span class='op'>(</span>hpadata <span class='op'>=</span> <span class='st'>"hpaSubcellularLoc"</span><span class='op'>)</span>
 <span class='fu'>getHpa</span><span class='op'>(</span><span class='va'>id</span><span class='op'>)</span>       <span class='co'>## now uses "hpaSubcellularLoc"</span>
 </div><div class='output co'>#&gt;              Gene Gene.name Reliability          Main.location
