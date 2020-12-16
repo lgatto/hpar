@@ -1,3 +1,18 @@
+getHpaRelease <- function() {
+    rel <- readLines("http://www.proteinatlas.org/about/releases", warn = FALSE)
+    suppressWarnings(reldate <- grep("Release date:", rel, value = TRUE)[1])
+    suppressWarnings(relver <- grep("Protein Atlas version", rel, value = TRUE)[1])
+    reldate <- sub("</b.+$", "", sub("^.+<b>", "", reldate))
+    relver <- sub("<.+$", "", sub("^.+version ", "", relver))
+    hpa <- c("version" = relver, "date" = reldate)
+    ens <- grep("Ensembl version", rel, value = TRUE, useBytes=TRUE)[1]
+    ens <- sub("</b>", "", sub("^.+<b>", "", ens))
+    ens <- sub("\t", "", ens)
+    ans <- c(hpa, ensembl = ens)
+    return(ans)
+}
+
+
 allHparData <- function(){
   x <- grep(".rda", list.files(system.file("data", package = "hpar")), value = TRUE)
   x <- gsub(".rda","",x)
@@ -19,7 +34,7 @@ getHpaEnsembl <- function()
 
 ##' Queries one if the HPA data sets with the \code{id} Ensembl
 ##' gene identifier. The data set to be used is defined by the
-##' \code{hpadata} argument. 
+##' \code{hpadata} argument.
 ##'
 ##' @title HPA gene query
 ##' @param id A Ensembl gene identifier.
@@ -57,7 +72,7 @@ getHpaEnsembl <- function()
 ##'        hpadata = "hpaSubcellularLoc")
 ##' \dontrun{
 ##' ## opens a browser with http://www.proteinatlas.org/ENSG00000163435
-##' getHpa("ENSG00000163435", type = "details") 
+##' getHpa("ENSG00000163435", type = "details")
 ##' }
 getHpa <- function(id,
                    hpadata = NULL,
@@ -76,7 +91,7 @@ getHpa <- function(id,
     urls <- paste0("http://www.proteinatlas.org/", id)
     browseURL(urls[1])
     if (length(urls) > 1) {
-      ## to avoid a browser error complaining about 
+      ## to avoid a browser error complaining about
       ## running but not responding
       Sys.sleep(0.5)
       tmp <- sapply(urls[-1], browseURL)

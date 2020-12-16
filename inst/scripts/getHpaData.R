@@ -21,7 +21,7 @@ getAsDataframe_fromQuery <- function(url, ...){
     x <- read.table(tf, sep = '\t', header = TRUE, ...)
     on.exit(unlink(tf), add = TRUE)
     # format 1st column names
-    x <- x %>% dplyr::rename(Gene.name = Gene, Gene = Ensembl) 
+    x <- x %>% dplyr::rename(Gene.name = Gene, Gene = Ensembl)
     x <- x %>% dplyr::relocate(Gene, Gene.name)
     return(x)
 }
@@ -63,7 +63,7 @@ rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_cel
 saveObjAsRda(rnaGeneCellLine)
 
 
-## Secretome data: The human 'secretome' can be defined as all genes encoding at 
+## Secretome data: The human 'secretome' can be defined as all genes encoding at
 ## least one secreted protein
 url <- "https://www.proteinatlas.org/search/sa_location%3ASecreted+-+unknown+location%2CSecreted+in+brain%2CSecreted+in+female+reproductive+system%2CSecreted+in+male+reproductive+system%2CSecreted+in+other+tissues%2CSecreted+to+blood%2CSecreted+to+digestive+system%2CSecreted+to+extracellular+matrix%2CIntracellular+and+membrane?format=tsv"
 hpaSecretome <- getAsDataframe_fromQuery(url)
@@ -84,20 +84,5 @@ saveObjAsRda(hpaSecretome)
 
 
 ## * Populate PKGDIR/inst/extdata
-
-getHpaRelease <- function() {
-    rel <- readLines("http://www.proteinatlas.org/about/releases", warn = FALSE)
-    suppressWarnings(reldate <- grep("Release date:", rel, value = TRUE)[1])
-    suppressWarnings(relver <- grep("Protein Atlas version", rel, value = TRUE)[1])
-    reldate <- sub("</b.+$", "", sub("^.+<b>", "", reldate))
-    relver <- sub("<.+$", "", sub("^.+version ", "", relver))
-    hpa <- c("version" = relver, "date" = reldate)
-    ens <- grep("Ensembl version", rel, value = TRUE, useBytes=TRUE)[1]
-    ens <- sub("</b>", "", sub("^.+<b>", "", ens))
-    ens <- sub("\t", "", ens)
-    ans <- c(hpa, ensembl = ens)
-    return(ans)
-}
-
-hpaRelease <- getHpaRelease()
+hpaRelease <- hpar:::getHpaRelease()
 save(hpaRelease, file = "../extdata/hpaRelease.rda")

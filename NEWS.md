@@ -1,5 +1,10 @@
 # hpar 1.33
 
+## Changes in version 1.33.3
+
+- Private `getHpaRelease()` function that extracts the version, date
+  and ensembl version from the Human Protein Atlas webpage.
+
 ## Changes in version 1.33.2
 
 - Update to HPA release 20.0 <2020-11-24 Thu>
