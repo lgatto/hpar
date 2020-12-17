@@ -2,8 +2,10 @@
 
 ## Changes in version 1.33.3
 
-- Private `getHpaRelease()` function that extracts the version, date
-  and ensembl version from the Human Protein Atlas webpage.
+- Private `getHpaRelease()` and `newHpaVersion()` functions that
+  extracts the version, date and ensembl version from the Human
+  Protein Atlas webpage and compares the version to the data in
+  `hpar`.
 
 ## Changes in version 1.33.2
 

@@ -1,3 +1,5 @@
+## Extracts the extracts the version, date and ensembl version from the Human
+## Protein Atlas webpage.
 getHpaRelease <- function() {
     rel <- readLines("http://www.proteinatlas.org/about/releases", warn = FALSE)
     suppressWarnings(reldate <- grep("Release date:", rel, value = TRUE)[1])
@@ -12,6 +14,13 @@ getHpaRelease <- function() {
     return(ans)
 }
 
+## Return TRUE if the version extraced from the Human Protein Atlas webpage is
+## different for the one in hpar. FALSE otherwise.
+newHpaVersion <- function() {
+    hpa_version <- hpar:::getHpaRelease()['version']
+    hpar_version <- getHpaVersion()
+    !identical(hpa_version, hpar_version)
+}
 
 allHparData <- function(){
   x <- grep(".rda", list.files(system.file("data", package = "hpar")), value = TRUE)
