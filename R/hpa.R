@@ -72,7 +72,7 @@ getHpa <- function(id,
   data(list = hpadata, envir = environment())
   idx <- with(get(hpadata), which(Gene %in% id))
   ans <- get(hpadata)[idx, ]
-  if (type == "details") {
+  if (type == "details" && interactive()) {
     urls <- paste0("http://www.proteinatlas.org/", id)
     browseURL(urls[1])
     if (length(urls) > 1) {
