@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -65,16 +67,16 @@
 <div id="human-protein-atlas-in-r" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#human-protein-atlas-in-r" class="anchor"></a>Human Protein Atlas in R</h1></div>
-<p><code>hpar</code> is a simple interface to the <a href="http://www.proteinatlas.org/">Human Protein Atlas</a>.</p>
-<p>The official Bioconductor landing page for the <a href="http://bioconductor.org/packages/release/bioc/html/hpar.html">release</a> and devel <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html">versions</a>.</p>
+<p><code>hpar</code> is a simple interface to the <a href="http://www.proteinatlas.org/" class="external-link">Human Protein Atlas</a>.</p>
+<p>The official Bioconductor landing page for the <a href="http://bioconductor.org/packages/release/bioc/html/hpar.html" class="external-link">release</a> and devel <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html" class="external-link">versions</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## load or install BiocManager</span>
-<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
-<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"hpar"</span>, version <span class="op">=</span> <span class="st">"devel"</span><span class="op">)</span></code></pre></div>
+<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"hpar"</span>, version <span class="op">=</span> <span class="st">"devel"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
@@ -83,12 +85,12 @@
 <pre><code><a href="articles/hpar.html">vignette("hpar")
 ?hpar</a></code></pre>
 <p>Online:</p>
-<p><a href="http://lgatto.github.io/hpar" class="uri">http://lgatto.github.io/hpar</a></p>
+<p>http://lgatto.github.io/hpar</p>
 </div>
 <div id="questions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#questions" class="anchor"></a>Questions</h2>
-<p>Open a <a href="https://github.com/lgatto/hpar/issues">github issue</a> or ask on the <a href="https://support.bioconductor.org/">Bioconductor support forum</a>.</p>
+<p>Open a <a href="https://github.com/lgatto/hpar/issues" class="external-link">github issue</a> or ask on the <a href="https://support.bioconductor.org/" class="external-link">Bioconductor support forum</a>.</p>
 </div>
 </div>
 
@@ -96,43 +98,50 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from BIOC at <br><a href="https://www.bioconductor.org/packages/hpar">https://​www.bioconductor.org/​packages/​hpar</a>
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.r-project.org/Licenses/Artistic-2.0">Artistic-2.0</a></li>
 </ul>
 </div>
+
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Laurent Gatto <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-1520-2268" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Manon Martin <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/lgatto/hpar"><img src="https://travis-ci.org/lgatto/hpar.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://codecov.io/gh/lgatto/hpar"><img src="https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://travis-ci.org/lgatto/hpar" class="external-link"><img src="https://travis-ci.org/lgatto/hpar.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://codecov.io/gh/lgatto/hpar" class="external-link"><img src="https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://github.com/ManonMartin/hpar/actions?query=workflow%3Atest-HPA-version" class="external-link"><img src="https://img.shields.io/github/workflow/status/ManonMartin/hpar/test-HPA-version?color=%23FFBB00&amp;label=HPA-version&amp;style=flat-square" alt="GitHub Workflow Status"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Laurent Gatto, Manon Martin.</p>
+  <p></p>
+<p>Developed by Laurent Gatto, Manon Martin.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
@@ -140,6 +149,8 @@
 
   
 
+
+  
 
   </body>
 </html>
