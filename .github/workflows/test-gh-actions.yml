@@ -4,7 +4,7 @@ name: test-HPA-version # workflow name
 on: # multiple triggering events
   push:
   schedule:
-   - cron: '0 9 * * MON'
+   - cron: '0 9 1,15 * *' #“At 09:00 on day-of-month 1 and 15.”
    
 jobs: # groups all the jobs ran in this workflow
 #----------
