@@ -23,7 +23,8 @@ Suggests:
     GO.db,
     knitr,
     BiocStyle,
-    testthat
+    testthat,
+    rmarkdown
 VignetteBuilder: knitr
 License: Artistic-2.0
 Collate:
