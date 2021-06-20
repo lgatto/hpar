@@ -59,7 +59,7 @@
 
       
 
-      </header><script src="hpar_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><script src="hpar_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Human Protein Atlas in R</h1>
@@ -78,15 +78,15 @@
     
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
+<a href="#introduction" class="anchor" aria-hidden="true"></a>Introduction</h1>
 <div id="the-hpa-project" class="section level2">
 <h2 class="hasAnchor">
-<a href="#the-hpa-project" class="anchor"></a>The HPA project</h2>
+<a href="#the-hpa-project" class="anchor" aria-hidden="true"></a>The HPA project</h2>
 <p>From the <a href="http://www.proteinatlas.org/" class="external-link">Human Protein Atlas</a> <span class="citation">(Uhlén et al. 2005; Uhlen et al. 2010)</span> site:</p>
 <blockquote>
 <p>The Swedish Human Protein Atlas project, funded by the Knut and Alice Wallenberg Foundation, has been set up to allow for a systematic exploration of the human proteome using Antibody-Based Proteomics. This is accomplished by combining high-throughput generation of affinity-purified antibodies with protein profiling in a multitude of tissues and cells assembled in tissue microarrays. Confocal microscopy analysis using human cell lines is performed for more detailed protein localisation. The program hosts the Human Protein Atlas portal with expression profiles of human proteins in tissues and cells.</p>
 </blockquote>
-<p>The <em><a href="https://bioconductor.org/packages/3.13/hpar" class="external-link">hpar</a></em> package provides access to HPA data from the R interface. It also distributes the following data sets:</p>
+<p>The <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package provides access to HPA data from the R interface. It also distributes the following data sets:</p>
 <ul>
 <li><p><code>hpaNormalTissue</code> <em>Normal tissue data</em>: Expression profiles for proteins in human tissues based on immunohistochemisty using tissue micro arrays. The tab-separated file includes Ensembl gene identifier (“Gene”), tissue name (“Tissue”), annotated cell type (“Cell type”), expression value (“Level”), and the gene reliability of the expression value (“Reliability”).}</p></li>
 <li><p><code>hpaNormalTissue16.1</code>: Same as above, for version 16.1.</p></li>
@@ -102,7 +102,7 @@
 </div>
 <div id="hpa-data-usage-policy" class="section level2">
 <h2 class="hasAnchor">
-<a href="#hpa-data-usage-policy" class="anchor"></a>HPA data usage policy</h2>
+<a href="#hpa-data-usage-policy" class="anchor" aria-hidden="true"></a>HPA data usage policy</h2>
 <p>The use of data and images from the HPA in publications and presentations is permitted provided that the following conditions are met:</p>
 <ul>
 <li>The publication and/or presentation are solely for informational and non-commercial purposes.</li>
@@ -111,14 +111,14 @@
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p><em><a href="https://bioconductor.org/packages/3.13/hpar" class="external-link">hpar</a></em> is available through the Bioconductor project. Details about the package and the installation procedure can be found on its <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html" class="external-link">landing page</a>. To install using the dedicated Bioconductor infrastructure, run :</p>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<p><em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> is available through the Bioconductor project. Details about the package and the installation procedure can be found on its <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html" class="external-link">landing page</a>. To install using the dedicated Bioconductor infrastructure, run :</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## install BiocManager only one</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
 <span class="co">## install hpar</span>
 <span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"hpar"</span><span class="op">)</span></code></pre></div>
-<p>After installation, <em><a href="https://bioconductor.org/packages/3.13/hpar" class="external-link">hpar</a></em> will have to be explicitly loaded with</p>
+<p>After installation, <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> will have to be explicitly loaded with</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"hpar"</span><span class="op">)</span></code></pre></div>
 <pre><code>## This is hpar version 1.33.3,
@@ -132,10 +132,10 @@
 </div>
 <div id="the-hpar-package" class="section level1">
 <h1 class="hasAnchor">
-<a href="#the-hpar-package" class="anchor"></a>The <em><a href="https://bioconductor.org/packages/3.13/hpar" class="external-link">hpar</a></em> package</h1>
+<a href="#the-hpar-package" class="anchor" aria-hidden="true"></a>The <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package</h1>
 <div id="data-sets" class="section level2">
 <h2 class="hasAnchor">
-<a href="#data-sets" class="anchor"></a>Data sets</h2>
+<a href="#data-sets" class="anchor" aria-hidden="true"></a>Data sets</h2>
 <p>The data sets described above can be loaded with the <code>data</code> function, as illustrated below for <code>hpaNormalTissue</code> below. Each data set is a <code>data.frame</code> and can be easily manipulated using standard R functionality. The code chunk below illustrates some of its properties.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span>
@@ -166,7 +166,7 @@
 </div>
 <div id="hpa-interface" class="section level2">
 <h2 class="hasAnchor">
-<a href="#hpa-interface" class="anchor"></a>HPA interface</h2>
+<a href="#hpa-interface" class="anchor" aria-hidden="true"></a>HPA interface</h2>
 <p>The package provides a interface to the HPA data. The <code>getHpa</code> allows to query the data sets described above. It takes three arguments, <code>id</code>, <code>hpadata</code> and <code>type</code>, that control the query, what data set to interrogate and how to report results respectively. The HPA data uses Ensembl gene identifiers and <code>id</code> must be a valid identifier. <code>hpadata</code> must be one of available dataset. <code>type</code> can be either <code>"data"</code> or <code>"details"</code>. The former is the default and returns a <code>data.frame</code> containing the information relevant to <code>id</code>. It is also possible to obtained detailed information, (including cell images) as web pages, directly from the HPA web page, using <code>"details"</code>.</p>
 <p>We will illustrate this functionality with using the TSPAN6 (tetraspanin 6) gene (ENSG00000000003) as example.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
@@ -244,9 +244,9 @@
 </div>
 <div id="hpa-release-information" class="section level2">
 <h2 class="hasAnchor">
-<a href="#hpa-release-information" class="anchor"></a>HPA release information</h2>
+<a href="#hpa-release-information" class="anchor" aria-hidden="true"></a>HPA release information</h2>
 <p>Information about the HPA release used to build the installed</p>
-<p><em><a href="https://bioconductor.org/packages/3.13/hpar" class="external-link">hpar</a></em> package can be accessed with <code>getHpaVersion</code>, <code>getHpaDate</code> and <code>getHpaEnsembl</code>. Full release details can be found on the <a href="http://www.proteinatlas.org/about/releases" class="external-link">HPA release history</a> page.</p>
+<p><em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package can be accessed with <code>getHpaVersion</code>, <code>getHpaDate</code> and <code>getHpaEnsembl</code>. Full release details can be found on the <a href="http://www.proteinatlas.org/about/releases" class="external-link">HPA release history</a> page.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaVersion</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## version 
@@ -263,7 +263,7 @@
 </div>
 <div id="a-small-use-case" class="section level1">
 <h1 class="hasAnchor">
-<a href="#a-small-use-case" class="anchor"></a>A small use case</h1>
+<a href="#a-small-use-case" class="anchor" aria-hidden="true"></a>A small use case</h1>
 <p>Let’s compare the subcellular localisation annotation obtained from the HPA subcellular location data set and the information available in the Bioconductor annotation packages.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">id</span> <span class="op">&lt;-</span> <span class="st">"ENSG00000001460"</span>
@@ -276,11 +276,11 @@
 ## 8                                                              
 ##   Cell.cycle.dependency                    GO.id
 ## 8                       Nucleoplasm (GO:0005654)</code></pre>
-<p>Below, we first extract all cellular component GO terms available for <code>id</code> from the <em><a href="https://bioconductor.org/packages/3.13/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em> human annotation and then retrieve their term definitions using the <em><a href="https://bioconductor.org/packages/3.13/GO.db" class="external-link">GO.db</a></em> database.</p>
+<p>Below, we first extract all cellular component GO terms available for <code>id</code> from the <em><a href="https://bioconductor.org/packages/3.14/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em> human annotation and then retrieve their term definitions using the <em><a href="https://bioconductor.org/packages/3.14/GO.db" class="external-link">GO.db</a></em> database.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"org.Hs.eg.db"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"GO.db"</span><span class="op">)</span>
-<span class="va">ans</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">org.Hs.eg.db</span>, keys <span class="op">=</span> <span class="va">id</span>,
+<span class="va">ans</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/AnnotationDb-class.html" class="external-link">select</a></span><span class="op">(</span><span class="va">org.Hs.eg.db</span>, keys <span class="op">=</span> <span class="va">id</span>,
               columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ENSEMBL"</span>, <span class="st">"GO"</span>, <span class="st">"ONTOLOGY"</span><span class="op">)</span>,
               keytype <span class="op">=</span> <span class="st">"ENSEMBL"</span><span class="op">)</span></code></pre></div>
 <pre><code>## 'select()' returned 1:many mapping between keys and columns</code></pre>
@@ -291,14 +291,14 @@
 ## 2 ENSG00000001460 GO:0005634      IEA       CC
 ## 3 ENSG00000001460 GO:0005739      IEA       CC</code></pre>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">as.list</a></span><span class="op">(</span><span class="va">GOTERM</span><span class="op">[</span><span class="va">ans</span><span class="op">$</span><span class="va">GO</span><span class="op">]</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"Term"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/BimapFormatting.html" class="external-link">as.list</a></span><span class="op">(</span><span class="va">GOTERM</span><span class="op">[</span><span class="va">ans</span><span class="op">$</span><span class="va">GO</span><span class="op">]</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"Term"</span><span class="op">)</span></code></pre></div>
 <pre><code>##      GO:0005634      GO:0005739 
 ##       "nucleus" "mitochondrion"</code></pre>
 </div>
 <div id="session-information" class="section level1 unnumbered">
 <h1 class="hasAnchor">
-<a href="#session-information" class="anchor"></a>Session information</h1>
-<pre><code>## R Under development (unstable) (2021-03-04 r80066)
+<a href="#session-information" class="anchor" aria-hidden="true"></a>Session information</h1>
+<pre><code>## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.2 LTS
 ## 
@@ -314,29 +314,32 @@
 ## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] parallel  stats4    stats     graphics  grDevices utils     datasets 
-## [8] methods   base     
+## [1] stats4    stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
 ## 
 ## other attached packages:
-## [1] hpar_1.33.3          GO.db_3.12.1         org.Hs.eg.db_3.12.0 
-## [4] AnnotationDbi_1.53.1 IRanges_2.25.6       S4Vectors_0.29.7    
-## [7] Biobase_2.51.0       BiocGenerics_0.37.1  BiocStyle_2.19.1    
+## [1] hpar_1.33.3          GO.db_3.13.0         org.Hs.eg.db_3.13.0 
+## [4] AnnotationDbi_1.55.1 IRanges_2.27.0       S4Vectors_0.31.0    
+## [7] Biobase_2.53.0       BiocGenerics_0.39.1  BiocStyle_2.21.3    
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.6          XVector_0.31.1      compiler_4.1.0     
-##  [4] BiocManager_1.30.10 zlibbioc_1.37.0     tools_4.1.0        
-##  [7] digest_0.6.27       bit_4.0.4           evaluate_0.14      
-## [10] memoise_2.0.0       RSQLite_2.2.3       pkgconfig_2.0.3    
-## [13] png_0.1-7           rlang_0.4.10        DBI_1.1.1          
-## [16] yaml_2.2.1          pkgdown_1.6.1.9000  xfun_0.21          
-## [19] fastmap_1.1.0       httr_1.4.2          stringr_1.4.0      
-## [22] knitr_1.31          Biostrings_2.59.2   desc_1.3.0         
-## [25] fs_1.5.0            vctrs_0.3.6         systemfonts_1.0.1  
-## [28] rprojroot_2.0.2     bit64_4.0.5         R6_2.5.0           
-## [31] textshaping_0.3.1   rmarkdown_2.7       bookdown_0.21      
-## [34] blob_1.2.1          magrittr_2.0.1      htmltools_0.5.1.1  
-## [37] KEGGREST_1.31.1     ragg_1.1.1          stringi_1.5.3      
-## [40] cachem_1.0.4        crayon_1.4.1</code></pre>
+##  [1] Rcpp_1.0.6             XVector_0.33.0         GenomeInfoDb_1.29.0   
+##  [4] bslib_0.2.5.1          compiler_4.1.0         BiocManager_1.30.16   
+##  [7] jquerylib_0.1.4        zlibbioc_1.39.0        bitops_1.0-7          
+## [10] tools_4.1.0            digest_0.6.27          bit_4.0.4             
+## [13] jsonlite_1.7.2         evaluate_0.14          memoise_2.0.0         
+## [16] RSQLite_2.2.7          pkgconfig_2.0.3        png_0.1-7             
+## [19] rlang_0.4.11           DBI_1.1.1              yaml_2.2.1            
+## [22] pkgdown_1.6.1.9001     xfun_0.24              fastmap_1.1.0         
+## [25] GenomeInfoDbData_1.2.6 httr_1.4.2             stringr_1.4.0         
+## [28] knitr_1.33             Biostrings_2.61.1      desc_1.3.0            
+## [31] fs_1.5.0               sass_0.4.0             vctrs_0.3.8           
+## [34] systemfonts_1.0.2      rprojroot_2.0.2        bit64_4.0.5           
+## [37] R6_2.5.0               textshaping_0.3.5      rmarkdown_2.9         
+## [40] bookdown_0.22          blob_1.2.1             magrittr_2.0.1        
+## [43] htmltools_0.5.1.1      KEGGREST_1.33.0        ragg_1.1.3            
+## [46] stringi_1.6.2          RCurl_1.98-1.3         cachem_1.0.5          
+## [49] crayon_1.4.1</code></pre>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Uhlen2010" class="csl-entry">
 Uhlen, Mathias, Per Oksvold, Linn Fagerberg, Emma Lundberg, Kalle Jonasson, Mattias Forsberg, Martin Zwahlen, et al. 2010. <span>“<span class="nocase">Towards a knowledge-based Human Protein Atlas.</span>”</span> <em>Nature Biotechnology</em> 28 (12): 1248–50. <a href="https://doi.org/10.1038/nbt1210-1248" class="external-link">https://doi.org/10.1038/nbt1210-1248</a>.
@@ -371,7 +374,7 @@ Uhlén, Mathias, Erik Björling, Charlotta Agaton, Cristina Al-Khalili A. Szigya
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9000.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
