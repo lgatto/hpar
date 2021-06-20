@@ -1,3 +1,13 @@
+# hpar 1.35
+
+## Changes in version 1.35.1
+
+- Suggest rmarkdown
+
+## Changes in version 1.35.0
+
+- New Bioc devel version
+
 # hpar 1.33
 
 ## Changes in version 1.33.3
