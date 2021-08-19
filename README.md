@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/lgatto/hpar.svg?branch=master)](https://travis-ci.org/lgatto/hpar)
 [![codecov](https://codecov.io/gh/lgatto/hpar/branch/master/graph/badge.svg)](https://codecov.io/gh/lgatto/hpar)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ManonMartin/hpar/test-HPA-version?color=%23FFBB00&label=HPA-version&style=flat-square)](https://github.com/ManonMartin/hpar/actions?query=workflow%3Atest-HPA-version)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lgatto/hpar/test-HPA-version?color=%23FFBB00&label=HPA-version&style=flat-square)](https://github.com/lgatto/hpar/actions?query=workflow%3Atest-HPA-version)
 
 # Human Protein Atlas in R
 
