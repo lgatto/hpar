@@ -13,7 +13,8 @@ jobs: # groups all the jobs ran in this workflow
   test-HPA-version: # name of the first job
     runs-on: ubuntu-latest # The type of runner that the job will run on
     container: bioconductor/bioconductor_docker:devel
-    
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps: # group all the steps in the job named test-HPA-version
    
        - uses: actions/checkout@master # an action that checks out your repository and downloads it to the runner, allowing you to run actions against your code
