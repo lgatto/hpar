@@ -1,3 +1,9 @@
+# hpar 1.37
+
+## Changes in version 1.37.1
+
+- Update to HPA release 21.0 <2021-11-22 Mon>
+
 # hpar 1.35
 
 ## Changes in version 1.35.1
