@@ -1,7 +1,7 @@
 Package: hpar
 Type: Package
 Title: Human Protein Atlas in R
-Version: 1.37.0
+Version: 1.37.1
 Authors@R:
     c(person(given = "Laurent",
              family = "Gatto",
