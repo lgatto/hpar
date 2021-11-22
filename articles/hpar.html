@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.35.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.37.1</span>
       </span>
     </div>
 
@@ -59,7 +59,7 @@
 
       
 
-      </header><script src="hpar_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Human Protein Atlas in R</h1>
@@ -76,17 +76,17 @@
       <p>The Human Protein Atlas (HPA) is a systematic study oh the human proteome using antibody-based proteomics. Multiple tissues and cell lines are systematically assayed affinity-purified antibodies and confocal microscopy. The <em>hpar</em> package is an R interface to the HPA project. It distributes three data sets, provides functionality to query these and to access detailed information pages, including confocal microscopy images available on the HPA web page.</p>
     </div>
     
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor" aria-hidden="true"></a>Introduction</h1>
-<div id="the-hpa-project" class="section level2">
-<h2 class="hasAnchor">
-<a href="#the-hpa-project" class="anchor" aria-hidden="true"></a>The HPA project</h2>
+<div class="section level1">
+<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h1>
+<div class="section level2">
+<h2 id="the-hpa-project">The HPA project<a class="anchor" aria-label="anchor" href="#the-hpa-project"></a>
+</h2>
 <p>From the <a href="http://www.proteinatlas.org/" class="external-link">Human Protein Atlas</a> <span class="citation">(Uhlén et al. 2005; Uhlen et al. 2010)</span> site:</p>
 <blockquote>
 <p>The Swedish Human Protein Atlas project, funded by the Knut and Alice Wallenberg Foundation, has been set up to allow for a systematic exploration of the human proteome using Antibody-Based Proteomics. This is accomplished by combining high-throughput generation of affinity-purified antibodies with protein profiling in a multitude of tissues and cells assembled in tissue microarrays. Confocal microscopy analysis using human cell lines is performed for more detailed protein localisation. The program hosts the Human Protein Atlas portal with expression profiles of human proteins in tissues and cells.</p>
 </blockquote>
-<p>The <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package provides access to HPA data from the R interface. It also distributes the following data sets:</p>
+<p>The <em><a href="https://bioconductor.org/packages/3.15/hpar" class="external-link">hpar</a></em> package provides access to HPA data from the R interface. It also distributes the following data sets:</p>
 <ul>
 <li><p><code>hpaNormalTissue</code> <em>Normal tissue data</em>: Expression profiles for proteins in human tissues based on immunohistochemisty using tissue micro arrays. The tab-separated file includes Ensembl gene identifier (“Gene”), tissue name (“Tissue”), annotated cell type (“Cell type”), expression value (“Level”), and the gene reliability of the expression value (“Reliability”).}</p></li>
 <li><p><code>hpaNormalTissue16.1</code>: Same as above, for version 16.1.</p></li>
@@ -100,115 +100,115 @@
 <li><p><code>hpaSecretome</code> <em>Secretome data</em>: The human secretome is here defined as all Ensembl genes with at least one predicted secreted transcript according to HPA predictions. The complete information about the HPA Secretomedata is given on . This dataset has 230 columns and includes the Ensembl gene identifier (“Gene”). Information about the additionnal variables can be found  by clicking on .</p></li>
 </ul>
 </div>
-<div id="hpa-data-usage-policy" class="section level2">
-<h2 class="hasAnchor">
-<a href="#hpa-data-usage-policy" class="anchor" aria-hidden="true"></a>HPA data usage policy</h2>
+<div class="section level2">
+<h2 id="hpa-data-usage-policy">HPA data usage policy<a class="anchor" aria-label="anchor" href="#hpa-data-usage-policy"></a>
+</h2>
 <p>The use of data and images from the HPA in publications and presentations is permitted provided that the following conditions are met:</p>
 <ul>
 <li>The publication and/or presentation are solely for informational and non-commercial purposes.</li>
 <li>The source of the data and/or image is referred to the HPA site<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and/or one or more of our publications are cited.</li>
 </ul>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
-<p><em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> is available through the Bioconductor project. Details about the package and the installation procedure can be found on its <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html" class="external-link">landing page</a>. To install using the dedicated Bioconductor infrastructure, run :</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p><em><a href="https://bioconductor.org/packages/3.15/hpar" class="external-link">hpar</a></em> is available through the Bioconductor project. Details about the package and the installation procedure can be found on its <a href="http://bioconductor.org/packages/devel/bioc/html/hpar.html" class="external-link">landing page</a>. To install using the dedicated Bioconductor infrastructure, run :</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## install BiocManager only one</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
 <span class="co">## install hpar</span>
 <span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"hpar"</span><span class="op">)</span></code></pre></div>
-<p>After installation, <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> will have to be explicitly loaded with</p>
+<p>After installation, <em><a href="https://bioconductor.org/packages/3.15/hpar" class="external-link">hpar</a></em> will have to be explicitly loaded with</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"hpar"</span><span class="op">)</span></code></pre></div>
-<pre><code>## This is hpar version 1.35.1,
-## based on the Human Protein Atlas
-##   Version: 20.1
-##   Release data: 2021.02.24
-##   Ensembl build: 92.38
-## See '?hpar' or 'vignette('hpar')' for details.</code></pre>
+<pre><code><span class="co">## This is hpar version 1.37.1,</span>
+<span class="co">## based on the Human Protein Atlas</span>
+<span class="co">##   Version: 21.0</span>
+<span class="co">##   Release data: 2021.11.18</span>
+<span class="co">##   Ensembl build: 103.38</span>
+<span class="co">## See '?hpar' or 'vignette('hpar')' for details.</span></code></pre>
 <p>so that all the package’s functionality and data is available to the user.</p>
 </div>
 </div>
-<div id="the-hpar-package" class="section level1">
-<h1 class="hasAnchor">
-<a href="#the-hpar-package" class="anchor" aria-hidden="true"></a>The <em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package</h1>
-<div id="data-sets" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-sets" class="anchor" aria-hidden="true"></a>Data sets</h2>
+<div class="section level1">
+<h1 id="the-hpar-package">The <em><a href="https://bioconductor.org/packages/3.15/hpar" class="external-link">hpar</a></em> package<a class="anchor" aria-label="anchor" href="#the-hpar-package"></a>
+</h1>
+<div class="section level2">
+<h2 id="data-sets">Data sets<a class="anchor" aria-label="anchor" href="#data-sets"></a>
+</h2>
 <p>The data sets described above can be loaded with the <code>data</code> function, as illustrated below for <code>hpaNormalTissue</code> below. Each data set is a <code>data.frame</code> and can be easily manipulated using standard R functionality. The code chunk below illustrates some of its properties.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 1118517       6</code></pre>
+<pre><code><span class="co">## [1] 1198924       6</span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] "Gene"        "Gene.name"   "Tissue"      "Cell.type"   "Level"      
-## [6] "Reliability"</code></pre>
+<pre><code><span class="co">## [1] "Gene"        "Gene.name"   "Tissue"      "Cell.type"   "Level"      </span>
+<span class="co">## [6] "Reliability"</span></code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Number of genes</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Gene</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 15320</code></pre>
+<pre><code><span class="co">## [1] 15323</span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Number of cell types</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Cell.type</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 120</code></pre>
+<pre><code><span class="co">## [1] 142</span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Cell.type</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## NULL</code></pre>
+<pre><code><span class="co">## NULL</span></code></pre>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Number of tissues</span>
 <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Tissue</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## [1] 63</code></pre>
+<pre><code><span class="co">## [1] 63</span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">$</span><span class="va">Tissue</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## NULL</code></pre>
+<pre><code><span class="co">## NULL</span></code></pre>
 </div>
-<div id="hpa-interface" class="section level2">
-<h2 class="hasAnchor">
-<a href="#hpa-interface" class="anchor" aria-hidden="true"></a>HPA interface</h2>
+<div class="section level2">
+<h2 id="hpa-interface">HPA interface<a class="anchor" aria-label="anchor" href="#hpa-interface"></a>
+</h2>
 <p>The package provides a interface to the HPA data. The <code>getHpa</code> allows to query the data sets described above. It takes three arguments, <code>id</code>, <code>hpadata</code> and <code>type</code>, that control the query, what data set to interrogate and how to report results respectively. The HPA data uses Ensembl gene identifiers and <code>id</code> must be a valid identifier. <code>hpadata</code> must be one of available dataset. <code>type</code> can be either <code>"data"</code> or <code>"details"</code>. The former is the default and returns a <code>data.frame</code> containing the information relevant to <code>id</code>. It is also possible to obtained detailed information, (including cell images) as web pages, directly from the HPA web page, using <code>"details"</code>.</p>
 <p>We will illustrate this functionality with using the TSPAN6 (tetraspanin 6) gene (ENSG00000000003) as example.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">id</span> <span class="op">&lt;-</span> <span class="st">"ENSG00000000003"</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, hpadata <span class="op">=</span> <span class="st">"hpaNormalTissue"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>##              Gene Gene.name         Tissue           Cell.type        Level
-## 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected
-## 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected
-## 3 ENSG00000000003    TSPAN6       appendix     glandular cells       Medium
-## 4 ENSG00000000003    TSPAN6       appendix     lymphoid tissue Not detected
-## 5 ENSG00000000003    TSPAN6    bone marrow hematopoietic cells Not detected
-## 6 ENSG00000000003    TSPAN6         breast          adipocytes Not detected
-##   Reliability
-## 1    Approved
-## 2    Approved
-## 3    Approved
-## 4    Approved
-## 5    Approved
-## 6    Approved</code></pre>
+<pre><code><span class="co">##              Gene Gene.name         Tissue           Cell.type        Level</span>
+<span class="co">## 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected</span>
+<span class="co">## 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected</span>
+<span class="co">## 3 ENSG00000000003    TSPAN6       appendix     glandular cells       Medium</span>
+<span class="co">## 4 ENSG00000000003    TSPAN6       appendix     lymphoid tissue Not detected</span>
+<span class="co">## 5 ENSG00000000003    TSPAN6    bone marrow hematopoietic cells Not detected</span>
+<span class="co">## 6 ENSG00000000003    TSPAN6         breast          adipocytes Not detected</span>
+<span class="co">##   Reliability</span>
+<span class="co">## 1    Approved</span>
+<span class="co">## 2    Approved</span>
+<span class="co">## 3    Approved</span>
+<span class="co">## 4    Approved</span>
+<span class="co">## 5    Approved</span>
+<span class="co">## 6    Approved</span></code></pre>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, hpadata <span class="op">=</span> <span class="st">"hpaSubcellularLoc"</span><span class="op">)</span></code></pre></div>
-<pre><code>##              Gene Gene.name Reliability          Main.location
-## 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
-##         Additional.location Extracellular.location Enhanced Supported
-## 1 Nucleoli fibrillar center                                          
-##                                           Approved Uncertain
-## 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          
-##   Single.cell.variation.intensity Single.cell.variation.spatial
-## 1                         Cytosol                              
-##   Cell.cycle.dependency
-## 1                      
-##                                                                                     GO.id
-## 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</code></pre>
+<pre><code><span class="co">##              Gene Gene.name Reliability          Main.location</span>
+<span class="co">## 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol</span>
+<span class="co">##         Additional.location Extracellular.location Enhanced Supported</span>
+<span class="co">## 1 Nucleoli fibrillar center                                          </span>
+<span class="co">##                                           Approved Uncertain</span>
+<span class="co">## 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          </span>
+<span class="co">##   Single.cell.variation.intensity Single.cell.variation.spatial</span>
+<span class="co">## 1                         Cytosol                              </span>
+<span class="co">##   Cell.cycle.dependency</span>
+<span class="co">## 1                      </span>
+<span class="co">##                                                                                     GO.id</span>
+<span class="co">## 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, hpadata <span class="op">=</span> <span class="st">"rnaGeneCellLine"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>##              Gene Gene.name Cell.line   TPM  pTPM   NX
-## 1 ENSG00000000003    TSPAN6     A-431  27.8  33.9  7.9
-## 2 ENSG00000000003    TSPAN6      A549  37.6  45.5 10.6
-## 3 ENSG00000000003    TSPAN6      AF22 108.1 134.5 28.7
-## 4 ENSG00000000003    TSPAN6    AN3-CA  51.8  64.4 14.5
-## 5 ENSG00000000003    TSPAN6  ASC diff  32.3  37.4 12.6
-## 6 ENSG00000000003    TSPAN6 ASC TERT1  17.7  20.8  6.8</code></pre>
+<pre><code><span class="co">##              Gene Gene.name Cell.line  TPM pTPM nTPM</span>
+<span class="co">## 1 ENSG00000000003    TSPAN6     A-431 21.3 25.6 24.8</span>
+<span class="co">## 2 ENSG00000000003    TSPAN6      A549 20.5 24.4 23.0</span>
+<span class="co">## 3 ENSG00000000003    TSPAN6      AF22 78.8 96.9 80.6</span>
+<span class="co">## 4 ENSG00000000003    TSPAN6    AN3-CA 38.7 47.1 42.2</span>
+<span class="co">## 5 ENSG00000000003    TSPAN6  ASC diff 19.2 22.1 28.7</span>
+<span class="co">## 6 ENSG00000000003    TSPAN6 ASC TERT1 11.3 13.1 16.6</span></code></pre>
 <p>If we ask for <code>"detail"</code>, a browser page pointing to the relevant page is open (see figure below)</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, type <span class="op">=</span> <span class="st">"details"</span><span class="op">)</span></code></pre></div>
@@ -218,128 +218,128 @@
 <p>If a user is interested specifically in one data set, it is possible to set <code>hpadata</code> globally and omit it in <code>getHpa</code>. This is done by setting the <code>hpar</code> options <code>hpardata</code> with the <code>setHparOptions</code> function. The current default data set can be tested with <code>getHparOptions</code>.</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHparOptions.html">getHparOptions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## $hpar
-## $hpar$hpadata
-## [1] "hpaNormalTissue"</code></pre>
+<pre><code><span class="co">## $hpar</span>
+<span class="co">## $hpar$hpadata</span>
+<span class="co">## [1] "hpaNormalTissue"</span></code></pre>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/setHparOptions.html">setHparOptions</a></span><span class="op">(</span>hpadata <span class="op">=</span> <span class="st">"hpaSubcellularLoc"</span><span class="op">)</span>
 <span class="fu"><a href="../reference/getHparOptions.html">getHparOptions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## $hpar
-## $hpar$hpadata
-## [1] "hpaSubcellularLoc"</code></pre>
+<pre><code><span class="co">## $hpar</span>
+<span class="co">## $hpar$hpadata</span>
+<span class="co">## [1] "hpaSubcellularLoc"</span></code></pre>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span><span class="op">)</span></code></pre></div>
-<pre><code>##              Gene Gene.name Reliability          Main.location
-## 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol
-##         Additional.location Extracellular.location Enhanced Supported
-## 1 Nucleoli fibrillar center                                          
-##                                           Approved Uncertain
-## 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          
-##   Single.cell.variation.intensity Single.cell.variation.spatial
-## 1                         Cytosol                              
-##   Cell.cycle.dependency
-## 1                      
-##                                                                                     GO.id
-## 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</code></pre>
+<pre><code><span class="co">##              Gene Gene.name Reliability          Main.location</span>
+<span class="co">## 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol</span>
+<span class="co">##         Additional.location Extracellular.location Enhanced Supported</span>
+<span class="co">## 1 Nucleoli fibrillar center                                          </span>
+<span class="co">##                                           Approved Uncertain</span>
+<span class="co">## 1 Cell Junctions;Cytosol;Nucleoli fibrillar center          </span>
+<span class="co">##   Single.cell.variation.intensity Single.cell.variation.spatial</span>
+<span class="co">## 1                         Cytosol                              </span>
+<span class="co">##   Cell.cycle.dependency</span>
+<span class="co">## 1                      </span>
+<span class="co">##                                                                                     GO.id</span>
+<span class="co">## 1 Cell Junctions (GO:0030054);Cytosol (GO:0005829);Nucleoli fibrillar center (GO:0001650)</span></code></pre>
 </div>
-<div id="hpa-release-information" class="section level2">
-<h2 class="hasAnchor">
-<a href="#hpa-release-information" class="anchor" aria-hidden="true"></a>HPA release information</h2>
+<div class="section level2">
+<h2 id="hpa-release-information">HPA release information<a class="anchor" aria-label="anchor" href="#hpa-release-information"></a>
+</h2>
 <p>Information about the HPA release used to build the installed</p>
-<p><em><a href="https://bioconductor.org/packages/3.14/hpar" class="external-link">hpar</a></em> package can be accessed with <code>getHpaVersion</code>, <code>getHpaDate</code> and <code>getHpaEnsembl</code>. Full release details can be found on the <a href="http://www.proteinatlas.org/about/releases" class="external-link">HPA release history</a> page.</p>
+<p><em><a href="https://bioconductor.org/packages/3.15/hpar" class="external-link">hpar</a></em> package can be accessed with <code>getHpaVersion</code>, <code>getHpaDate</code> and <code>getHpaEnsembl</code>. Full release details can be found on the <a href="http://www.proteinatlas.org/about/releases" class="external-link">HPA release history</a> page.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaVersion</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## version 
-##  "20.1"</code></pre>
+<pre><code><span class="co">## version </span>
+<span class="co">##  "21.0"</span></code></pre>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaDate</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>##         date 
-## "2021.02.24"</code></pre>
+<pre><code><span class="co">##         date </span>
+<span class="co">## "2021.11.18"</span></code></pre>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/getHpaDate.html">getHpaEnsembl</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## ensembl 
-## "92.38"</code></pre>
+<pre><code><span class="co">##  ensembl </span>
+<span class="co">## "103.38"</span></code></pre>
 </div>
 </div>
-<div id="a-small-use-case" class="section level1">
-<h1 class="hasAnchor">
-<a href="#a-small-use-case" class="anchor" aria-hidden="true"></a>A small use case</h1>
+<div class="section level1">
+<h1 id="a-small-use-case">A small use case<a class="anchor" aria-label="anchor" href="#a-small-use-case"></a>
+</h1>
 <p>Let’s compare the subcellular localisation annotation obtained from the HPA subcellular location data set and the information available in the Bioconductor annotation packages.</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">id</span> <span class="op">&lt;-</span> <span class="st">"ENSG00000001460"</span>
 <span class="fu"><a href="../reference/getHpa.html">getHpa</a></span><span class="op">(</span><span class="va">id</span>, <span class="st">"hpaSubcellularLoc"</span><span class="op">)</span></code></pre></div>
-<pre><code>##              Gene Gene.name Reliability Main.location Additional.location
-## 8 ENSG00000001460     STPG1    Approved   Nucleoplasm                    
-##   Extracellular.location Enhanced Supported    Approved Uncertain
-## 8                                           Nucleoplasm          
-##   Single.cell.variation.intensity Single.cell.variation.spatial
-## 8                                                              
-##   Cell.cycle.dependency                    GO.id
-## 8                       Nucleoplasm (GO:0005654)</code></pre>
-<p>Below, we first extract all cellular component GO terms available for <code>id</code> from the <em><a href="https://bioconductor.org/packages/3.14/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em> human annotation and then retrieve their term definitions using the <em><a href="https://bioconductor.org/packages/3.14/GO.db" class="external-link">GO.db</a></em> database.</p>
+<pre><code><span class="co">##              Gene Gene.name Reliability Main.location Additional.location</span>
+<span class="co">## 8 ENSG00000001460     STPG1    Approved   Nucleoplasm                    </span>
+<span class="co">##   Extracellular.location Enhanced Supported    Approved Uncertain</span>
+<span class="co">## 8                                           Nucleoplasm          </span>
+<span class="co">##   Single.cell.variation.intensity Single.cell.variation.spatial</span>
+<span class="co">## 8                                                              </span>
+<span class="co">##   Cell.cycle.dependency                    GO.id</span>
+<span class="co">## 8                       Nucleoplasm (GO:0005654)</span></code></pre>
+<p>Below, we first extract all cellular component GO terms available for <code>id</code> from the <em><a href="https://bioconductor.org/packages/3.15/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em> human annotation and then retrieve their term definitions using the <em><a href="https://bioconductor.org/packages/3.15/GO.db" class="external-link">GO.db</a></em> database.</p>
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"org.Hs.eg.db"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"GO.db"</span><span class="op">)</span>
 <span class="va">ans</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/AnnotationDb-class.html" class="external-link">select</a></span><span class="op">(</span><span class="va">org.Hs.eg.db</span>, keys <span class="op">=</span> <span class="va">id</span>,
               columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ENSEMBL"</span>, <span class="st">"GO"</span>, <span class="st">"ONTOLOGY"</span><span class="op">)</span>,
               keytype <span class="op">=</span> <span class="st">"ENSEMBL"</span><span class="op">)</span></code></pre></div>
-<pre><code>## 'select()' returned 1:many mapping between keys and columns</code></pre>
+<pre><code><span class="co">## 'select()' returned 1:many mapping between keys and columns</span></code></pre>
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ans</span> <span class="op">&lt;-</span> <span class="va">ans</span><span class="op">[</span><span class="va">ans</span><span class="op">$</span><span class="va">ONTOLOGY</span> <span class="op">==</span> <span class="st">"CC"</span>, <span class="op">]</span>
 <span class="va">ans</span></code></pre></div>
-<pre><code>##           ENSEMBL         GO EVIDENCE ONTOLOGY
-## 2 ENSG00000001460 GO:0005634      IEA       CC
-## 3 ENSG00000001460 GO:0005739      IEA       CC</code></pre>
+<pre><code><span class="co">##           ENSEMBL         GO EVIDENCE ONTOLOGY</span>
+<span class="co">## 2 ENSG00000001460 GO:0005634      IEA       CC</span>
+<span class="co">## 3 ENSG00000001460 GO:0005739      IEA       CC</span></code></pre>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/BimapFormatting.html" class="external-link">as.list</a></span><span class="op">(</span><span class="va">GOTERM</span><span class="op">[</span><span class="va">ans</span><span class="op">$</span><span class="va">GO</span><span class="op">]</span><span class="op">)</span>, <span class="va">slot</span>, <span class="st">"Term"</span><span class="op">)</span></code></pre></div>
-<pre><code>##      GO:0005634      GO:0005739 
-##       "nucleus" "mitochondrion"</code></pre>
+<pre><code><span class="co">##      GO:0005634      GO:0005739 </span>
+<span class="co">##       "nucleus" "mitochondrion"</span></code></pre>
 </div>
-<div id="session-information" class="section level1 unnumbered">
-<h1 class="hasAnchor">
-<a href="#session-information" class="anchor" aria-hidden="true"></a>Session information</h1>
-<pre><code>## R version 4.1.0 (2021-05-18)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04.3 LTS
-## 
-## Matrix products: default
-## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
-## 
-## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-## 
-## attached base packages:
-## [1] stats4    stats     graphics  grDevices utils     datasets  methods  
-## [8] base     
-## 
-## other attached packages:
-## [1] hpar_1.35.1          GO.db_3.13.0         org.Hs.eg.db_3.13.0 
-## [4] AnnotationDbi_1.55.1 IRanges_2.27.0       S4Vectors_0.31.0    
-## [7] Biobase_2.53.0       BiocGenerics_0.39.1  BiocStyle_2.21.3    
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.7             XVector_0.33.0         GenomeInfoDb_1.29.3   
-##  [4] bslib_0.2.5.1          compiler_4.1.0         BiocManager_1.30.16   
-##  [7] jquerylib_0.1.4        zlibbioc_1.39.0        bitops_1.0-7          
-## [10] tools_4.1.0            digest_0.6.27          bit_4.0.4             
-## [13] jsonlite_1.7.2         evaluate_0.14          memoise_2.0.0         
-## [16] RSQLite_2.2.7          pkgconfig_2.0.3        png_0.1-7             
-## [19] rlang_0.4.11           DBI_1.1.1              yaml_2.2.1            
-## [22] pkgdown_1.6.1.9001     xfun_0.25              fastmap_1.1.0         
-## [25] GenomeInfoDbData_1.2.6 httr_1.4.2             stringr_1.4.0         
-## [28] knitr_1.33             Biostrings_2.61.2      desc_1.3.0            
-## [31] fs_1.5.0               sass_0.4.0             vctrs_0.3.8           
-## [34] systemfonts_1.0.2      rprojroot_2.0.2        bit64_4.0.5           
-## [37] R6_2.5.0               textshaping_0.3.5      rmarkdown_2.10        
-## [40] bookdown_0.22          blob_1.2.2             magrittr_2.0.1        
-## [43] htmltools_0.5.1.1      KEGGREST_1.33.0        ragg_1.1.3            
-## [46] stringi_1.7.3          RCurl_1.98-1.3         cachem_1.0.5          
-## [49] crayon_1.4.1</code></pre>
+<div class="section level1 unnumbered">
+<h1 class="unnumbered" id="session-information">Session information<a class="anchor" aria-label="anchor" href="#session-information"></a>
+</h1>
+<pre><code><span class="co">## R Under development (unstable) (2021-11-16 r81199)</span>
+<span class="co">## Platform: x86_64-pc-linux-gnu (64-bit)</span>
+<span class="co">## Running under: Ubuntu 20.04.3 LTS</span>
+<span class="co">## </span>
+<span class="co">## Matrix products: default</span>
+<span class="co">## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so</span>
+<span class="co">## </span>
+<span class="co">## locale:</span>
+<span class="co">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span>
+<span class="co">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span>
+<span class="co">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             </span>
+<span class="co">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span>
+<span class="co">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span>
+<span class="co">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span>
+<span class="co">## </span>
+<span class="co">## attached base packages:</span>
+<span class="co">## [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">## [8] base     </span>
+<span class="co">## </span>
+<span class="co">## other attached packages:</span>
+<span class="co">## [1] hpar_1.37.1          GO.db_3.14.0         org.Hs.eg.db_3.14.0 </span>
+<span class="co">## [4] AnnotationDbi_1.57.1 IRanges_2.29.1       S4Vectors_0.33.4    </span>
+<span class="co">## [7] Biobase_2.55.0       BiocGenerics_0.41.2  BiocStyle_2.23.0    </span>
+<span class="co">## </span>
+<span class="co">## loaded via a namespace (and not attached):</span>
+<span class="co">##  [1] Rcpp_1.0.7               XVector_0.35.0           GenomeInfoDb_1.31.1     </span>
+<span class="co">##  [4] bslib_0.3.1              compiler_4.2.0           BiocManager_1.30.16     </span>
+<span class="co">##  [7] jquerylib_0.1.4          zlibbioc_1.41.0          bitops_1.0-7            </span>
+<span class="co">## [10] tools_4.2.0              digest_0.6.28            bit_4.0.4               </span>
+<span class="co">## [13] jsonlite_1.7.2           evaluate_0.14            memoise_2.0.0           </span>
+<span class="co">## [16] RSQLite_2.2.8            pkgconfig_2.0.3          png_0.1-7               </span>
+<span class="co">## [19] rlang_0.4.12             DBI_1.1.1                yaml_2.2.1              </span>
+<span class="co">## [22] pkgdown_1.9000.9000.9000 xfun_0.28                fastmap_1.1.0           </span>
+<span class="co">## [25] GenomeInfoDbData_1.2.7   httr_1.4.2               stringr_1.4.0           </span>
+<span class="co">## [28] knitr_1.36               Biostrings_2.63.0        vctrs_0.3.8             </span>
+<span class="co">## [31] desc_1.4.0               fs_1.5.0                 sass_0.4.0              </span>
+<span class="co">## [34] systemfonts_1.0.3        rprojroot_2.0.2          bit64_4.0.5             </span>
+<span class="co">## [37] R6_2.5.1                 textshaping_0.3.6        rmarkdown_2.11          </span>
+<span class="co">## [40] bookdown_0.24            purrr_0.3.4              blob_1.2.2              </span>
+<span class="co">## [43] magrittr_2.0.1           htmltools_0.5.2          KEGGREST_1.35.0         </span>
+<span class="co">## [46] ragg_1.2.0               stringi_1.7.5            RCurl_1.98-1.5          </span>
+<span class="co">## [49] cachem_1.0.6             crayon_1.4.2</span></code></pre>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Uhlen2010" class="csl-entry">
 Uhlen, Mathias, Per Oksvold, Linn Fagerberg, Emma Lundberg, Kalle Jonasson, Mattias Forsberg, Martin Zwahlen, et al. 2010. <span>“<span class="nocase">Towards a knowledge-based Human Protein Atlas.</span>”</span> <em>Nature Biotechnology</em> 28 (12): 1248–50. <a href="https://doi.org/10.1038/nbt1210-1248" class="external-link">https://doi.org/10.1038/nbt1210-1248</a>.
@@ -374,7 +374,7 @@ Uhlén, Mathias, Erik Björling, Charlotta Agaton, Cristina Al-Khalili A. Szigya
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
 </div>
 
       </footer>
