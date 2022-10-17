@@ -11,8 +11,11 @@
 \alias{hpaSecretome}
 \alias{rnaGeneCellLine}
 \alias{rnaGeneCellLine16.1}
-\alias{rnaGeneTissue}
-
+\alias{rnaGeneTissue21.0}
+\alias{rnaConsensusTissue}
+\alias{rnaHpaTissue}
+\alias{rnaGtexTissue}
+\alias{rnaFantomTissue}
 
 \title{
   Human Protein Atlas in R
@@ -63,19 +66,52 @@
 
   \item{hpaCancer16.1}{Same as above, for version 16.1}
   
-  \item{rnaGeneTissue}{\bold{RNA HPA tissue gene data}: Transcript 
+  \item{rnaConsensusTissue}{\bold{RNA consensus tissue gene data}
+  Consensus transcript expression levels summarized per gene in 54 tissues 
+  based on transcriptomics data from HPA and GTEx. The consensus normalized 
+  expression ("nTPM") value is calculated as the maximum nTPM value for each 
+  gene in the two data sources. For tissues with multiple sub-tissues 
+  (brain regions, lymphoid tissues and intestine) the maximum of all 
+  sub-tissues is used for the tissue type. The tab-separated file includes 
+  Ensembl gene identifier ("Gene"), analysed sample ("Tissue") and 
+  normalized expression ("nTPM"). 
+  }
+
+  \item{rnaHpaTissue}{\bold{RNA HPA tissue gene data}
+  Transcript expression levels summarized per gene in 256 tissues based 
+  on RNA-seq. The tab-separated file includes Ensembl gene identifier 
+  ("Gene"), analysed sample ("Tissue"), transcripts per million ("TPM"), 
+  protein-transcripts per million ("pTPM") and normalized expression ("nTPM"). }
+  
+    \item{rnaGtexTissue}{\bold{RNA GTEx tissue gene data}
+  Transcript expression levels summarized per gene in 37 tissues based on 
+  RNA-seq. The tab-separated file includes Ensembl gene identifier ("Gene"), 
+  analysed sample ("Tissue"), transcripts per million ("TPM"), 
+  protein-transcripts per million ("pTPM") and normalized expression ("nTPM").
+  The data was obtained from GTEx.}
+  
+    \item{rnaFantomTissue}{\bold{RNA FANTOM tissue gene data}
+  Transcript expression levels summarized per gene in 60 tissues based on 
+  CAGE data. The tab-separated file includes Ensembl gene identifier ("Gene"), 
+  analysed sample ("Tissue"), tags per million ("Tags per million"), 
+  scaled-tags per million ("Scaled tags per million") and normalized 
+  expression ("nTPM"). The data was obtained from FANTOM5.}
+  
+  
+  \item{rnaGeneTissue21.0}{\bold{RNA HPA tissue gene data}: Transcript 
   expression levels summarized per gene in 37 tissues based on 
-  RNA-seq. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Tissue"), transcripts per million 
-  ("TPM"), protein-transcripts per million ("pTPM") and 
-  normalized expression ("NX"). }
+  RNA-seq, for hpa version 21.0. The tab-separated file includes 
+  Ensembl gene identifier ("Gene"), analysed sample ("Tissue"), 
+  transcripts per million ("TPM"), protein-transcripts per million 
+  ("pTPM"). }
   
   \item{rnaGeneCellLine}{\bold{RNA HPA cell line gene data}: 
-  Transcript expression levels summarized per gene in 64 cell 
+  Transcript expression levels summarized per gene in 69 cell 
   lines. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Cell line"), transcripts per
-  million ("TPM"), protein-coding transcripts per million ("pTPM") 
-  and normalized expression ("NX").}
+  ("Gene"), analysed sample ("Cell line"), transcripts per million 
+  ("TPM"), protein-coding transcripts per million ("pTPM") 
+  and normalized expression ("nTPM").}
+  
   
   \item{rnaGeneCellLine16.1}{Same as above, for version 16.1}
 
@@ -103,7 +139,7 @@
     predictions. The complete information about the HPA Secretome 
     data is given on 
     \url{https://www.proteinatlas.org/humanproteome/blood/secretome}. 
-    This dataset has 230 columns and includes the Ensembl gene identifier 
+    This dataset has 315 columns and includes the Ensembl gene identifier 
     ("Gene"). Information about the additionnal variables can be found 
     \href{https://www.proteinatlas.org/search}{here} by clicking on 
     \emph{Show/hide columns}.}
