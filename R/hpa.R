@@ -26,7 +26,7 @@ allHparData <- function(){
   x <- grep(".rda", list.files(system.file("data", package = "hpar")), value = TRUE)
   x <- gsub(".rda","",x)
   # reorder the list of datasets givent the initial order
-  nam <- c("hpaNormalTissue", "rnaGeneCellLine", "rnaGeneTissue",
+  nam <- c("hpaNormalTissue", "rnaGeneCellLine", "rnaGeneTissue21.0",
            "hpaSubcellularLoc", "hpaSubcellularLoc14", "hpaCancer")
   x <- c(nam[nam %in% x],x[!x %in% nam])
   return(x)
@@ -68,8 +68,7 @@ getHpaEnsembl <- function()
 ##' ## Define 'hpadata' data manually
 ##' getHpa(id, hpadata = "hpaSubcellularLoc")
 ##' head(getHpa(id, hpadata = "hpaNormalTissue"), )
-##' head(getHpa(id, hpadata = "rnaGeneTissue"))
-##' head(getHpa(id, hpadata = "rnaGeneCellLine"))
+##' ##' head(getHpa(id, hpadata = "rnaGeneCellLine"))
 ##' head(getHpa(id, hpadata = "hpaCancer"))
 ##' ## Sets default to "SubcellularLoc"
 ##' setHparOptions(hpadata = "hpaSubcellularLoc")
