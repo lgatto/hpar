@@ -54,18 +54,32 @@ hpaCancer <- getAsDataframe("https://www.proteinatlas.org/download/pathology.tsv
 names(hpaCancer) <- sub("\\.\\.", "", names(hpaCancer))
 saveObjAsRda(hpaCancer)
 
-## RNA gene data: RNA levels in 45 cell lines and 32 tissues based on
-## RNA-seq.
-rnaGeneTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue.tsv.zip", sep = "\t")
-saveObjAsRda(rnaGeneTissue)
+## RNA gene data:
 
+# RNA consensus tissue gene data
+rnaConsensusTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue_consensus.tsv.zip", sep = "\t")
+saveObjAsRda(rnaConsensusTissue)
+
+# RNA HPA tissue gene data
+rnaHpaTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue_hpa.tsv.zip", sep = "\t")
+saveObjAsRda(rnaHpaTissue)
+
+# RNA GTEx tissue gene data
+rnaGtexTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue_gtex.tsv.zip", sep = "\t")
+saveObjAsRda(rnaGtexTissue)
+
+# RNA FANTOM tissue gene data
+rnaFantomTissue <- getAsDataframe("https://www.proteinatlas.org/download/rna_tissue_fantom.tsv.zip", sep = "\t")
+saveObjAsRda(rnaFantomTissue)
+
+# rnaGeneCellLine
 rnaGeneCellLine <- getAsDataframe("https://www.proteinatlas.org/download/rna_celline.tsv.zip", sep = "\t")
 saveObjAsRda(rnaGeneCellLine)
 
 
 ## Secretome data: The human 'secretome' can be defined as all genes encoding at
 ## least one secreted protein
-url <- "https://www.proteinatlas.org/search/sa_location%3ASecreted+-+unknown+location%2CSecreted+in+brain%2CSecreted+in+female+reproductive+system%2CSecreted+in+male+reproductive+system%2CSecreted+in+other+tissues%2CSecreted+to+blood%2CSecreted+to+digestive+system%2CSecreted+to+extracellular+matrix%2CIntracellular+and+membrane?format=tsv"
+url <- "https://www.proteinatlas.org/search/sa_location%3ASecreted+-+unknown+location%2CSecreted+in+brain%2CSecreted+in+female+reproductive+system%2CSecreted+in+male+reproductive+system%2CSecreted+in+other+tissues%2CSecreted+to+blood%2CSecreted+to+digestive+system%2CSecreted+to+extracellular+matrix%2CIntracellular+and+membrane%2CImmunoglobulin+genes?format=tsv"
 hpaSecretome <- getAsDataframe_fromQuery(url)
 saveObjAsRda(hpaSecretome)
 

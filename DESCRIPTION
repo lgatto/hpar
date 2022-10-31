@@ -1,7 +1,7 @@
 Package: hpar
 Type: Package
 Title: Human Protein Atlas in R
-Version: 1.39.0
+Version: 1.39.1
 Authors@R:
     c(person(given = "Laurent",
              family = "Gatto",
@@ -32,4 +32,4 @@ Collate:
     hpa.R
     zzz.R
 biocViews: Proteomics, Homo_sapiens, CellBiology
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
