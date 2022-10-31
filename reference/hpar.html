@@ -28,7 +28,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.37.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.39.1</span>
       </span>
     </div>
 
@@ -75,110 +75,150 @@
     <div id="details">
     <h2>Details</h2>
     <p>Several flat files are distributed by the HPA project and
-  available within the package as <code>data.frame</code>s, other datasets 
-  are available through a search query on the HPA website. 
+  available within the package as <code>data.frame</code>s, other datasets
+  are available through a search query on the HPA website.
   The description below is taken from the HPA site:</p>
 <dl><dt>hpaNormalTissue</dt>
 <dd><p><b>Normal tissue data</b>: Expression profiles
   for proteins in human tissues based on immunohistochemisty using tissue
-  micro arrays. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell type"), 
-  expression value ("Level"), and the gene reliability of the expression 
+  micro arrays. The tab-separated file includes Ensembl gene identifier
+  ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell type"),
+  expression value ("Level"), and the gene reliability of the expression
   value ("Reliability").</p></dd>
 
-  
+
   <dt>hpaNormalTissue16.1</dt>
 <dd><p>Same as above, for version 16.1</p></dd>
 
 
   <dt>hpaCancer</dt>
-<dd><p><b>Pathology data</b>: Staining profiles for 
-  proteins in human tumor tissue based on immunohistochemisty using 
-  tissue micro arrays and log-rank P value for Kaplan-Meier analysis 
-  of correlation between mRNA expression level and patient survival. 
-  The tab-separated file includes Ensembl gene identifier ("Gene"), 
-  gene name ("Gene name"), tumor name ("Cancer"), the number of 
+<dd><p><b>Pathology data</b>: Staining profiles for
+  proteins in human tumor tissue based on immunohistochemisty using
+  tissue micro arrays and log-rank P value for Kaplan-Meier analysis
+  of correlation between mRNA expression level and patient survival.
+  The tab-separated file includes Ensembl gene identifier ("Gene"),
+  gene name ("Gene name"), tumor name ("Cancer"), the number of
   patients annotated for different staining levels ("High", "Medium",
-  "Low" &amp; "Not detected") and log-rank p values for patient survival 
-  and mRNA correlation ("prognostic - favourable", 
-  "unprognostic - favourable", "prognostic - unfavourable", 
+  "Low" &amp; "Not detected") and log-rank p values for patient survival
+  and mRNA correlation ("prognostic - favourable",
+  "unprognostic - favourable", "prognostic - unfavourable",
   "unprognostic - unfavourable").</p></dd>
 
 
   <dt>hpaCancer16.1</dt>
 <dd><p>Same as above, for version 16.1</p></dd>
 
-  
-  <dt>rnaGeneTissue</dt>
-<dd><p><b>RNA HPA tissue gene data</b>: Transcript 
-  expression levels summarized per gene in 37 tissues based on 
-  RNA-seq. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Tissue"), transcripts per million 
-  ("TPM"), protein-transcripts per million ("pTPM") and 
-  normalized expression ("NX").</p></dd>
 
-  
+  <dt>rnaConsensusTissue</dt>
+<dd><p><b>RNA consensus tissue gene data</b>
+  Consensus transcript expression levels summarized per gene in 54 tissues
+  based on transcriptomics data from HPA and GTEx. The consensus normalized
+  expression ("nTPM") value is calculated as the maximum nTPM value for each
+  gene in the two data sources. For tissues with multiple sub-tissues
+  (brain regions, lymphoid tissues and intestine) the maximum of all
+  sub-tissues is used for the tissue type. The tab-separated file includes
+  Ensembl gene identifier ("Gene"), analysed sample ("Tissue") and
+  normalized expression ("nTPM").</p></dd>
+
+
+  <dt>rnaHpaTissue</dt>
+<dd><p><b>RNA HPA tissue gene data</b>
+  Transcript expression levels summarized per gene in 256 tissues based
+  on RNA-seq. The tab-separated file includes Ensembl gene identifier
+  ("Gene"), analysed sample ("Tissue"), transcripts per million ("TPM"),
+  protein-transcripts per million ("pTPM") and normalized expression ("nTPM").</p></dd>
+
+
+    <dt>rnaGtexTissue</dt>
+<dd><p><b>RNA GTEx tissue gene data</b>
+  Transcript expression levels summarized per gene in 37 tissues based on
+  RNA-seq. The tab-separated file includes Ensembl gene identifier ("Gene"),
+  analysed sample ("Tissue"), transcripts per million ("TPM"),
+  protein-transcripts per million ("pTPM") and normalized expression ("nTPM").
+  The data was obtained from GTEx.</p></dd>
+
+
+    <dt>rnaFantomTissue</dt>
+<dd><p><b>RNA FANTOM tissue gene data</b>
+  Transcript expression levels summarized per gene in 60 tissues based on
+  CAGE data. The tab-separated file includes Ensembl gene identifier ("Gene"),
+  analysed sample ("Tissue"), tags per million ("Tags per million"),
+  scaled-tags per million ("Scaled tags per million") and normalized
+  expression ("nTPM"). The data was obtained from FANTOM5.</p></dd>
+
+
+
+  <dt>rnaGeneTissue21.0</dt>
+<dd><p><b>RNA HPA tissue gene data</b>: Transcript
+  expression levels summarized per gene in 37 tissues based on
+  RNA-seq, for hpa version 21.0. The tab-separated file includes
+  Ensembl gene identifier ("Gene"), analysed sample ("Tissue"),
+  transcripts per million ("TPM"), protein-transcripts per million
+  ("pTPM").</p></dd>
+
+
   <dt>rnaGeneCellLine</dt>
-<dd><p><b>RNA HPA cell line gene data</b>: 
-  Transcript expression levels summarized per gene in 64 cell 
-  lines. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Cell line"), transcripts per
-  million ("TPM"), protein-coding transcripts per million ("pTPM") 
-  and normalized expression ("NX").</p></dd>
+<dd><p><b>RNA HPA cell line gene data</b>:
+  Transcript expression levels summarized per gene in 69 cell
+  lines. The tab-separated file includes Ensembl gene identifier
+  ("Gene"), analysed sample ("Cell line"), transcripts per million
+  ("TPM"), protein-coding transcripts per million ("pTPM")
+  and normalized expression ("nTPM").</p></dd>
 
-  
+
+
   <dt>rnaGeneCellLine16.1</dt>
 <dd><p>Same as above, for version 16.1</p></dd>
 
 
   <dt>hpaSubcellularLoc</dt>
 <dd><p><b>Subcellular location data</b>:
-  Subcellular location of proteins based on immunofluorescently stained 
-  cells. The tab-separated file includes the following columns: Ensembl 
-  gene identifier ("Gene"), name of gene ("Gene name"), gene reliability 
-  score ("Reliability"), enhanced locations ("Enhanced"), supported 
-  locations ("Supported"), Approved locations ("Approved"), uncertain 
-  locations ("Uncertain"), locations with single-cell variation in 
-  intensity ("Single-cell variation intensity"), locations with spatial 
-  single-cell variation ("Single-cell variation spatial"), locations 
-  with observed cell cycle dependency (type can be one or more of 
-  biological definition, custom data or correlation) ("Cell cycle 
-  dependency"), Gene Ontology Cellular Component term identifier 
+  Subcellular location of proteins based on immunofluorescently stained
+  cells. The tab-separated file includes the following columns: Ensembl
+  gene identifier ("Gene"), name of gene ("Gene name"), gene reliability
+  score ("Reliability"), enhanced locations ("Enhanced"), supported
+  locations ("Supported"), Approved locations ("Approved"), uncertain
+  locations ("Uncertain"), locations with single-cell variation in
+  intensity ("Single-cell variation intensity"), locations with spatial
+  single-cell variation ("Single-cell variation spatial"), locations
+  with observed cell cycle dependency (type can be one or more of
+  biological definition, custom data or correlation) ("Cell cycle
+  dependency"), Gene Ontology Cellular Component term identifier
   ("GO id").</p></dd>
 
-  
+
   <dt>hpaSubcellularLoc16.1</dt>
 <dd><p>Same as above, for version 16.1</p></dd>
 
-  
+
   <dt>hpaSubcellularLoc14</dt>
 <dd><p>Same as above, for version 14.</p></dd>
 
-  
+
   <dt>hpaSecretome</dt>
 <dd><p><b>Secretome data</b>:
-    The human secretome is here defined as all Ensembl genes with 
-    at least one predicted secreted transcript according to HPA 
-    predictions. The complete information about the HPA Secretome 
-    data is given on 
-    <a href="https://www.proteinatlas.org/humanproteome/blood/secretome" class="external-link">https://www.proteinatlas.org/humanproteome/blood/secretome</a>. 
-    This dataset has 230 columns and includes the Ensembl gene identifier 
-    ("Gene"). Information about the additionnal variables can be found 
-    <a href="https://www.proteinatlas.org/search" class="external-link">here</a> by clicking on 
+    The human secretome is here defined as all Ensembl genes with
+    at least one predicted secreted transcript according to HPA
+    predictions. The complete information about the HPA Secretome
+    data is given on
+    <a href="https://www.proteinatlas.org/humanproteome/blood/secretome" class="external-link">https://www.proteinatlas.org/humanproteome/blood/secretome</a>.
+    This dataset has 315 columns and includes the Ensembl gene identifier
+    ("Gene"). Information about the additionnal variables can be found
+    <a href="https://www.proteinatlas.org/search" class="external-link">here</a> by clicking on
     <em>Show/hide columns</em>.</p></dd>
 
 
 
 </dl><p>Detailed description for gene entries and images and not included in
 the package but can be accessed from within the <span style="R">R</span> environment through
-a web browser while on-line.</p>  
+a web browser while on-line.</p>
 <p>The full data sets can be individually loaded using the
 <code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></code> function (see example below).
 Data about individual genes of interest can retrived with the
 <code><a href="getHpa.html">getHpa</a></code> function.</p>
 <p>HPA data usage policy: The use of data and images from this site in
 publications and presentations is permitted provided that the
-following conditions are met:</p>  
+following conditions are met:</p>
 <ol><li><p>The publication and/or presentation are solely for
   informational and non-commercial purposes.</p></li>
 <li><p>The source of the data and/or image is referred to this site
@@ -204,31 +244,32 @@ following conditions are met:</p>
   <a href="http://www.proteinatlas.org/" class="external-link">http://www.proteinatlas.org/</a> and
   <a href="http://www.proteinatlas.org/about/download" class="external-link">http://www.proteinatlas.org/about/download</a> for more details and
   documentation.</p>
-<p>Uhlen et al (2015). Tissue-based map of the human proteome. Science. 
+<p>Uhlen et al (2015). Tissue-based map of the human proteome. Science.
   347(6220):1260419.</p>
 <p>Uhlen et al (2010). Towards a knowledge-based Human Protein Atlas. Nat
-  Biotechnol. 28(12):1248-50.</p>  
+  Biotechnol. 28(12):1248-50.</p>
 <p>Berglund et al (2008). A gene-centric Human Protein Atlas for
   expression profiles based on antibodies. Mol Cell
-  Proteomics. 7(10):2019-27.</p>  
+  Proteomics. 7(10):2019-27.</p>
 <p>Uhlen et al (2005). A human protein atlas for normal and cancer
   tissues based on antibody proteomics. Mol Cell
-  Proteomics. 4(12):1920-1932.</p>  
+  Proteomics. 4(12):1920-1932.</p>
 <p>Ponten et al (2008). The Human Protein Atlas - a tool for pathology. J
   Pathology. 216(4):387-93.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu">allHparData</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "hpaNormalTissue"       "rnaGeneCellLine"       "rnaGeneTissue"        </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">allHparData</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "hpaNormalTissue"       "rnaGeneCellLine"       "rnaGeneTissue21.0"    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "hpaSubcellularLoc"     "hpaSubcellularLoc14"   "hpaCancer"            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "hpaCancer16.1"         "hpaNormalTissue16.1"   "hpaSecretome"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "hpaSubcellularLoc16.1" "rnaGeneCellLine16.1"  </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "hpaSubcellularLoc16.1" "rnaConsensusTissue"    "rnaFantomTissue"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "rnaGeneCellLine16.1"   "rnaGtexTissue"         "rnaHpaTissue"         </span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaNormalTissue</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name         Tissue           Cell.type        Level</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003    TSPAN6 adipose tissue          adipocytes Not detected</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000003    TSPAN6  adrenal gland     glandular cells Not detected</span>
@@ -243,9 +284,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    Approved</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    Approved</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6    Approved</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">rnaGeneCellLine</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">rnaGeneCellLine</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">rnaGeneCellLine</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">rnaGeneCellLine</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name Cell.line  TPM pTPM nTPM</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003    TSPAN6     A-431 21.3 25.6 24.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000003    TSPAN6      A549 20.5 24.4 23.0</span>
@@ -253,9 +294,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 ENSG00000000003    TSPAN6    AN3-CA 38.7 47.1 42.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 ENSG00000000003    TSPAN6  ASC diff 19.2 22.1 28.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 ENSG00000000003    TSPAN6 ASC TERT1 11.3 13.1 16.6</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">rnaGeneTissue</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">rnaGeneTissue</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">rnaGeneTissue21.0</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">rnaGeneTissue21.0</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name          Tissue  TPM pTPM</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003    TSPAN6  adipose tissue 31.5 37.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000003    TSPAN6   adrenal gland 26.4 32.7</span>
@@ -263,9 +304,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 ENSG00000000003    TSPAN6     bone marrow  0.7  0.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 ENSG00000000003    TSPAN6          breast 53.3 68.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 ENSG00000000003    TSPAN6 cerebral cortex 18.5 22.8</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name Reliability          Main.location</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003    TSPAN6    Approved Cell Junctions;Cytosol</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000457     SCYL3   Uncertain           Microtubules</span>
@@ -308,9 +349,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                                     Aggresome (GO:0016235);Plasma membrane (GO:0005886)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                   Vesicles (GO:0043231)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                     Cytosol (GO:0005829);Nucleoli (GO:0005730);Nucleoplasm (GO:0005654)</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc14</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc14</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc14</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSubcellularLoc14</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene                         Main.location</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003                             Cytoplasm</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000457           Cytoskeleton (Microtubules)</span>
@@ -325,9 +366,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                      APE   Uncertain</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                Cytoplasm             APE  Supportive</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                         Nuclear membrane             APE  Supportive</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaCancer</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaCancer</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaCancer</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaCancer</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name             Cancer High Medium Low Not.detected</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000000003    TSPAN6      breast cancer    1      7   2            2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000000003    TSPAN6          carcinoid    0      1   1            2</span>
@@ -349,9 +390,9 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                       NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                   0.2567</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                       NA</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSecretome</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSecretome</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hpaSecretome</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpaSecretome</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              Gene Gene.name           Gene.synonym</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 ENSG00000121410      A1BG                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 ENSG00000175899       A2M CPAMD5, FWP007, S863-7</span>
@@ -409,19 +450,19 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 Evidence at transcript level Evidence at transcript level</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6    Evidence at protein level    Evidence at protein level</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   RNA.tissue.specificity RNA.tissue.distribution RNA.tissue.specificity.score</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1        Tissue enriched      Detected in single                         1492</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1        Tissue enriched      Detected in single                         1493</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2        Tissue enhanced         Detected in all                           NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3        Tissue enhanced        Detected in some                           NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4        Tissue enriched        Detected in some                            7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5        Tissue enriched        Detected in some                           26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5        Tissue enriched        Detected in some                           19</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6        Tissue enhanced        Detected in some                           NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         RNA.tissue.specific.nTPM RNA.single.cell.type.specificity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                  liver: 1234.7               Cell type enriched</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   lung: 1692.9               Cell type enhanced</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 esophagus: 560.7;vagina: 206.4               Cell type enriched</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                stomach 1: 23.8                   Group enriched</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                  liver: 1224.7               Cell type enriched</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   lung: 1678.3               Cell type enhanced</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 esophagus: 556.3;vagina: 204.8               Cell type enriched</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                stomach 1: 23.6                   Group enriched</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                   skin 1: 35.6               Cell type enriched</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       retina: 11.1;testis: 4.7               Cell type enriched</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       retina: 11.0;testis: 4.7               Cell type enriched</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   RNA.single.cell.type.distribution RNA.single.cell.type.specificity.score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                  Detected in many                                     13</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                  Detected in many                                     NA</span>
@@ -453,7 +494,7 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   RNA.brain.regional.distribution RNA.brain.regional.specificity.score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                    Not detected                                   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                 Detected in all                                   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                 Detected in all                                   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                Detected in many                                   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                    Not detected                                   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                    Not detected                                   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                Detected in many                                   NA</span>
@@ -562,20 +603,55 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                          NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                                          NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Blood.concentration...Conc..blood.MS..pg.L. Subcellular.main.location</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                     5.1e+10                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     1.7e+11                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                     1.0e+07                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                          NA                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                          NA                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                          NA                   Cytosol</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Subcellular.additional.location                                 Antibody.RRID</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                  CAB016673: AB_1611892, HPA044252: AB_2678876</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                  CAB017621: AB_1118894, HPA002265: AB_1078142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 HPA038847: AB_2676236, HPA038848: AB_10672654</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                         HPA008017: AB_1078073</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                         HPA054321: AB_2682449</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Blood.concentration...Conc..blood.MS..pg.L.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                     5.1e+10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     1.7e+11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                     1.0e+07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                          NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                           Blood.expression.cluster</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Cluster 36: GdT-cells - Adaptive immune response</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       Cluster 2: Granulocytes - Unknown function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                          Tissue.expression.cluster</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                   Cluster 62: Liver - Hemostasis</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Cluster 86: Liver &amp; Placenta - Transport via ER</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Cluster 84: Esophagus - Epithelial cell function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                   Cluster 4: Stomach - Digestion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                 Cluster 61: Skin - Cornification</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           Cluster 77: Retina - Visual perception</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                             Cell.line.expression.cluster</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         Cluster 37: Hep G2 - Hepatocyte cell processes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         Cluster 37: Hep G2 - Hepatocyte cell processes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  Cluster 8: SK-BR-3 - Unknown function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Cluster 27: U-698-M &amp; Daudi - Adaptive immune response</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                              Single.cell.expression.cluster</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      Cluster 15: Hepatocytes - Hemostasis</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Cluster 14: Adipocytes &amp; Endothelial cells - Angiogenesis</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    Cluster 61: Squamous epithelial cells - Keratinization</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   Cluster 16: Pancreatic endocrine cells - Mixed function</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                Cluster 28: Keratinocytes - Keratinization</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6             Cluster 56: Bipolar cells - Visual perception</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Subcellular.main.location Subcellular.additional.location</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                   Cytosol                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                   Antibody.RRID</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  CAB016673: AB_1611892, HPA044252: AB_2678876</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  CAB017621: AB_1118894, HPA002265: AB_1078142</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 HPA038847: AB_2676236, HPA038848: AB_10672654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         HPA008017: AB_1078073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         HPA054321: AB_2682449</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Pathology.prognostics...Breast.cancer Pathology.prognostics...Cervical.cancer</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                unprognostic (9.95e-2)                  unprognostic (5.31e-2)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                unprognostic (1.73e-2)                  unprognostic (1.05e-3)</span>
@@ -648,228 +724,221 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                 unprognostic (4.47e-2)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Pathology.prognostics...Urothelial.cancer Tissue.RNA...adipose.tissue..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                    unprognostic (6.72e-2)                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    unprognostic (9.03e-3)                              455.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    unprognostic (9.03e-3)                              451.5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                    unprognostic (2.42e-2)                                0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                    unprognostic (6.48e-3)                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    unprognostic (2.91e-4)                                0.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    unprognostic (2.91e-4)                                1.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                    unprognostic (1.34e-2)                                0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...adrenal.gland..nTPM. Tissue.RNA...amygdala..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               0.1                          0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             184.0                        166.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               0.1                          2.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                               0.0                          0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               0.1                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             182.3                        157.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               0.1                          2.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                               0.0                          0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                               0.0                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                               0.2                          0.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                               0.2                          0.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...appendix..nTPM. Tissue.RNA...basal.ganglia..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.1                               0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        151.1                             145.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          0.0                               2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        149.8                             158.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          0.0                               2.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.0                               0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                               0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          1.6                               0.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          1.6                               0.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...bone.marrow..nTPM. Tissue.RNA...breast..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                             0.1                        0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             5.6                      297.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             0.2                        4.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             5.6                      295.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             0.2                        4.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                             0.1                        0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                             0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             1.3                        0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             1.2                        0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...cerebellum..nTPM. Tissue.RNA...cerebral.cortex..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                            0.1                                 0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          154.8                               225.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            1.3                                 2.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          169.3                               223.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            0.8                                 2.4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                            0.0                                 0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                            0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            0.7                                 0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            0.8                                 1.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...cervix..nTPM. Tissue.RNA...choroid.plexus..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.1                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      204.0                              166.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                       55.8                                0.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.1                                0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      227.2                              163.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      116.5                                0.6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                                0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.1                                0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.1                                0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.2                                0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.1                                0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...colon..nTPM. Tissue.RNA...duodenum..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                       0.0                          0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     259.4                        142.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     257.0                        141.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                       0.1                          0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                       0.1                          2.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                       0.4                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                       0.5                          0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                       0.1                          0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...endometrium.1..nTPM. Tissue.RNA...epididymis..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                               0.2                            0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             309.0                          246.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             306.2                          244.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                               0.5                            0.4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                               0.1                            0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                               0.0                            0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                               0.1                            0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...esophagus..nTPM. Tissue.RNA...fallopian.tube..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                           0.0                                0.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         220.4                              230.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         560.7                                0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         218.3                              228.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         556.3                                0.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                           0.0                                0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                           0.3                                0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                           0.3                                0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...gallbladder..nTPM. Tissue.RNA...heart.muscle..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                             0.1                              0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           456.3                            315.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           452.4                            312.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                             0.2                              0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             2.0                              0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             1.9                              0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                             0.0                              0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                             0.7                              0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...hippocampal.formation..nTPM. Tissue.RNA...hypothalamus..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                       0.1                              0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     138.6                            180.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                       2.0                              1.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                       0.0                              0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                       0.0                              0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                     149.8                            175.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                       2.0                              2.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                       0.0                              0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       0.0                              0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                       0.7                              0.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                       0.9                              0.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...kidney..nTPM. Tissue.RNA...liver..nTPM. Tissue.RNA...lung..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.1                    1234.7                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      308.6                    1260.4                   1692.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.1                    1224.7                      0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      311.4                    1250.0                   1678.3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.1                       0.3                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.8                       0.1                      0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        1.4                       0.1                      0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                       0.0                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.2                       0.0                      0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.3                       0.0                      0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...lymph.node..nTPM. Tissue.RNA...medulla.oblongata..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                            0.3                                   0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           99.0                                 187.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            0.2                                   2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           98.2                                 192.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            0.2                                   1.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                            0.0                                   0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                            0.0                                   0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            1.5                                   1.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...midbrain..nTPM. Tissue.RNA...olfactory.bulb..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.0                                0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        149.9                              113.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          2.1                                1.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.3                                0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                                0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          3.0                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...ovary..nTPM. Tissue.RNA...pancreas..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                       0.3                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     102.5                         92.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                       0.4                          0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                       0.1                          3.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                       0.0                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                       0.2                          0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...parathyroid.gland..nTPM. Tissue.RNA...pituitary.gland..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                   0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                 155.0                               136.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                   0.9                                 1.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                   0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                   0.0                                 0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                   0.0                                 0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...placenta..nTPM. Tissue.RNA...pons..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.1                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        448.9                    178.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          0.7                      1.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.0                      0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          0.0                      1.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...prostate..nTPM. Tissue.RNA...rectum..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        296.4                      319.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          0.6                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.1                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          0.1                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...retina..nTPM. Tissue.RNA...salivary.gland..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      131.0                              132.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.7                               99.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.9                                0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                                0.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                       11.1                                0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...seminal.vesicle..nTPM. Tissue.RNA...skeletal.muscle..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                 0.1                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               228.8                               149.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 0.0                                 0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 0.0                                 0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...skin.1..nTPM. Tissue.RNA...small.intestine..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       63.1                               184.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                       72.6                                 0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.3                                 0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                       35.6                                 0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        1.4                                 0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...smooth.muscle..nTPM. Tissue.RNA...spinal.cord..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               0.0                             0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             524.4                           171.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               0.1                             1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                               0.0                             0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                               0.0                             0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                               0.0                             0.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...spleen..nTPM. Tissue.RNA...stomach.1..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.7                           0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      242.7                         173.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.1                           0.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.2                          23.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                           0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        1.0                           0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...testis..nTPM. Tissue.RNA...thalamus..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       59.4                        178.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        5.0                          2.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                          0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        4.7                          1.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...thymus..nTPM. Tissue.RNA...thyroid.gland..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                               0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       54.4                             204.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        3.0                               0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                               0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                               0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.0                               0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...tongue..nTPM. Tissue.RNA...tonsil..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            1.5                                   2.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...midbrain..nTPM. Tissue.RNA...ovary..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.1                       0.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        167.6                     101.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          3.1                       0.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.4                       0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                       0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          1.7                       0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...pancreas..nTPM. Tissue.RNA...parathyroid.gland..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.0                                   0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         91.5                                 153.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          0.2                                   0.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          3.2                                   0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                                   0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          0.2                                   0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...pituitary.gland..nTPM. Tissue.RNA...placenta..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                 0.0                          0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               135.3                        445.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 1.4                          0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 0.0                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 0.1                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 0.3                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...pons..nTPM. Tissue.RNA...prostate..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      0.0                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    193.0                        293.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      1.3                          0.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                      0.1                          0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                      0.0                          0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                      2.0                          0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...rectum..nTPM. Tissue.RNA...retina..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      288.1                       59.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.0                       51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      316.3                      129.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.0                        0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                        0.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.0                        0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...urinary.bladder..nTPM. Tissue.RNA...vagina..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.0                       11.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...salivary.gland..nTPM. Tissue.RNA...seminal.vesicle..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                0.1                                 0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                              131.8                               226.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               99.0                                 0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                0.0                                 0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                0.5                                 0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                0.1                                 0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...skeletal.muscle..nTPM. Tissue.RNA...skin.1..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                 0.0                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               855.2                      161.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 1.2                      206.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 0.2                        0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 0.3                        1.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 0.2                        0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...white.matter..nTPM. Cell.RNA...A.431..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                              0.1                     0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                            210.6                     0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              1.3                     0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                              0.0                     0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                              0.0                     0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                              1.9                     0.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...A549..nTPM. Cell.RNA...AF22..nTPM. Cell.RNA...AN3.CA..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                    0.1                    0.0                      0.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                    0.0                  772.0                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                    0.0                    0.1                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                    0.5                    0.0                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                    0.0                    0.0                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                    2.5                    0.3                      0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...ASC.diff..nTPM. Cell.RNA...ASC.TERT1..nTPM. Cell.RNA...BEWO..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                         0.1                    0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      223.5                        16.2                    2.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                        0.0                         0.0                    2.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                         0.0                    0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                         0.0                    0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.0                         0.0                    0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...BJ..nTPM. Cell.RNA...BJ.hTERT...nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                  0.3                         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                 93.1                        25.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                  0.0                         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                  0.7                         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                  0.0                         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                  0.0                         0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...BJ.hTERT..SV40.Large.T...nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                       0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                       0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                       0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                       0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                       0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                       0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               147.8                       71.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 0.3                       72.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 0.0                        0.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 0.0                       35.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 0.1                        1.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...small.intestine..nTPM. Tissue.RNA...smooth.muscle..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                 0.0                               0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                               182.7                             520.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                 0.1                               0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                 0.0                               0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                 0.3                               0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                 0.4                               0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...spinal.cord..nTPM. Tissue.RNA...spleen..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                             0.0                        0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           196.2                      240.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             1.7                        0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             0.3                        0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                             0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             1.2                        1.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...stomach.1..nTPM. Tissue.RNA...testis..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           0.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                         171.6                       58.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                           0.7                        5.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          23.6                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                           0.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                           0.2                        4.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...thalamus..nTPM. Tissue.RNA...thymus..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                          0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        190.7                       53.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                          4.3                        3.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                          0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                          0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                          2.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...thyroid.gland..nTPM. Tissue.RNA...tongue..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                               0.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                             202.7                      285.6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               0.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                               0.2                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                               0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                               0.4                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...tonsil..nTPM. Tissue.RNA...urinary.bladder..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                                 0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       59.2                               847.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                       51.5                                 1.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                                 0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        0.0                                 0.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.1                                 0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Tissue.RNA...vagina..nTPM. Tissue.RNA...white.matter..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                        0.0                              0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      160.2                            192.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      204.8                              1.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                        0.0                              0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                        1.3                              0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                        0.1                              1.4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...A.431..nTPM. Cell.RNA...A549..nTPM. Cell.RNA...AF22..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                     0.0                    0.1                    0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                     0.3                    0.0                  772.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                     0.1                    0.0                    0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                     0.0                    0.5                    0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     0.0                    0.0                    0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                     0.5                    2.5                    0.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...AN3.CA..nTPM. Cell.RNA...ASC.diff..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                      0.4                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                      0.0                      223.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                      0.1                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                      0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                      0.0                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                      0.2                        0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...ASC.TERT1..nTPM. Cell.RNA...BEWO..nTPM. Cell.RNA...BJ..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         0.1                    0.1                  0.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        16.2                    2.0                 93.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         0.0                    2.5                  0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         0.0                    0.0                  0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         0.0                    0.0                  0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         0.0                    0.2                  0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...BJ.hTERT...nTPM. Cell.RNA...BJ.hTERT..SV40.Large.T...nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         0.0                                       0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                        25.5                                       0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         0.0                                       0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         0.0                                       0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         0.0                                       0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         0.2                                       0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Cell.RNA...BJ.hTERT..SV40.Large.T..RasG12V..nTPM. Cell.RNA...CACO.2..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                 0                      0.1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                 0                      0.1</span>
@@ -1088,61 +1157,54 @@ following conditions are met:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                0.0                      0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6                                0.3                      0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Blood.RNA...total.PBMC..nTPM. Brain.RNA...amygdala..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           0.0                         0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           0.1                       166.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                           0.0                         2.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           0.0                         0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                           0.0                         0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           0.1                       157.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                           0.0                         2.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                           0.0                         0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                           0.0                         0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                           0.0                         0.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                           0.0                         0.7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...basal.ganglia..nTPM. Brain.RNA...cerebellum..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                              0.1                           0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                            145.4                         154.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              2.0                           1.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                            158.5                         169.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                              2.1                           0.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                              0.1                           0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                              0.0                           0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                              0.6                           0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                              0.7                           0.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...cerebral.cortex..nTPM. Brain.RNA...hippocampal.formation..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                0.1                                      0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                              225.4                                    138.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                2.5                                      2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                0.1                                      0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                              223.5                                    149.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                2.4                                      2.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4                                0.0                                      0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                                0.0                                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                0.7                                      0.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                1.1                                      0.9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...hypothalamus..nTPM. Brain.RNA...medulla.oblongata..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                             0.0                                  0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           180.6                                187.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             1.7                                  2.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             0.1                                  0.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           175.0                                192.9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             2.2                                  1.8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             0.0                                  0.2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5                             0.0                                  0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             0.5                                  1.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...midbrain..nTPM. Brain.RNA...olfactory.bulb..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         0.0                               0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       149.9                             113.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         2.1                               1.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         0.3                               0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         0.0                               0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         3.0                               0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...pons..nTPM. Brain.RNA...spinal.cord..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                     0.1                            0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                   178.4                          171.7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                     1.6                            1.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                     0.2                            0.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                     0.0                            0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                     1.8                            0.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...thalamus..nTPM. Brain.RNA...white.matter..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         0.0                             0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       178.5                           210.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         2.8                             1.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         0.0                             0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         0.0                             0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         1.6                             1.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Single.Cell.Type.RNA...Adipocytes..nTPM.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                     10.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                   1319.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                      0.0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                      0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             0.9                                  2.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...midbrain..nTPM. Brain.RNA...pons..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                         0.1                     0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                       167.6                   193.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                         3.1                     1.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                         0.4                     0.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                         0.0                     0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                         1.7                     2.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...spinal.cord..nTPM. Brain.RNA...thalamus..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                            0.0                         0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                          196.2                       190.7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                            1.7                         4.3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                            0.3                         0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                            0.0                         0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                            1.2                         2.1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Brain.RNA...white.matter..nTPM. Single.Cell.Type.RNA...Adipocytes..nTPM.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                             0.2                                     10.2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                           192.7                                   1319.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                             1.5                                      0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                             0.0                                      0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                             0.0                                      0.0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                             1.4                                      0.0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Single.Cell.Type.RNA...Alveolar.cells.type.1..nTPM.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                12.8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                12.8</span>
@@ -1682,7 +1744,7 @@ following conditions are met:</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer></div>
