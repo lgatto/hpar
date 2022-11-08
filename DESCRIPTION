@@ -1,7 +1,7 @@
 Package: hpar
 Type: Package
 Title: Human Protein Atlas in R
-Version: 1.41.0
+Version: 1.41.1
 Authors@R:
     c(person(given = "Laurent",
              family = "Gatto",
@@ -17,7 +17,8 @@ Description: The hpar package provides a simple R interface to and
 Depends:
     R (>= 3.5.0)
 Imports:
-    utils
+    utils,
+    ExperimentHub
 Suggests:
     org.Hs.eg.db,
     GO.db,
@@ -31,5 +32,10 @@ Collate:
     environment.R
     hpa.R
     zzz.R
-biocViews: Proteomics, Homo_sapiens, CellBiology
+biocViews: Proteomics,
+           CellBiology,
+           DataImport,
+           FunctionalGenomics,
+           SystemsBiology,
+           ExperimentHubSoftware
 RoxygenNote: 7.2.1

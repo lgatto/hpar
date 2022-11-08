@@ -1,11 +1,12 @@
-# hpar 1.39
+# hpar 1.41
 
-## Changes in version 1.39.1
+## Changes in version 1.41.1
 
+- Serve data through ExperimentHub.
 - Update to HPA release 21.1 <2022-05-31 Tue>
 - New datasets added: `rnaConsensusTissue`, `rnaHpaTissue`,
   `rnaGtexTissue`, `rnaFantomTissue`
-- the dataset `rnaGeneTissue` becomes `rnaGeneTissue21.0` as no longer
+- The dataset `rnaGeneTissue` becomes `rnaGeneTissue21.0` as no longer
   available in version 21.1
 
 # hpar 1.37

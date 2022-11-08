@@ -85,29 +85,31 @@ getHpaEnsembl <- function()
 getHpa <- function(id,
                    hpadata = NULL,
                    type = c("data", "details")) {
-  type <- match.arg(type)
-  if (is.null(hpadata)) {
-    opts <- getOption("hpar")
-    hpadata <- opts$hpadata
-  }
-  hpadata <- match.arg(hpadata,
-                       allHparData())
-  data(list = hpadata, envir = environment())
-  idx <- with(get(hpadata), which(Gene %in% id))
-  ans <- get(hpadata)[idx, ]
-  if (type == "details" && interactive()) {
-    urls <- paste0("http://www.proteinatlas.org/", id)
-    browseURL(urls[1])
-    if (length(urls) > 1) {
-      ## to avoid a browser error complaining about
-      ## running but not responding
-      Sys.sleep(0.5)
-      tmp <- sapply(urls[-1], browseURL)
+    if (missing(id))
+        stop("Please provide an ENSG identifier.")
+    type <- match.arg(type)
+    if (is.null(hpadata)) {
+        opts <- getOption("hpar")
+        hpadata <- opts$hpadata
     }
-  }
-  if (type == "data") {
-    return(ans)
-  } else {
-    invisible(ans)
-  }
+    hpadata <- match.arg(hpadata,
+                         allHparData())
+    data(list = hpadata, envir = environment())
+    idx <- with(get(hpadata), which(Gene %in% id))
+    ans <- get(hpadata)[idx, ]
+    if (type == "details" && interactive()) {
+        urls <- paste0("http://www.proteinatlas.org/", id)
+        browseURL(urls[1])
+        if (length(urls) > 1) {
+            ## to avoid a browser error complaining about
+            ## running but not responding
+            Sys.sleep(0.5)
+            tmp <- sapply(urls[-1], browseURL)
+        }
+    }
+    if (type == "data") {
+        return(ans)
+    } else {
+        invisible(ans)
+    }
 }

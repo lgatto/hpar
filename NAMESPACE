@@ -1,4 +1,6 @@
-importFrom("utils", "data", "browseURL")
+importFrom("utils", "data", "browseURL", "read.csv")
+
+importFrom("ExperimentHub", "createHubAccessors")
 
 export(getHpaVersion, getHpaDate, getHpaEnsembl,
        getHpa, allHparData,
