@@ -94,11 +94,11 @@ data.frame(
         "hpar/data/rnaGtexTissue.rda",
         "hpar/data/rnaHpaTissue.rda"
     ),
-    Tags = paste0(
-        "ExperimentHub, ExperimentData, ReproducibleResearch, RepositoryData",
-        "CancerData, Homo_sapiens_Data, Proteome, Tissue")
+    Tags = paste("ExperimentHub", "ExperimentData",
+                 "ReproducibleResearch", "RepositoryData",
+                 "CancerData", "Homo_sapiens_Data", "Proteome" ,
+                 "Tissue", sep = ":")
 )
-
 
 ## Saving as a version-specific metadata file for traceability and as
 ## a default metadata.csv file for standardisation.
