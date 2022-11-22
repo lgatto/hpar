@@ -22,15 +22,18 @@ Imports:
 Suggests:
     org.Hs.eg.db,
     GO.db,
+    AnnotationDbi,
     knitr,
     BiocStyle,
     testthat,
-    rmarkdown
+    rmarkdown,
+    dplyr,
+    DT
 VignetteBuilder: knitr
 License: Artistic-2.0
 Collate:
-    environment.R
     hpa.R
+    hpar-package.R
     zzz.R
 biocViews: Proteomics,
            CellBiology,

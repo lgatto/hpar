@@ -4,7 +4,8 @@
 \alias{getHpaDate}
 \alias{getHpaVersion}
 \alias{getHpaEnsembl}
-\title{Obtain HPA release information}
+\alias{allHparData}
+\title{Obtain HPA data release information}
 \usage{
 getHpaDate()
 }
@@ -12,10 +13,8 @@ getHpaDate()
 A `character()` with the release information.
 }
 \description{
-Obtain release information about the Human Protein Atlas (HPA)
-data, including version, release data and Ensembl version the data
-is based on. Detailed release information is accessed on-line
-using [utils::browseURL()]. Sew
+Obtain the data and release information of the Human Protein Atlas
+(HPA) sets distributed by `hpar`. See
 http://www.proteinatlas.org/about/releases for the HPA release
 history.
 }

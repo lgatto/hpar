@@ -2,10 +2,13 @@
 
 ## Changes in version 1.41.1
 
+- Drop `getHpa()` function and use base R or tidyverse (as illustrated
+  in the vignette).
+- Repalce `getHpa(type = "details")` by `browseHPA()`.
 - Serve data through ExperimentHub.
 - Update to HPA release 21.1 <2022-05-31 Tue>
 - New datasets added: `rnaConsensusTissue`, `rnaHpaTissue`,
-  `rnaGtexTissue`, `rnaFantomTissue`
+  `rnaGtexTissue`, `rnaFantomTissue`.
 - The dataset `rnaGeneTissue` becomes `rnaGeneTissue21.0` as no longer
   available in version 21.1
 

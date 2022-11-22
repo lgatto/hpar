@@ -25,6 +25,7 @@ vignette: >
 
 
 ```{r env, echo=FALSE}
+suppressPackageStartupMessages(library("dplyr"))
 suppressPackageStartupMessages(library("BiocStyle"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("GO.db"))
@@ -37,7 +38,6 @@ suppressPackageStartupMessages(library("GO.db"))
 
 From the [Human Protein Atlas](http://www.proteinatlas.org/)
 [@Uhlen2005; @Uhlen2010] site:
-
 
 > The Swedish Human Protein Atlas project, funded by the Knut and
 > Alice Wallenberg Foundation, has been set up to allow for a
@@ -54,71 +54,113 @@ The `r Biocpkg("hpar")` package provides access to HPA data from the R
 interface. It also distributes the following data sets:
 
 
-- `hpaNormalTissue` *Normal tissue data*: Expression profiles
-  for proteins in human tissues based on immunohistochemisty using tissue
-  micro arrays. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), tissue name ("Tissue"), annotated cell type ("Cell type"), 
-  expression value ("Level"), and the gene reliability of the expression 
-  value ("Reliability").}
+Several flat files are distributed by the HPA project and available
+within the package as data.frames, other datasets are available
+through a search query on the HPA website.  The description below is
+taken from the HPA site:
 
-- `hpaNormalTissue16.1`: Same as above, for version 16.1.
+- hpaNormalTissue: Normal tissue data. Expression profiles for
+  proteins in human tissues based on immunohistochemisty using
+  tissue micro arrays. The tab-separated file includes Ensembl
+  gene identifier ("Gene"), tissue name ("Tissue"), annotated cell
+  type ("Cell type"), expression value ("Level"), and the gene
+  reliability of the expression value ("Reliability").
 
-- `hpaCancer` *Pathology data*: Staining profiles for 
-  proteins in human tumor tissue based on immunohistochemisty using 
-  tissue micro arrays and log-rank P value for Kaplan-Meier analysis 
-  of correlation between mRNA expression level and patient survival. 
-  The tab-separated file includes Ensembl gene identifier ("Gene"), 
-  gene name ("Gene name"), tumor name ("Cancer"), the number of 
-  patients annotated for different staining levels ("High", "Medium",
-  "Low" & "Not detected") and log-rank p values for patient survival 
-  and mRNA correlation ("prognostic - favourable", 
-  "unprognostic - favourable", "prognostic - unfavourable", 
-  "unprognostic - unfavourable"). }
+- hpaNormalTissue16.1: Same as above, for version 16.1.
 
-- `hpaCancer16.1`: Same as above, for version 16.1.
+- hpaCancer: Pathology data. Staining profiles for proteins in
+  human tumor tissue based on immunohistochemisty using tissue
+  micro arrays and log-rank P value for Kaplan-Meier analysis of
+  correlation between mRNA expression level and patient survival.
+  The tab-separated file includes Ensembl gene identifier
+  ("Gene"), gene name ("Gene name"), tumor name ("Cancer"), the
+  number of patients annotated for different staining levels
+  ("High", "Medium", "Low" & "Not detected") and log-rank p values
+  for patient survival and mRNA correlation
+  ("prognostic - favourable", "unprognostic - favourable",
+  "prognostic - unfavourable", "unprognostic - unfavourable").
 
-- `rnaGeneTissue` *RNA HPA tissue gene data*: Transcript 
-  expression levels summarized per gene in 37 tissues based on 
-  RNA-seq. The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Tissue"), transcripts per million 
-  ("TPM"), protein-transcripts per million ("pTPM") and 
-  normalized expression ("NX"). }
+- hpaCancer16.1: Same as above, for version 16.1
 
-- `rnaGeneCellLine` *RNA HPA cell line gene data*: Transcript 
-  expression levels summarized per gene in 64 cell lines.
-  The tab-separated file includes Ensembl gene identifier 
-  ("Gene"), analysed sample ("Cell line"), transcripts per
-  million ("TPM"), protein-coding transcripts per million ("pTPM") 
-  and normalized expression ("NX"). }
-  
-- `rnaGeneCellLine16.1`: Same as above, for version 16.1.
+- rnaConsensusTissue: RNA consensus tissue gene data. Consensus
+  transcript expression levels summarized per gene in 54 tissues
+  based on transcriptomics data from HPA and GTEx. The consensus
+  normalized expression ("nTPM") value is calculated as the
+  maximum nTPM value for each gene in the two data sources. For
+  tissues with multiple sub-tissues (brain regions, lymphoid
+  tissues and intestine) the maximum of all sub-tissues is used
+  for the tissue type. The tab-separated file includes Ensembl
+  gene identifier ("Gene"), analysed sample ("Tissue") and
+  normalized expression ("nTPM").
 
-- `hpaSubcellularLoc` *Subcellular location data*: Subcellular 
-  location of proteins based on immunofluorescently stained cells. 
-  The tab-separated file includes the following columns: Ensembl 
-  gene identifier ("Gene"), name of gene ("Gene name"), gene reliability 
-  score ("Reliability"), enhanced locations ("Enhanced"), supported 
-  locations ("Supported"), Approved locations ("Approved"), uncertain 
-  locations ("Uncertain"), locations with single-cell variation in 
-  intensity ("Single-cell variation intensity"), locations with spatial 
-  single-cell variation ("Single-cell variation spatial"), locations 
-  with observed cell cycle dependency (type can be one or more of 
-  biological definition, custom data or correlation) ("Cell cycle 
-  dependency"), Gene Ontology Cellular Component term identifier 
-  ("GO id").}
+- rnaHpaTissue: RNA HPA tissue gene data. Transcript expression
+  levels summarized per gene in 256 tissues based on RNA-seq. The
+  tab-separated file includes Ensembl gene identifier ("Gene"),
+  analysed sample ("Tissue"), transcripts per million ("TPM"),
+  protein-transcripts per million ("pTPM") and normalized
+  expression ("nTPM").
 
-- `hpaSubcellularLoc14` and `*16.1`: Same as above, for versions 14
-  and 16.1.
-  
-- `hpaSecretome` *Secretome data*: The human secretome is here 
-  defined as all Ensembl genes with at least one predicted 
-  secreted transcript according to HPA predictions. The complete 
-  information about the HPA Secretomedata is given on 
-  \url{https://www.proteinatlas.org/humanproteome/blood/secretome}. 
-  This dataset has 230 columns and includes the Ensembl gene identifier 
-  ("Gene"). Information about the additionnal variables can be found 
-  \href{https://www.proteinatlas.org/search}{here} by clicking on 
-  \emph{Show/hide columns}.
+- rnaGtexTissue: RNA GTEx tissue gene data. Transcript expression
+  levels summarized per gene in 37 tissues based on RNA-seq. The
+  tab-separated file includes Ensembl gene identifier ("Gene"),
+  analysed sample ("Tissue"), transcripts per million ("TPM"),
+  protein-transcripts per million ("pTPM") and normalized
+  expression ("nTPM").  The data was obtained from GTEx.
+
+- rnaFantomTissue: RNA FANTOM tissue gene data. Transcript
+  expression levels summarized per gene in 60 tissues based on
+  CAGE data. The tab-separated file includes Ensembl gene
+  identifier ("Gene"), analysed sample ("Tissue"), tags per
+  million ("Tags per million"), scaled-tags per million
+  ("Scaled tags per million") and normalized expression
+  ("nTPM"). The data was obtained from FANTOM5.
+
+- rnaGeneTissue21.0: RNA HPA tissue gene data. Transcript
+  expression levels summarized per gene in 37 tissues based on
+  RNA-seq, for hpa version 21.0. The tab-separated file includes
+  Ensembl gene identifier ("Gene"), analysed sample ("Tissue"),
+  transcripts per million ("TPM"), protein-transcripts per million
+  ("pTPM").
+
+- rnaGeneCellLine: RNA HPA cell line gene data. Transcript
+  expression levels summarized per gene in 69 cell lines. The
+  tab-separated file includes Ensembl gene identifier ("Gene"),
+  analysed sample ("Cell line"), transcripts per million ("TPM"),
+  protein-coding transcripts per million ("pTPM") and normalized
+  expression ("nTPM").
+
+- rnaGeneCellLine16.1: Same as above, for version 16.1.
+
+- hpaSubcellularLoc: Subcellular location data. Subcellular
+  location of proteins based on immunofluorescently stained
+  cells. The tab-separated file includes the following columns:
+  Ensembl gene identifier ("Gene"), name of gene ("Gene name"),
+  gene reliability score ("Reliability"), enhanced locations
+  ("Enhanced"), supported locations ("Supported"), Approved
+  locations ("Approved"), uncertain locations ("Uncertain"),
+  locations with single-cell variation in intensity
+  ("Single-cell variation intensity"), locations with spatial
+  single-cell variation ("Single-cell variation spatial"),
+  locations with observed cell cycle dependency (type can be one
+  or more of biological definition, custom data or correlation)
+  ("Cell cycle dependency"), Gene Ontology Cellular Component term
+  identifier ("GO id").
+
+- hpaSubcellularLoc16.1: Same as above, for version 16.1.
+
+- hpaSubcellularLoc14: Same as above, for version 14.
+
+- hpaSecretome: Secretome data. The human secretome is here
+  defined as all Ensembl genes with at least one predicted
+  secreted transcript according to HPA predictions. The complete
+  information about the HPA Secretome data is given on
+  <https://www.proteinatlas.org/humanproteome/blood/secretome>. This
+  dataset has 315 columns and includes the Ensembl gene identifier
+  ("Gene"). Information about the additionnal variables can be
+  found [here](https://www.proteinatlas.org/search) by clicking on
+  *Show/hide columns*.
+
+The `hpar::allHparData()` returns a list of all datasets (see below).
 
 ## HPA data usage policy
 
@@ -164,79 +206,91 @@ user.
 
 ## Data sets
 
-The data sets described above can be loaded with the `data` function,
-as illustrated below for `hpaNormalTissue` below. Each data set is a
-`data.frame` and can be easily manipulated using standard R
-functionality. The code chunk below illustrates some of its
-properties.
+A table descibing all dataset available in the package can be accessed
+with the `allHparData()` function.
 
+```{r}
+hpa_data <- allHparData()
+```
 
-```{r hpaData}
-data(hpaNormalTissue)
-dim(hpaNormalTissue)
-names(hpaNormalTissue)
-## Number of genes
-length(unique(hpaNormalTissue$Gene))
-## Number of cell types
-length(unique(hpaNormalTissue$Cell.type))
-head(levels(hpaNormalTissue$Cell.type))
-## Number of tissues
-length(unique(hpaNormalTissue$Tissue))
-head(levels(hpaNormalTissue$Tissue))
+```{r, echo=FALSE}
+DT::datatable(hpa_data)
+```
+
+The *Title* variable corresponds to names of the data that can be
+downloaded localled and cached as part of the ExperimentHub
+infrastructure.
+
+```{r}
+head(normtissue <- hpaNormalTissue.rda())
+```
+
+Note that given that the `hpa` data is distributed as par the
+ExperimentHub infrastructure, it is also possible to query it directly
+for relevant datasets.
+
+```{r, message = FALSE}
+library("ExperimentHub")
+eh <- ExperimentHub()
+query(eh, "hpar")
 ```
 
 
 ## HPA interface
 
+Each data described above is a `data.frame` and can be easily
+manipulated using standard R or `BiocStyle::CRANpkg("tidyverse")`
+tidyverse functionality.
 
-The package provides a interface to the HPA data. The `getHpa` allows
-to query the data sets described above. It takes three arguments,
-`id`, `hpadata` and `type`, that control the query, what data set to
-interrogate and how to report results respectively. The HPA data uses
-Ensembl gene identifiers and `id` must be a valid
-identifier. `hpadata` must be one of available dataset. `type` can be
-either `"data"` or `"details"`. The former is the default and returns
-a `data.frame` containing the information relevant to `id`. It is also
-possible to obtained detailed information, (including cell images) as
-web pages, directly from the HPA web page, using `"details"`.
 
-We will illustrate this functionality with using the TSPAN6
-(tetraspanin 6) gene (ENSG00000000003) as example.
+```{r hpaData}
+names(normtissue)
+## Number of genes
+length(unique(normtissue$Gene))
+## Number of cell types
+length(unique(normtissue$Cell.type))
+## Number of tissues
+length(unique(normtissue$Tissue))
+
+## Number of genes highlighly and reliably expressed in each cell type
+## in each tissue.
+library("dplyr")
+normtissue |>
+    filter(Reliability == "Approved",
+           Level == "High") |>
+    count(Cell.type, Tissue) |>
+    arrange(desc(n)) |>
+    head()
+```
+
+We will illustrate additional datasets using the TSPAN6 (tetraspanin
+6) gene (ENSG00000000003) as example.
 
 ```{r getHpa}
 id <- "ENSG00000000003"
-head(getHpa(id, hpadata = "hpaNormalTissue"))
-getHpa(id, hpadata = "hpaSubcellularLoc")
-head(getHpa(id, hpadata = "rnaGeneCellLine"))
+subcell <- hpaSubcellularLoc.rda()
+rna <- rnaGeneCellLine.rda()
+
+## Compine protein immunohistochemisty data, with the subcellular
+## location and RNA expression levels.
+filter(normtissue, Gene == id) |>
+    full_join(filter(subcell, Gene == id)) |>
+    full_join(filter(rna, Gene == id)) |>
+    head()
 ```
 
-If we ask for `"detail"`, a browser page pointing to the
-relevant page is open (see figure below)
+It is also possible to directly open the HPA page for a specific gene
+(see figure below).
 
 ```{r getHpa2, eval=FALSE}
-getHpa(id, type = "details")
+browseHPA(id)
 ```
 
 ![The HPA web page for the tetraspanin 6 gene (ENSG00000000003).](./hpa.png)
 
-If a user is interested specifically in one data set, it is possible
-to set `hpadata` globally and omit it in `getHpa`. This is done by
-setting the `hpar` options `hpardata` with the `setHparOptions`
-function. The current default data set can be tested with
-`getHparOptions`.
-
-```{r opts}
-getHparOptions()
-setHparOptions(hpadata = "hpaSubcellularLoc")
-getHparOptions()
-getHpa(id)
-```
-
 ## HPA release information
 
 Information about the HPA release used to build the installed
-
-
 `r Biocpkg("hpar")` package can be accessed with `getHpaVersion`,
 `getHpaDate` and `getHpaEnsembl`. Full release details can be found on
 the [HPA release history](http://www.proteinatlas.org/about/releases)
@@ -256,9 +310,8 @@ the Bioconductor annotation packages.
 
 ```{r uc-hpar}
 id <- "ENSG00000001460"
-getHpa(id, "hpaSubcellularLoc")
+filter(subcell, Gene == id)
 ```
-
 Below, we first extract all cellular component GO terms available for
 `id` from the `r Biocannopkg("org.Hs.eg.db")` human annotation and
 then retrieve their term definitions using the `r Biocannopkg("GO.db")`
@@ -267,9 +320,9 @@ database.
 ```{r uc-db}
 library("org.Hs.eg.db")
 library("GO.db")
-ans <- select(org.Hs.eg.db, keys = id,
-              columns = c("ENSEMBL", "GO", "ONTOLOGY"),
-              keytype = "ENSEMBL")
+ans <- AnnotationDbi::select(org.Hs.eg.db, keys = id,
+                             columns = c("ENSEMBL", "GO", "ONTOLOGY"),
+                             keytype = "ENSEMBL")
 ans <- ans[ans$ONTOLOGY == "CC", ]
 ans
 sapply(as.list(GOTERM[ans$GO]), slot, "Term")
