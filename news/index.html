@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hpar</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.39.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.41.1</span>
       </span>
     </div>
 
@@ -45,13 +45,15 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="1.39" id="hpar-139">hpar 1.39<a class="anchor" aria-label="anchor" href="#hpar-139"></a></h2>
+<h2 class="page-header" data-toc-text="1.41" id="hpar-141">hpar 1.41<a class="anchor" aria-label="anchor" href="#hpar-141"></a></h2>
 <div class="section level3">
-<h3 id="changes-in-version-1-39">Changes in version 1.39.1<a class="anchor" aria-label="anchor" href="#changes-in-version-1-39"></a></h3>
-<ul><li>Update to HPA release 21.1 &lt;2022-05-31 Tue&gt;</li>
-<li>New datasets added: <code>rnaConsensusTissue</code>, <code>rnaHpaTissue</code>, <code>rnaGtexTissue</code>, <code>rnaFantomTissue</code>
-</li>
-<li>the dataset <code>rnaGeneTissue</code> becomes <code>rnaGeneTissue21.0</code> as no longer available in version 21.1</li>
+<h3 id="changes-in-version-1-41">Changes in version 1.41.1<a class="anchor" aria-label="anchor" href="#changes-in-version-1-41"></a></h3>
+<ul><li>Drop <code>getHpa()</code> function and use base R or tidyverse (as illustrated in the vignette).</li>
+<li>Repalce <code>getHpa(type = "details")</code> by <code><a href="../reference/browseHPA.html">browseHPA()</a></code>.</li>
+<li>Serve data through ExperimentHub.</li>
+<li>Update to HPA release 21.1 &lt;2022-05-31 Tue&gt;</li>
+<li>New datasets added: <code>rnaConsensusTissue</code>, <code>rnaHpaTissue</code>, <code>rnaGtexTissue</code>, <code>rnaFantomTissue</code>.</li>
+<li>The dataset <code>rnaGeneTissue</code> becomes <code>rnaGeneTissue21.0</code> as no longer available in version 21.1</li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -89,7 +91,7 @@
 <li>Updated R version (&gt;= 3.5.0) in Depends field &lt;2020-10-26 Mon&gt;</li>
 <li>Added the Secretome data &lt;2020-10-28 Wed&gt;</li>
 <li>Updated the documentation and docs folder for pkgdown &lt;2020-10-29 Thu&gt;</li>
-<li>Automated <code><a href="../reference/hpar.html">allHparData()</a></code> &lt;2020-10-29 Thu&gt;</li>
+<li>Automated <code><a href="../reference/getHpaDate.html">allHparData()</a></code> &lt;2020-10-29 Thu&gt;</li>
 </ul></div>
 <div class="section level3">
 <h3 id="changes-in-version-1-33-3">Changes in version 1.33.0<a class="anchor" aria-label="anchor" href="#changes-in-version-1-33-3"></a></h3>

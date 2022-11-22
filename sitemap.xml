@@ -19,21 +19,15 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/getHpa.html</loc>
+    <loc>/reference/browseHPA.html</loc>
   </url>
   <url>
     <loc>/reference/getHpaDate.html</loc>
   </url>
   <url>
-    <loc>/reference/getHparOptions.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hpar.html</loc>
+    <loc>/reference/hpar-package.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/setHparOptions.html</loc>
   </url>
 </urlset>
