@@ -22,47 +22,79 @@ newHpaVersion <- function() {
     !identical(hpa_version, hpar_version)
 }
 
-allHparData <- function(){
-  x <- grep(".rda", list.files(system.file("data", package = "hpar")), value = TRUE)
-  x <- gsub(".rda","",x)
-  # reorder the list of datasets givent the initial order
-  nam <- c("hpaNormalTissue", "rnaGeneCellLine", "rnaGeneTissue21.0",
-           "hpaSubcellularLoc", "hpaSubcellularLoc14", "hpaCancer")
-  x <- c(nam[nam %in% x],x[!x %in% nam])
-  return(x)
+##' @export
+allHparData <- function() {
+   fl <- system.file("extdata", "metadata.csv", package = pkgname)
+   read.csv(fl, stringsAsFactors = FALSE)$Title
 }
 
 
-getHpaVersion <- function()
-  get("hpaVersion", envir = .hparEnv)
+##' @title Obtain HPA release information
+##'
+##' @description
+##'
+##' Obtain release information about the Human Protein Atlas (HPA)
+##' data, including version, release data and Ensembl version the data
+##' is based on. Detailed release information is accessed on-line
+##' using [utils::browseURL()]. Sew
+##' http://www.proteinatlas.org/about/releases for the HPA release
+##' history.
+##'
+##' @return A `character()` with the release information.
+##'
+##' @aliases getHpaVersion getHpaEnsembl
+##'
+##' @author Laurent Gatto
+##'
+##' @export
+##'
+##' @examples
+##' getHpaVersion()
+##' getHpaDate()
+##' getHpaEnsembl()
 getHpaDate <- function()
-  get("hpaDate", envir = .hparEnv)
-getHpaEnsembl <- function()
-  get("hpaEnsembl", envir = .hparEnv)
+    get("hpaDate", envir = .hparEnv)
 
+##' @export
+getHpaEnsembl <- function()
+    get("hpaEnsembl", envir = .hparEnv)
+
+##' @export
+getHpaVersion <- function()
+    get("hpaVersion", envir = .hparEnv)
 
 ##' Queries one if the HPA data sets with the \code{id} Ensembl
 ##' gene identifier. The data set to be used is defined by the
 ##' \code{hpadata} argument.
 ##'
 ##' @title HPA gene query
+##'
 ##' @param id A Ensembl gene identifier.
+##'
 ##' @param hpadata A \code{character} with the data set to query. One
 ##'     of available \code{hpar} datasets, available by calling
 ##'     \code{\link{allHparData}} (or any unambiguous prefix), or
 ##'     \code{NULL} (default). In the latter case, the default option
 ##'     is used. See \code{\link{setHparOptions}} and
 ##'     \code{\link{getHparOptions}} for more details.
+##'
 ##' @param type A \code{character} defining what type data to return.
 ##'     One of \code{data} (default, for the data as
 ##'     \code{data.frame}) or \code{details} (to open the id's HPA
 ##'     webpage).
+##'
 ##' @return A \code{data.frame} with the information corresponding to
 ##'     the respective \code{id} genes. If \code{type} is
 ##'     \code{details}, then the \code{dataframe} is returned
 ##'     invisibly and a web page is opened with
 ##'     \code{\link{browseURL}}.
+##'
 ##' @author Laurent Gatto
+##'
+##' @importFrom utils browserURL
+##'
+##' @export
+##'
 ##' @examples
 ##' id <- "ENSG00000000003"
 ##' ## Define 'hpadata' data manually
