@@ -72,7 +72,122 @@ history.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">getHpaVersion</span><span class="op">(</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">allHparData</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                        Title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          hpaCancer16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              hpaCancer.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    hpaNormalTissue16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        hpaNormalTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           hpaSecretome.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    hpaSubcellularLoc14.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  hpaSubcellularLoc16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8      hpaSubcellularLoc.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     rnaConsensusTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       rnaFantomTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   rnaGeneCellLine16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       rnaGeneCellLine.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13     rnaGeneTissue21.0.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14         rnaGtexTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15          rnaHpaTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                  Description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                       Pathology data: Staining profiles for proteins in human tumor tissue (version 16.1).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                                      Pathology data: Staining profiles for proteins in human tumor tissue.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                Normal tissue data: Expression profiles for proteins in human tissues based on immunohistochemisty using tissue micro arrays (version 16.1)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                              Normal tissue data: Expression profiles for proteins in human tissues based on immunohistochemisty using tissue micro arrays.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                Secretome data: Ensembl genes with at least one predicted secreted transcript according to HPA predictions.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                       Subcellular location data: Subcellular location of proteins based on immunofluorescently stained cells (version 14).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                     Subcellular location data: Subcellular location of proteins based on immunofluorescently stained cells (version 16.1).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                                                               Subcellular location of proteins based on immunofluorescently stained cells.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  RNA consensus tissue gene data: Consensus transcript expression levels summarized per gene in 54 tissues based on transcriptomics data from HPA and GTEx.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                            RNA FANTOM tissue gene data: Transcript expression levels summarized per gene in 60 tissues based on CAGE data</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                            RNA HPA cell line gene data: Transcript expression levels summarized per gene in 69 cell lines (version 16.1).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                                           RNA HPA cell line gene data: Transcript expression levels summarized per gene in 69 cell lines.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                                  RNA HPA tissue gene data: Transcript expression levels summarized per gene in 37 tissues based on RNA-seq (version 21.0)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                                                RNA GTEx tissue gene data: Transcript expression levels summarized per gene in 37 tissues based on RNA-seq</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                                               RNA HPA tissue gene data: Transcript expression levels summarized per gene in 256 tissues based on RNA-seq.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    BiocVersion Genome SourceType                             SourceUrl</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9         3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15        3.16     NA        TSV https://www.proteinatlas.org/download</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    SourceVersion      Species TaxonomyId Coordinate_1_based        DataProvider</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           16.1 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           16.1 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           14.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7           16.1 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8           21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9           21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10          21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11          16.1 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12          21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13          21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14          21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15          21.0 Homo sapiens       9606                 NA Human Protein Atlas</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                    Maintainer RDataClass DispatchClass</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 Laurent Gatto &lt;laurent.gatto@uclouvain.be&gt; data.frame           Rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                              RDataPath</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          hpar/data/hpaCancer16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2              hpar/data/hpaCancer.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    hpar/data/hpaNormalTissue16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4        hpar/data/hpaNormalTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           hpar/data/hpaSecretome.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    hpar/data/hpaSubcellularLoc14.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  hpar/data/hpaSubcellularLoc16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8      hpar/data/hpaSubcellularLoc.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9     hpar/data/rnaConsensusTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10       hpar/data/rnaFantomTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11   hpar/data/rnaGeneCellLine16.1.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12       hpar/data/rnaGeneCellLine.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13     hpar/data/rnaGeneTissue21.0.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14         hpar/data/rnaGtexTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15          hpar/data/rnaHpaTissue.rda</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                             Tags</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 ExperimentHub:ExperimentData:ReproducibleResearch:RepositoryData:CancerData:Homo_sapiens_Data:Proteome:Tissue</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">getHpaVersion</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> version </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  "21.1" </span>
 <span class="r-in"><span><span class="fu">getHpaDate</span><span class="op">(</span><span class="op">)</span></span></span>
