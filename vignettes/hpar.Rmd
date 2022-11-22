@@ -222,7 +222,7 @@ downloaded localled and cached as part of the ExperimentHub
 infrastructure.
 
 ```{r}
-head(normtissue <- hpaNormalTissue.rda())
+head(normtissue <- hpaNormalTissue())
 ```
 
 Note that given that the `hpa` data is distributed as par the
@@ -268,8 +268,8 @@ We will illustrate additional datasets using the TSPAN6 (tetraspanin
 
 ```{r getHpa}
 id <- "ENSG00000000003"
-subcell <- hpaSubcellularLoc.rda()
-rna <- rnaGeneCellLine.rda()
+subcell <- hpaSubcellularLoc()
+rna <- rnaGeneCellLine()
 
 ## Compine protein immunohistochemisty data, with the subcellular
 ## location and RNA expression levels.
