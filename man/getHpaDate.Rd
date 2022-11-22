@@ -19,6 +19,9 @@ http://www.proteinatlas.org/about/releases for the HPA release
 history.
 }
 \examples{
+
+allHparData()
+
 getHpaVersion()
 getHpaDate()
 getHpaEnsembl()

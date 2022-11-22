@@ -58,6 +58,9 @@ newHpaVersion <- function() {
 ##' @export
 ##'
 ##' @examples
+##'
+##' allHparData()
+##'
 ##' getHpaVersion()
 ##' getHpaDate()
 ##' getHpaEnsembl()
