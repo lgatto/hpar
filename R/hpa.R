@@ -1,5 +1,5 @@
-## Extracts the extracts the version, date and ensembl version from the Human
-## Protein Atlas webpage.
+## Internal function that extracts the version, date and ensembl
+## version from the Human Protein Atlas webpage.
 getHpaRelease <- function() {
     rel <- readLines("http://www.proteinatlas.org/about/releases", warn = FALSE)
     suppressWarnings(reldate <- grep("Release date:", rel, value = TRUE)[1])
