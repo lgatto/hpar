@@ -4,7 +4,7 @@
 \name{hpar-package}
 \alias{hpar-package}
 \alias{_PACKAGE}
-\alias{hpa}
+\alias{hpar}
 \alias{hpaCancer16.1}
 \alias{hpaCancer}
 \alias{hpaNormalTissue16.1}
