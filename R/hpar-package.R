@@ -17,7 +17,7 @@
 ##'
 ##' See the vignette for available data.
 ##'
-##' @aliases hpaCancer16.1 hpaCancer hpaNormalTissue16.1 hpaNormalTissue hpaSecretome hpaSubcellularLoc14 hpaSubcellularLoc16.1 hpaSubcellularLoc rnaConsensusTissue rnaFantomTissue rnaGeneCellLine16.1 rnaGeneCellLine rnaGeneTissue21.0 rnaGtexTissue rnaHpaTissue
+##' @aliases hpa hpaCancer16.1 hpaCancer hpaNormalTissue16.1 hpaNormalTissue hpaSecretome hpaSubcellularLoc14 hpaSubcellularLoc16.1 hpaSubcellularLoc rnaConsensusTissue rnaFantomTissue rnaGeneCellLine16.1 rnaGeneCellLine rnaGeneTissue21.0 rnaGtexTissue rnaHpaTissue
 ##'
 ##' @section HPA data usage policy:
 ##'

@@ -4,21 +4,22 @@
 \name{hpar-package}
 \alias{hpar-package}
 \alias{_PACKAGE}
-\alias{hpaCancer16.1.rda}
-\alias{hpaCancer.rda}
-\alias{hpaNormalTissue16.1.rda}
-\alias{hpaNormalTissue.rda}
-\alias{hpaSecretome.rda}
-\alias{hpaSubcellularLoc14.rda}
-\alias{hpaSubcellularLoc16.1.rda}
-\alias{hpaSubcellularLoc.rda}
-\alias{rnaConsensusTissue.rda}
-\alias{rnaFantomTissue.rda}
-\alias{rnaGeneCellLine16.1.rda}
-\alias{rnaGeneCellLine.rda}
-\alias{rnaGeneTissue21.0.rda}
-\alias{rnaGtexTissue.rda}
-\alias{rnaHpaTissue.rda}
+\alias{hpa}
+\alias{hpaCancer16.1}
+\alias{hpaCancer}
+\alias{hpaNormalTissue16.1}
+\alias{hpaNormalTissue}
+\alias{hpaSecretome}
+\alias{hpaSubcellularLoc14}
+\alias{hpaSubcellularLoc16.1}
+\alias{hpaSubcellularLoc}
+\alias{rnaConsensusTissue}
+\alias{rnaFantomTissue}
+\alias{rnaGeneCellLine16.1}
+\alias{rnaGeneCellLine}
+\alias{rnaGeneTissue21.0}
+\alias{rnaGtexTissue}
+\alias{rnaHpaTissue}
 \title{Human Protein Atlas in R}
 \description{
 This package provides a simple interface to the Human Protein
